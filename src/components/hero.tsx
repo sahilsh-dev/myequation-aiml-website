@@ -15,7 +15,7 @@ export default function Hero() {
           integrations, we're shaping the future of technology.
         </p>
       </div>
-      <div className="flex gap-4">
+      <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
         <Button size="lg">
           Explore Solutions
           <ArrowRight className="ml-2 h-4 w-4" />

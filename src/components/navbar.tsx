@@ -34,8 +34,8 @@ export default function Navbar() {
                   <Link href="#projects" onClick={() => setMenuOpen(false)} className="w-full py-2 hover:text-primary text-2xl pl-7">Projects</Link>
                   <Link href="#contact" onClick={() => setMenuOpen(false)} className="w-full py-2 hover:text-primary text-2xl pl-7">Contact</Link>
                 </nav>
-                <div>
-                  <Button className="w-[85vw] mx-7 mb-20 text-lg" asChild>
+                <div className="mx-7 mb-20">
+                  <Button className="w-[85vw] text-base" asChild>
                     <Link href="#enroll" onClick={() => setMenuOpen(false)}>Register Now</Link>
                   </Button>
                 </div>
