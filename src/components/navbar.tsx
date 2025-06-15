@@ -44,11 +44,13 @@ export default function Navbar() {
           </>
         ) : (
           <>
-            <nav className="flex flex-1 items-center space-x-6 text-sm font-medium">
-              <Link href="#overview" className="transition-colors hover:text-primary">Overview</Link>
-              <Link href="#curriculum" className="transition-colors hover:text-primary">Curriculum</Link>
-              <Link href="#projects" className="transition-colors hover:text-primary">Projects</Link>
-            </nav>
+            <div className="flex-1 flex justify-center">
+              <nav className="flex items-center space-x-10 text-sm font-medium">
+                <Link href="#overview" className="transition-colors hover:text-primary">Overview</Link>
+                <Link href="#curriculum" className="transition-colors hover:text-primary">Curriculum</Link>
+                <Link href="#projects" className="transition-colors hover:text-primary">Projects</Link>
+              </nav>
+            </div>
             <div className="flex items-center space-x-4">
               <Button variant="ghost" size="sm" asChild>
                 <Link href="#contact">Contact</Link>
