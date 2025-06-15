@@ -46,7 +46,7 @@ export default function Navbar() {
               <span className={`block h-0.5 w-5 bg-current transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
             </button>
             {menuOpen && (
-              <div className="absolute top-14 left-0 w-full bg-background border-b border-border/40 shadow-md z-50 animate-fade-in flex flex-col h-[calc(100vh-3.5rem)]">
+              <div className="absolute top-14 left-0 w-full bg-background border-b border-border/40 shadow-md z-50 animate-fade-in flex flex-col h-[calc(100dvh-3.5rem)]">
                 <nav className="flex flex-col items-start space-y-4 py-4 text-base font-medium flex-1">
                   <Link href="#overview" onClick={() => setMenuOpen(false)} className="w-full py-2 hover:text-primary text-2xl pl-7">Overview</Link>
                   <Link href="#curriculum" onClick={() => setMenuOpen(false)} className="w-full py-2 hover:text-primary text-2xl pl-7">Curriculum</Link>
