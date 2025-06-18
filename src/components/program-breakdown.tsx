@@ -23,7 +23,7 @@ const features = [
   },
 ]
 
-export default function Features() {
+export default function ProgramBreakdown() {
   return (
     <section className="container space-y-16 py-24 md:py-32">
       <div className="mx-auto max-w-[58rem] text-center">
