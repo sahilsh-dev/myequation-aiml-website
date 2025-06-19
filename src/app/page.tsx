@@ -3,6 +3,7 @@ import Hero from "@/components/hero"
 import CTA from "@/components/cta"
 import Footer from "@/components/footer"
 import ProgramBreakdown from "@/components/program-breakdown"
+import ProgramInfo from "@/components/program-info"
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <div className="relative z-10">
         <Navbar />
         <Hero />
+        <ProgramInfo />
         <ProgramBreakdown />
         <CTA />
         <Footer />
