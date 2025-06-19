@@ -4,6 +4,8 @@ import CTA from "@/components/cta"
 import Footer from "@/components/footer"
 import ProgramBreakdown from "@/components/program-breakdown"
 import ProgramInfo from "@/components/program-info"
+import FeaturesOverview from "@/components/feature-overview"
+import Mentors from "@/components/mentors"
 
 export default function Home() {
   return (
@@ -19,6 +21,8 @@ export default function Home() {
         <Navbar />
         <Hero />
         <ProgramInfo />
+        <FeaturesOverview />
+        <Mentors />
         <ProgramBreakdown />
         <CTA />
         <Footer />
