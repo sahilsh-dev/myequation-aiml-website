@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
-import placeholderImg from "@/assets/mentor.jpg"
+import placeholderImg from "@/assets/image2.jpg"
 
 const mentors = [
 	{
