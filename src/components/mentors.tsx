@@ -6,13 +6,13 @@ import mentor2 from "@/assets/mentor2.jpg"
 const mentors = [
 	{
 		name: "Soumya SV",
-		title: "Python & Deep Learning Expert",
+		title: <p>Python & Deep Learning Expert</p>,
 		company: "IBM",
 		image: mentor1,
 	},
 	{
 		name: "Yashashvi Singh",
-		title: "Machine Learning & \nArtificial Intelligence Specialist",
+		title: <p>Machine Learning & Artificial<br /> Intelligence Specialist</p>,
 		company: "NVIDIA",
 		image: mentor2,
 	},
@@ -42,16 +42,16 @@ export default function Mentors() {
                   alt="Mentor"
                   className="h-full w-fit rounded-2xl"
                 />
-                <div className="flex flex-col w-[70%] justify-center gap-y-1">
+                <div className="flex flex-col justify-center gap-y-1">
                   <h2 className="text-xl sm:text-3xl font-bold mb-1">
                     {mentor.name}
                   </h2>
-                  <p className="text-sm sm:text-lg opacity-90 mb-0.5 w-[50%]">
+                  <h3 className="text-sm sm:text-lg opacity-90 mb-0.5">
                     {mentor.title}
-                  </p>
-                  <p className="text-sm sm:text-lg opacity-80">
+                  </h3>
+                  <h3 className="text-sm sm:text-lg opacity-80">
                     {mentor.company}
-                  </p>
+                  </h3>
                 </div>
               </div>
             </CardContent>
