@@ -1,21 +1,20 @@
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
-//import placeholderImg from "@/assets/image2.jpg"
-import image1 from "@/assets/image1.jpg" // added here the image file sahil
-import image2 from "@/assets/image2.jpg" 
+import mentor1 from "@/assets/mentor1.jpg"
+import mentor2 from "@/assets/mentor2.jpg" 
 
 const mentors = [
 	{
 		name: "Soumya SV",
 		title: "Python & Deep Learning Expert",
 		company: "IBM",
-		image: image2,
+		image: mentor1,
 	},
 	{
 		name: "Yashashvi Singh",
-		title: "Machine Learning & Artificial Intelligence Specialist",
+		title: "Machine Learning & \nArtificial Intelligence Specialist",
 		company: "NVIDIA",
-		image: image1,
+		image: mentor2,
 	},
 ]
 
@@ -39,16 +38,20 @@ export default function Mentors() {
             <CardContent className="p-4 sm:p-7 h-full flex flex-col justify-center text-white">
               <div className="flex gap-4 sm:gap-7 h-full">
                 <Image
-                  //src={placeholderImg}
-                  //alt="Mentor"
-		  src={mentor.image} // changed -tara
-                  alt={`Image of ${mentor.name}`} //  CHANGED-tara	
+                  src={mentor.image}
+                  alt="Mentor"
                   className="h-full w-fit rounded-2xl"
                 />
                 <div className="flex flex-col w-[70%] justify-center gap-y-1">
-                  <h2 className="text-xl sm:text-3xl font-bold mb-1">{mentor.name}</h2><br />
-                  <p className="text-sm sm:text-lg opacity-90 mb-0.5">{mentor.title}</p><br />
-                  <p className="text-sm sm:text-lg opacity-80">{mentor.company}</p>
+                  <h2 className="text-xl sm:text-3xl font-bold mb-1">
+                    {mentor.name}
+                  </h2>
+                  <p className="text-sm sm:text-lg opacity-90 mb-0.5 w-[50%]">
+                    {mentor.title}
+                  </p>
+                  <p className="text-sm sm:text-lg opacity-80">
+                    {mentor.company}
+                  </p>
                 </div>
               </div>
             </CardContent>
