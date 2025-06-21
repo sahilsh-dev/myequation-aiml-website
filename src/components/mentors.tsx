@@ -4,13 +4,13 @@ import placeholderImg from "@/assets/mentor.jpg"
 
 const mentors = [
 	{
-		name: "Sahil Verma",
-		title: "Software Engg.",
+		name: "Soumya SV",
+		title: "Python & Deep Learning Expert",
 		company: "IBM",
 	},
 	{
-		name: "Sahil Kumar",
-		title: "Software Engg.",
+		name: "Yashashvi Singh",
+		title: "Machine Learning & Artificial Intelligence Specialist",
 		company: "NVIDIA",
 	},
 ]
