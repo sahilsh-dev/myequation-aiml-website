@@ -29,20 +29,20 @@ export default function Mentors() {
       <div className="flex w-full px-2 mx-auto items-center justify-center gap-4 flex-wrap">
         {mentors.map((mentor, index) => (
           <Card
-            className="w-80 h-32 sm:h-40 bg-gradient-to-br from-[hsl(var(--card))] to-[#0a1736] border border-white/20 shadow-lg"
+            className="w-[min(45vw, 20rem)] h-32 sm:w-[min(45vw, 30rem)] sm:h-60 bg-gradient-to-br from-[hsl(var(--card))] to-[#0a1736] border border-white/20 shadow-lg rounded-2xl"
             key={mentor.name}
           >
-            <CardContent className="p-6 h-full flex flex-col justify-center text-white">
-              <div className="flex gap-4">
+            <CardContent className="p-4 sm:p-7 h-full flex flex-col justify-center text-white">
+              <div className="flex gap-4 sm:gap-7 h-full">
                 <Image
                   src={placeholderImg}
                   alt="Mentor"
-                  className="w-12 h-12 rounded-full"
+                  className="h-full w-fit rounded-2xl"
                 />
-                <div className="flex flex-col">
-                  <h2 className="text-xl font-bold mb-1">{mentor.name}</h2>
-                  <p className="text-sm opacity-90 mb-0.5">{mentor.title}</p>
-                  <p className="text-sm opacity-80">{mentor.company}</p>
+                <div className="flex flex-col w-[70%] justify-center gap-y-1">
+                  <h2 className="text-xl sm:text-3xl font-bold mb-1">{mentor.name}</h2>
+                  <p className="text-sm sm:text-lg opacity-90 mb-0.5">{mentor.title}</p>
+                  <p className="text-sm sm:text-lg opacity-80">{mentor.company}</p>
                 </div>
               </div>
             </CardContent>
