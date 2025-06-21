@@ -34,7 +34,7 @@ export default function FeaturesOverview() {
 	const [hoveredCard, setHoveredCard] = useState<number | null>(null)
 
 	return (
-		<div className="w-full min-h-screen relative px-4">
+		<div className="w-full relative px-4">
 			{/* What You'll Get From This Course Section */}
 			<div className="w-full max-w-[1200px] mx-auto pt-16 pb-20">
 				{/* Section Title */}
