@@ -53,7 +53,7 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section className="w-full py-16 px-4 md:py-32 my-10 md:my-30">
+    <section className="w-full py-16 px-4 md:py-32 my-10">
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16">
@@ -90,7 +90,7 @@ export default function ProjectsSection() {
               >
                 <button
                   onClick={() => toggleItem(project.id)}
-                  className="w-full px-6 py-4 text-left bg-gray-800 hover:bg-gray-700 transition-colors duration-200 flex items-center justify-between"
+                  className="w-full px-6 py-4 text-left  hover:bg-gray-900 transition-colors duration-300 flex items-center justify-between"
                 >
                   <span className="text-white font-medium text-lg">
                     {project.title}
@@ -103,7 +103,7 @@ export default function ProjectsSection() {
                 </button>
 
                 {expandedItems.includes(project.id) && (
-                  <div className="px-6 py-4 bg-gray-900 border-t border-gray-600">
+                  <div className="px-6 py-4 border-t border-gray-600">
                     <p className="text-gray-300 leading-relaxed">
                       {project.description}
                     </p>

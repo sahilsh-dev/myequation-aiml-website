@@ -7,6 +7,7 @@ import ProgramInfo from "@/components/program-info";
 import FeaturesOverview from "@/components/feature-overview";
 import Mentors from "@/components/mentors";
 import ProjectsSection from "@/components/projects-section";
+import TargetAudience from "@/components/target-audience";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
         <Mentors />
         <ProgramBreakdown />
         <ProjectsSection />
+        <TargetAudience />
         <CTA />
         <Footer />
       </div>
