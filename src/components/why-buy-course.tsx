@@ -44,7 +44,13 @@ const carouselItems = [
 
 export function WhyBuyCourse() {
   return (
-    <section className="container w-full my-[10%] px-16">
+    <section className="container w-full my-[10%] px-16 flex flex-col items-center justify-center">
+      <div className="text-center mb-5 md:mb-16">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8">
+          Why you should{" "}
+          <span className="text-yellow-500">Buy this Course</span>
+        </h2>
+      </div>
       <Carousel
         className="w-full max-w-screen-xl mx-auto"
         opts={{ align: "start", dragFree: true }}
