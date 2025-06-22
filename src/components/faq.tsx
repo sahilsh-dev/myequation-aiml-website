@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import faqImg from "@/assets/faq.png";
+import Image from "next/image";
 
 const faqs = [
   {
@@ -58,15 +60,8 @@ export default function FAQ() {
         {/* Main Content */}
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - FAQ Info */}
-          <div className="relative">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="relative">
-                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center">
-                  <span className="text-white text-2xl font-bold">?</span>
-                </div>
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full opacity-80"></div>
-              </div>
-            </div>
+          <div>
+            <Image src={faqImg} alt="FAQ" className="w-24 mb-4" />
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Have questions?
             </h2>
