@@ -19,16 +19,15 @@ export default function AnimatedGradient({ className, ...props }: AnimatedGradie
       { name: "blue", rgba: "rgba(10, 140, 255, 1.0)" },
       { name: "purple", rgba: "rgba(220, 30, 255, 1.0)" },
       { name: "orange", rgba: "rgba(255, 100, 0, 1.0)" },
-      { name: "black", rgba: "rgba(0, 0, 0, 0.8)" },
+      { name: "black", rgba: "rgba(0, 0, 0, 1.0)" },
       { name: "amber", rgba: "rgba(255, 210, 0, 0.95)" },
       { name: "lime", rgba: "rgba(160, 255, 20, 0.95)" },
-      { name: "black", rgba: "rgba(0, 0, 0, 0.8)" },
       { name: "sky", rgba: "rgba(0, 190, 255, 1.0)" },
       { name: "fuchsia", rgba: "rgba(240, 40, 255, 1.0)" },
       { name: "black", rgba: "rgba(0, 0, 0, 0.9)" },
+      { name: "purple", rgba: "rgba(220, 30, 255, 1.0)" },
     ]
 
-    // Generate random positions
     const positions = [
       { top: "5%", left: "10%" },
       { top: "60%", right: "15%" },
@@ -42,29 +41,15 @@ export default function AnimatedGradient({ className, ...props }: AnimatedGradie
       { bottom: "60%", right: "40%" },
       { top: "50%", left: "50%" },
       { bottom: "10%", left: "60%" },
-      { top: "15%", left: "40%" },
-      { top: "70%", right: "20%" },
-      { bottom: "30%", left: "30%" },
-      { top: "25%", right: "50%" },
-      { bottom: "50%", right: "25%" },
-      { top: "85%", left: "15%" },
-      { top: "35%", left: "5%" },
-      { bottom: "15%", right: "35%" },
-    ]
-
-    const generateSize = () => {
-      const baseSize = 60 + Math.floor(Math.random() * 20)
-      return `${baseSize}rem`
-    }
+    ];
 
     // Generate random animation durations
     const generateDuration = () => {
-      return 40 + Math.floor(Math.random() * 40) // 40-80s (much slower)
+      return 60 + Math.floor(Math.random() * 20)
     }
 
     // Generate gradients
     const generatedGradients = colors.map((color, index) => {
-      const size = generateSize()
       const duration = generateDuration()
       const position = positions[index % positions.length]
       const animationName = `float${index + 1}`
@@ -72,10 +57,8 @@ export default function AnimatedGradient({ className, ...props }: AnimatedGradie
       return (
         <div
           key={`gradient-${index}`}
-          className={`absolute rounded-full opacity-85 blur-3xl`}
+          className={`absolute rounded-full blur-2xl w-screen h-screen`}
           style={{
-            width: size,
-            height: size,
             background: `radial-gradient(circle, ${color.rgba} 0%, transparent 70%)`,
             animation: `${animationName} ${duration}s ease-in-out infinite`,
             ...position,
@@ -103,14 +86,6 @@ export default function AnimatedGradient({ className, ...props }: AnimatedGradie
           mixBlendMode: "overlay",
         }}
       />
-
-      {/* Content overlay */}
-      {/* <div className="relative z-10 flex items-center justify-center min-h-screen">
-        <div className="text-center text-white">
-          <h1 className="text-4xl font-bold mb-4">Your Website Content</h1>
-          <p className="text-lg opacity-80">Beautiful animated gradient background</p>
-        </div>
-      </div> */}
 
       <style jsx>{`
         @keyframes float1 {

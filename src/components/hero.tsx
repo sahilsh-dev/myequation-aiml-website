@@ -5,7 +5,7 @@ import AnimatedGradient from "./ui/animated-gradient";
 export default function Hero() {
   return (
     <section className="container flex min-h-[calc(100dvh-3.5rem)] max-w-screen-2xl flex-col items-center justify-center space-y-8 py-10 text-center md:py-32">
-      <div className="absolute h-[80dvh] px-10 -z-10 w-full">
+      <div className="absolute h-[80dvh] -z-10 w-[90%]">
         <AnimatedGradient className="rounded-3xl" />
       </div>
       <div className="space-y-4">
