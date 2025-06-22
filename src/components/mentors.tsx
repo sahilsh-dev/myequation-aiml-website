@@ -1,25 +1,30 @@
-import { Card, CardContent } from "@/components/ui/card"
-import Image from "next/image"
-import mentor1 from "@/assets/mentor1.jpg"
-import mentor2 from "@/assets/mentor2.jpg" 
+import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
+import mentor1 from "@/assets/mentor1.jpg";
+import mentor2 from "@/assets/mentor2.jpg";
 
 const mentors = [
-	{
-		name: "Soumya SV",
-		title: <p>Python & Deep Learning Expert</p>,
-		company: "IBM",
-		image: mentor1,
-	},
-	{
-		name: "Yashashvi Singh",
-		title: <p>Machine Learning & Artificial<br /> Intelligence Specialist</p>,
-		company: "NVIDIA",
-		image: mentor2,
-	},
-]
+  {
+    name: "Soumya SV",
+    title: <p>Python & Deep Learning Expert</p>,
+    company: "IBM",
+    image: mentor1,
+  },
+  {
+    name: "Yashashvi Singh",
+    title: (
+      <p>
+        Machine Learning & Artificial
+        <br /> Intelligence Specialist
+      </p>
+    ),
+    company: "NVIDIA",
+    image: mentor2,
+  },
+];
 
 export default function Mentors() {
-	return (
+  return (
     <section className="container w-full max-w-[1200px] mx-auto pt-20 mb-16 sm:mb-32">
       {/* Section Title */}
       <div className="text-center mb-12 px-4">
@@ -31,7 +36,7 @@ export default function Mentors() {
       <div className="flex w-full px-2 mx-auto items-center justify-center gap-4 flex-wrap">
         {mentors.map((mentor, index) => (
           <Card
-            className="w-[min(45vw, 20rem)] h-32 sm:w-[min(45vw, 30rem)] sm:h-60 bg-gradient-to-br from-[hsl(var(--card))] to-[#0a1736] border border-white/20 shadow-lg rounded-2xl"
+            className="w-[min(45vw, 20rem)] h-32 sm:w-[min(45vw, 30rem)] sm:h-60 bg-gradient-to-br from-[hsl(var(--card))] to-[#0a1736] border border-white/20 shadow-lg rounded-2xl flex-grow"
             key={mentor.name}
           >
             <CardContent className="p-4 sm:p-7 h-full flex flex-col justify-center text-white">

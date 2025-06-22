@@ -44,7 +44,7 @@ const carouselItems = [
 
 export function WhyBuyCourse() {
   return (
-    <section className="container w-full my-[10%] px-[15%] mx-auto">
+    <section className="container w-full my-[20%] px-16">
       <Carousel
         className="w-full max-w-screen-xl mx-auto"
         opts={{ align: "start", dragFree: true }}
