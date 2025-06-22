@@ -1,50 +1,57 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { ChevronDown, ChevronUp } from "lucide-react"
+import { useState } from "react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 const faqs = [
   {
     id: 1,
     question: "How long is this program?",
-    answer: "The program consists of 55+ hours of pre-recorded lectures which you can watch at your own pace.",
+    answer:
+      "The program consists of 55+ hours of pre-recorded lectures which you can watch at your own pace.",
     isExpanded: true,
   },
   {
     id: 2,
     question: "What prerequisites do I need?",
-    answer: "Basic programming knowledge is helpful but not required. We start from the fundamentals.",
+    answer:
+      "Basic programming knowledge is helpful but not required. We start from the fundamentals.",
     isExpanded: false,
   },
   {
     id: 3,
     question: "Do I get a certificate upon completion?",
-    answer: "Yes, you'll receive a verified certificate that you can add to your LinkedIn profile and resume.",
+    answer:
+      "Yes, you'll receive a verified certificate that you can add to your LinkedIn profile and resume.",
     isExpanded: false,
   },
   {
     id: 4,
     question: "Is there lifetime access to the course?",
-    answer: "Yes, once you enroll, you get lifetime access to all course materials and future updates.",
+    answer:
+      "Yes, once you enroll, you get lifetime access to all course materials and future updates.",
     isExpanded: false,
   },
   {
     id: 5,
     question: "What kind of support do I get?",
-    answer: "You get access to our community forum, weekly Q&A sessions, and direct instructor support.",
+    answer:
+      "You get access to our community forum, weekly Q&A sessions, and direct instructor support.",
     isExpanded: false,
   },
-]
+];
 
-export default function ProjectsSection() {
-  const [expandedItems, setExpandedItems] = useState<number[]>([1])
+export default function FAQ() {
+  const [expandedItems, setExpandedItems] = useState<number[]>([1]);
 
   const toggleItem = (id: number) => {
-    setExpandedItems((prev) => (prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]))
-  }
+    setExpandedItems((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+    );
+  };
 
   return (
-    <section className="w-full py-16 px-4 md:py-24 bg-gray-900">
+    <section className="w-full py-16 px-4 md:py-24">
       <div className="container mx-auto max-w-7xl">
         {/* Header - Remove this entire section */}
 
@@ -60,13 +67,23 @@ export default function ProjectsSection() {
                 <div className="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full opacity-80"></div>
               </div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Have questions?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Have questions?
+            </h2>
             <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              We're here to help. Check out the listed answers to some of the most frequently asked questions.
+              We're here to help. Check out the listed answers to some of the
+              most frequently asked questions.
             </p>
-            <p className="text-gray-300 text-base mb-8">Reach out to us in case of any doubts!</p>
+            <p className="text-gray-300 text-base mb-8">
+              Reach out to us in case of any doubts!
+            </p>
             <button className="inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-lg border border-gray-600 transition-colors duration-300">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -81,12 +98,17 @@ export default function ProjectsSection() {
           {/* Right Side - FAQ Accordion */}
           <div className="space-y-3">
             {faqs.map((faq) => (
-              <div key={faq.id} className="border border-gray-700 rounded-lg overflow-hidden bg-gray-800/30">
+              <div
+                key={faq.id}
+                className="border border-gray-700 rounded-lg overflow-hidden bg-gray-800/30"
+              >
                 <button
                   onClick={() => toggleItem(faq.id)}
                   className="w-full px-6 py-4 text-left hover:bg-gray-700/30 transition-colors duration-300 flex items-center justify-between"
                 >
-                  <span className="text-white font-medium text-lg">{faq.question}</span>
+                  <span className="text-white font-medium text-lg">
+                    {faq.question}
+                  </span>
                   {expandedItems.includes(faq.id) ? (
                     <ChevronUp className="w-5 h-5 text-yellow-400" />
                   ) : (
@@ -96,7 +118,9 @@ export default function ProjectsSection() {
 
                 {expandedItems.includes(faq.id) && (
                   <div className="px-6 py-4 border-t border-gray-700">
-                    <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                    <p className="text-gray-300 leading-relaxed">
+                      {faq.answer}
+                    </p>
                   </div>
                 )}
               </div>
@@ -105,5 +129,5 @@ export default function ProjectsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
