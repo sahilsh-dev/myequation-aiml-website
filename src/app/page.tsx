@@ -10,6 +10,7 @@ import ProjectsSection from "@/components/projects-section";
 import TargetAudience from "@/components/target-audience";
 import { WhyBuyCourse } from "@/components/why-buy-course";
 import CertificateSection from "@/components/certificate-section";
+//import FAQ from "@/components/faq"; - tarang faq section added
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
         <TargetAudience />
         <WhyBuyCourse />
         <CertificateSection />
+         //<FAQ />
         <CTA />
         <Footer />
       </div>
