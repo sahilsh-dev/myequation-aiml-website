@@ -72,7 +72,7 @@ export default function ProjectsSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - Image */}
           <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden">
+            <div className="w-full relative rounded-2xl overflow-hidden">
               <Image
                 src={projectsSectionImg}
                 alt="Projects Section"
