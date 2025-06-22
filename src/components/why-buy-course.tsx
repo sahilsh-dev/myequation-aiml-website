@@ -44,15 +44,21 @@ const carouselItems = [
 
 export function WhyBuyCourse() {
   return (
-    <section className="container w-full my-[10%] mx-auto">
-      <Carousel className="w-full max-w-screen-xl mx-auto" opts={{}}>
+    <section className="container w-full my-[10%] px-[15%] mx-auto">
+      <Carousel
+        className="w-full max-w-screen-xl mx-auto"
+        opts={{ align: "start", dragFree: true }}
+      >
         <CarouselContent>
           {carouselItems.map((item, index) => (
-            <CarouselItem key={index} className="basis-1/4">
+            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
               <div className="p-1">
                 <Card>
                   <CardContent className="flex aspect-square items-center justify-center p-6">
                     <div className="text-left">
+                      <span className="text-2xl font-bold text-blue-500 mb-4">
+                        {index + 1}
+                      </span>
                       <h3 className="text-xl font-semibold mb-2">
                         {item.heading}
                       </h3>
