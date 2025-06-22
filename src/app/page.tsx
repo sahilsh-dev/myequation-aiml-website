@@ -11,6 +11,7 @@ import TargetAudience from "@/components/target-audience";
 import { WhyBuyCourse } from "@/components/why-buy-course";
 import CertificateSection from "@/components/certificate-section";
 import FAQ from "@/components/faq";
+import EnrollmentSection from "@/components/enrollment-section";
 
 export default function Home() {
   return (
@@ -33,6 +34,7 @@ export default function Home() {
         <TargetAudience />
         <WhyBuyCourse />
         <CertificateSection />
+        <EnrollmentSection />
         <FAQ />
         <CTA />
         <Footer />
