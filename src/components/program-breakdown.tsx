@@ -41,7 +41,6 @@ export default function ProgramBreakdown() {
             <div
               key={feature.name}
               className="relative overflow-hidden rounded-lg border bg-background p-8"
-
             >
               <div className="flex items-center gap-4 justify-between">
                 <h3 className="font-bold">{feature.name}</h3>
