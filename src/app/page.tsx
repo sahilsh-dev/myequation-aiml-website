@@ -9,6 +9,7 @@ import Mentors from "@/components/mentors";
 import ProjectsSection from "@/components/projects-section";
 import TargetAudience from "@/components/target-audience";
 import { WhyBuyCourse } from "@/components/why-buy-course";
+import CertificateSection from "@/components/certificate-section";
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
         <ProjectsSection />
         <TargetAudience />
         <WhyBuyCourse />
+        <CertificateSection />
         <CTA />
         <Footer />
       </div>

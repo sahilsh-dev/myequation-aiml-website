@@ -26,17 +26,19 @@ export default function ProgramInfo() {
         {/* Main card container */}
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-50 to-blue-100 p-8 md:p-12">
           {/* Stats section */}
-          <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-3 -top-10 pt-[5%]">
+          <div className="mb-8 flex justify-between -top-10 pt-[5%] sm:mx-[5%]">
             {programInfoData.map((item, idx) => (
-              <div className="flex flex-col items-center" key={item.label}>
+              <div className="flex items-center" key={item.label}>
                 <div className="relative rounded-2xl bg-white px-6 py-3 text-center">
-                  <div className="absolute -top-10 left-1/2 -translate-x-1/2 flex items-center gap-2 rounded-2xl bg-blue-600 px-6 py-3 text-white">
-                    <item.icon className="h-4 w-4" />
-                    <span className="font-semibold">{item.value}</span>
-                  </div>
-                  <span className="font-medium text-gray-900">
+                  <div className="relative font-medium text-gray-900 text-sm sm:text-lg">
+                    <div className="absolute -top-10 sm:-top-14 left-1/2 -translate-x-1/2 flex items-center gap-2 rounded-2xl bg-blue-600 px-3 sm:px-6 py-3 text-white">
+                      <item.icon className="h-4 w-4" />
+                      <span className="font-semibold text-xs sm:text-base">
+                        {item.value}
+                      </span>
+                    </div>
                     {item.label}
-                  </span>
+                  </div>
                 </div>
               </div>
             ))}
@@ -47,9 +49,7 @@ export default function ProgramInfo() {
             <div className="flex-1">
               <h2 className="text-2xl font-bold text-gray-900 md:text-3xl lg:text-4xl">
                 A <span className="text-blue-600">55-Hour</span> Self-Paced
-                Program by
-                <br />
-                NVIDIA & IBM Mentors
+                Program by NVIDIA & IBM Mentors
               </h2>
             </div>
 
