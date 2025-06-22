@@ -8,6 +8,7 @@ import FeaturesOverview from "@/components/feature-overview";
 import Mentors from "@/components/mentors";
 import ProjectsSection from "@/components/projects-section";
 import TargetAudience from "@/components/target-audience";
+import { WhyBuyCourse } from "@/components/why-buy-course";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
         <ProgramBreakdown />
         <ProjectsSection />
         <TargetAudience />
+        <WhyBuyCourse />
         <CTA />
         <Footer />
       </div>
