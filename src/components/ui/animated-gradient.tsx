@@ -1,15 +1,18 @@
-"use client"
+"use client";
 
-import { cn } from "@/lib/utils"
-import type React from "react"
-import { useEffect, useState } from "react"
+import { cn } from "@/lib/utils";
+import type React from "react";
+import { useEffect, useState } from "react";
 
 interface AnimatedGradientProps extends React.HTMLAttributes<HTMLDivElement> {
   className?: string;
 }
 
-export default function AnimatedGradient({ className, ...props }: AnimatedGradientProps) {
-  const [gradients, setGradients] = useState<React.ReactNode[]>([])
+export default function AnimatedGradient({
+  className,
+  ...props
+}: AnimatedGradientProps) {
+  const [gradients, setGradients] = useState<React.ReactNode[]>([]);
 
   useEffect(() => {
     // Define gradient colors with high saturation
@@ -26,7 +29,7 @@ export default function AnimatedGradient({ className, ...props }: AnimatedGradie
       { name: "fuchsia", rgba: "rgba(240, 40, 255, 1.0)" },
       { name: "black", rgba: "rgba(0, 0, 0, 0.9)" },
       { name: "purple", rgba: "rgba(220, 30, 255, 1.0)" },
-    ]
+    ];
 
     const positions = [
       { top: "5%", left: "10%" },
@@ -45,33 +48,38 @@ export default function AnimatedGradient({ className, ...props }: AnimatedGradie
 
     // Generate random animation durations
     const generateDuration = () => {
-      return 60 + Math.floor(Math.random() * 20)
-    }
+      return 60 + Math.floor(Math.random() * 20);
+    };
 
     // Generate gradients
     const generatedGradients = colors.map((color, index) => {
-      const duration = generateDuration()
-      const position = positions[index % positions.length]
-      const animationName = `float${index + 1}`
+      const duration = generateDuration();
+      const position = positions[index % positions.length];
+      const animationName = `float${index + 1}`;
 
       return (
         <div
           key={`gradient-${index}`}
-          className={`absolute rounded-full blur-2xl w-screen h-screen`}
+          className={`absolute rounded-full blur-2xl w-screen h-screen max-w-[60rem] max-h-[60rem]`}
           style={{
             background: `radial-gradient(circle, ${color.rgba} 0%, transparent 70%)`,
             animation: `${animationName} ${duration}s ease-in-out infinite`,
             ...position,
           }}
         />
-      )
-    })
+      );
+    });
 
-    setGradients(generatedGradients)
-  }, [])
+    setGradients(generatedGradients);
+  }, []);
 
   return (
-    <div className={cn("relative w-full overflow-hidden bg-black h-full", className)}>
+    <div
+      className={cn(
+        "relative w-full overflow-hidden bg-black h-full",
+        className
+      )}
+    >
       {/* Animated gradient orbs */}
       <div className="absolute inset-0">{gradients}</div>
 
@@ -89,140 +97,310 @@ export default function AnimatedGradient({ className, ...props }: AnimatedGradie
 
       <style jsx>{`
         @keyframes float1 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          25% { transform: translate(100px, -50px) scale(1.1); }
-          50% { transform: translate(-50px, 100px) scale(0.9); }
-          75% { transform: translate(80px, 80px) scale(1.05); }
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+          25% {
+            transform: translate(100px, -50px) scale(1.1);
+          }
+          50% {
+            transform: translate(-50px, 100px) scale(0.9);
+          }
+          75% {
+            transform: translate(80px, 80px) scale(1.05);
+          }
         }
-        
+
         @keyframes float2 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(-80px, -100px) scale(1.2); }
-          66% { transform: translate(120px, 60px) scale(0.8); }
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+          33% {
+            transform: translate(-80px, -100px) scale(1.2);
+          }
+          66% {
+            transform: translate(120px, 60px) scale(0.8);
+          }
         }
-        
+
         @keyframes float3 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          20% { transform: translate(60px, -80px) scale(1.1); }
-          40% { transform: translate(-100px, -40px) scale(0.9); }
-          60% { transform: translate(40px, 100px) scale(1.15); }
-          80% { transform: translate(-60px, 20px) scale(0.95); }
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+          20% {
+            transform: translate(60px, -80px) scale(1.1);
+          }
+          40% {
+            transform: translate(-100px, -40px) scale(0.9);
+          }
+          60% {
+            transform: translate(40px, 100px) scale(1.15);
+          }
+          80% {
+            transform: translate(-60px, 20px) scale(0.95);
+          }
         }
-        
+
         @keyframes float4 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          30% { transform: translate(-120px, 80px) scale(1.3); }
-          70% { transform: translate(90px, -60px) scale(0.7); }
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+          30% {
+            transform: translate(-120px, 80px) scale(1.3);
+          }
+          70% {
+            transform: translate(90px, -60px) scale(0.7);
+          }
         }
-        
+
         @keyframes float5 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          25% { transform: translate(-70px, -120px) scale(1.1); }
-          50% { transform: translate(110px, 40px) scale(0.85); }
-          75% { transform: translate(-40px, 90px) scale(1.25); }
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+          25% {
+            transform: translate(-70px, -120px) scale(1.1);
+          }
+          50% {
+            transform: translate(110px, 40px) scale(0.85);
+          }
+          75% {
+            transform: translate(-40px, 90px) scale(1.25);
+          }
         }
-        
+
         @keyframes float6 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          50% { transform: translate(-150px, 150px) scale(1.4); }
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+          50% {
+            transform: translate(-150px, 150px) scale(1.4);
+          }
         }
-        
+
         @keyframes float7 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(100px, -100px) scale(0.8); }
-          66% { transform: translate(-80px, 120px) scale(1.2); }
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+          33% {
+            transform: translate(100px, -100px) scale(0.8);
+          }
+          66% {
+            transform: translate(-80px, 120px) scale(1.2);
+          }
         }
 
         @keyframes float8 {
-          0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
-          25% { transform: translate(-90px, 110px) scale(1.2) rotate(90deg); }
-          50% { transform: translate(130px, -70px) scale(0.8) rotate(180deg); }
-          75% { transform: translate(-50px, -120px) scale(1.1) rotate(270deg); }
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1) rotate(0deg);
+          }
+          25% {
+            transform: translate(-90px, 110px) scale(1.2) rotate(90deg);
+          }
+          50% {
+            transform: translate(130px, -70px) scale(0.8) rotate(180deg);
+          }
+          75% {
+            transform: translate(-50px, -120px) scale(1.1) rotate(270deg);
+          }
         }
 
         @keyframes float9 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          20% { transform: translate(140px, -90px) scale(1.3); }
-          40% { transform: translate(-80px, 130px) scale(0.7); }
-          60% { transform: translate(100px, 50px) scale(1.15); }
-          80% { transform: translate(-120px, -60px) scale(0.9); }
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+          20% {
+            transform: translate(140px, -90px) scale(1.3);
+          }
+          40% {
+            transform: translate(-80px, 130px) scale(0.7);
+          }
+          60% {
+            transform: translate(100px, 50px) scale(1.15);
+          }
+          80% {
+            transform: translate(-120px, -60px) scale(0.9);
+          }
         }
 
         @keyframes float10 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(-110px, -140px) scale(1.4); }
-          66% { transform: translate(160px, 80px) scale(0.6); }
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+          33% {
+            transform: translate(-110px, -140px) scale(1.4);
+          }
+          66% {
+            transform: translate(160px, 80px) scale(0.6);
+          }
         }
 
         @keyframes float11 {
-          0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
-          30% { transform: translate(70px, -110px) scale(1.2) rotate(120deg); }
-          60% { transform: translate(-140px, 90px) scale(0.8) rotate(240deg); }
-          90% { transform: translate(50px, 140px) scale(1.1) rotate(360deg); }
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1) rotate(0deg);
+          }
+          30% {
+            transform: translate(70px, -110px) scale(1.2) rotate(120deg);
+          }
+          60% {
+            transform: translate(-140px, 90px) scale(0.8) rotate(240deg);
+          }
+          90% {
+            transform: translate(50px, 140px) scale(1.1) rotate(360deg);
+          }
         }
 
         @keyframes float12 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          25% { transform: translate(-160px, 70px) scale(1.3); }
-          50% { transform: translate(90px, -150px) scale(0.75); }
-          75% { transform: translate(120px, 120px) scale(1.05); }
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+          25% {
+            transform: translate(-160px, 70px) scale(1.3);
+          }
+          50% {
+            transform: translate(90px, -150px) scale(0.75);
+          }
+          75% {
+            transform: translate(120px, 120px) scale(1.05);
+          }
         }
-        
+
         @keyframes float13 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          20% { transform: translate(-180px, -100px) scale(1.2); }
-          40% { transform: translate(120px, 160px) scale(0.85); }
-          60% { transform: translate(180px, -80px) scale(1.1); }
-          80% { transform: translate(-100px, 140px) scale(0.9); }
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+          20% {
+            transform: translate(-180px, -100px) scale(1.2);
+          }
+          40% {
+            transform: translate(120px, 160px) scale(0.85);
+          }
+          60% {
+            transform: translate(180px, -80px) scale(1.1);
+          }
+          80% {
+            transform: translate(-100px, 140px) scale(0.9);
+          }
         }
-        
+
         @keyframes float14 {
-          0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
-          33% { transform: translate(150px, 120px) scale(1.15) rotate(60deg); }
-          66% { transform: translate(-130px, -150px) scale(0.9) rotate(120deg); }
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1) rotate(0deg);
+          }
+          33% {
+            transform: translate(150px, 120px) scale(1.15) rotate(60deg);
+          }
+          66% {
+            transform: translate(-130px, -150px) scale(0.9) rotate(120deg);
+          }
         }
-        
+
         @keyframes float15 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          25% { transform: translate(200px, -120px) scale(1.25); }
-          50% { transform: translate(-150px, -180px) scale(0.8); }
-          75% { transform: translate(-100px, 200px) scale(1.1); }
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+          25% {
+            transform: translate(200px, -120px) scale(1.25);
+          }
+          50% {
+            transform: translate(-150px, -180px) scale(0.8);
+          }
+          75% {
+            transform: translate(-100px, 200px) scale(1.1);
+          }
         }
-        
+
         @keyframes float16 {
-          0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
-          20% { transform: translate(-120px, 180px) scale(1.3) rotate(45deg); }
-          40% { transform: translate(180px, 100px) scale(0.7) rotate(90deg); }
-          60% { transform: translate(150px, -150px) scale(1.2) rotate(135deg); }
-          80% { transform: translate(-180px, -120px) scale(0.8) rotate(180deg); }
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1) rotate(0deg);
+          }
+          20% {
+            transform: translate(-120px, 180px) scale(1.3) rotate(45deg);
+          }
+          40% {
+            transform: translate(180px, 100px) scale(0.7) rotate(90deg);
+          }
+          60% {
+            transform: translate(150px, -150px) scale(1.2) rotate(135deg);
+          }
+          80% {
+            transform: translate(-180px, -120px) scale(0.8) rotate(180deg);
+          }
         }
-        
+
         @keyframes float17 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(-200px, -100px) scale(1.4); }
-          66% { transform: translate(150px, 200px) scale(0.6); }
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+          33% {
+            transform: translate(-200px, -100px) scale(1.4);
+          }
+          66% {
+            transform: translate(150px, 200px) scale(0.6);
+          }
         }
-        
+
         @keyframes float18 {
-          0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
-          25% { transform: translate(180px, -180px) scale(1.2) rotate(120deg); }
-          50% { transform: translate(-150px, 150px) scale(0.8) rotate(240deg); }
-          75% { transform: translate(-180px, -150px) scale(1.1) rotate(360deg); }
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1) rotate(0deg);
+          }
+          25% {
+            transform: translate(180px, -180px) scale(1.2) rotate(120deg);
+          }
+          50% {
+            transform: translate(-150px, 150px) scale(0.8) rotate(240deg);
+          }
+          75% {
+            transform: translate(-180px, -150px) scale(1.1) rotate(360deg);
+          }
         }
-        
+
         @keyframes float19 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          20% { transform: translate(150px, 200px) scale(1.3); }
-          40% { transform: translate(-200px, -150px) scale(0.7); }
-          60% { transform: translate(-150px, 180px) scale(1.2); }
-          80% { transform: translate(180px, -200px) scale(0.8); }
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+          20% {
+            transform: translate(150px, 200px) scale(1.3);
+          }
+          40% {
+            transform: translate(-200px, -150px) scale(0.7);
+          }
+          60% {
+            transform: translate(-150px, 180px) scale(1.2);
+          }
+          80% {
+            transform: translate(180px, -200px) scale(0.8);
+          }
         }
-        
+
         @keyframes float20 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          50% { transform: translate(-200px, 200px) scale(1.5); }
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+          50% {
+            transform: translate(-200px, 200px) scale(1.5);
+          }
         }
       `}</style>
     </div>
-  )
+  );
 }

@@ -1,11 +1,12 @@
-import Navbar from "@/components/navbar"
-import Hero from "@/components/hero"
-import CTA from "@/components/cta"
-import Footer from "@/components/footer"
-import ProgramBreakdown from "@/components/program-breakdown"
-import ProgramInfo from "@/components/program-info"
-import FeaturesOverview from "@/components/feature-overview"
-import Mentors from "@/components/mentors"
+import Navbar from "@/components/navbar";
+import Hero from "@/components/hero";
+import CTA from "@/components/cta";
+import Footer from "@/components/footer";
+import ProgramBreakdown from "@/components/program-breakdown";
+import ProgramInfo from "@/components/program-info";
+import FeaturesOverview from "@/components/feature-overview";
+import Mentors from "@/components/mentors";
+import ProjectsSection from "@/components/projects-section";
 
 export default function Home() {
   return (
@@ -24,9 +25,10 @@ export default function Home() {
         <FeaturesOverview />
         <Mentors />
         <ProgramBreakdown />
+        <ProjectsSection />
         <CTA />
         <Footer />
       </div>
     </div>
-  )
+  );
 }
