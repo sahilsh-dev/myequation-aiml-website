@@ -12,12 +12,7 @@ const mentors = [
   },
   {
     name: "Yashashvi Singh",
-    title: (
-      <p>
-        Machine Learning & Artificial
-        <br /> Intelligence Specialist
-      </p>
-    ),
+    title: <p>Machine Learning & AI Specialist</p>,
     company: "NVIDIA",
     image: mentor2,
   },

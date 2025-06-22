@@ -21,7 +21,7 @@ export default function ProgramInfo() {
   ];
 
   return (
-    <section className="container my-[10%]">
+    <section className="container my-[5%]">
       <div className="mx-auto max-w-4xl">
         {/* Main card container */}
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-50 to-blue-100 p-8 md:p-12">
