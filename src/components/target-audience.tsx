@@ -43,8 +43,11 @@ export default function TargetAudience() {
         {/* Grid of Target Audiences */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {targetAudiences.map((audience) => (
-            <div key={audience.id} className="flex flex-col justify-between">
-              <div>
+            <div
+              key={audience.id}
+              className="flex flex-col justify-between border rounded-2xl bg-black/20"
+            >
+              <div className="p-3">
                 {/* Check Icon */}
                 <div className="mb-4">
                   <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
