@@ -24,26 +24,13 @@ export default function Footer() {
 
         <div className="grid flex-1 grid-cols-2 gap-12 sm:grid-cols-3">
           <div className="space-y-4">
-            <h3 className="text-sm font-medium">Solutions</h3>
+           <h3 className="text-sm font-medium">Onboarding Manager's</h3>
             <ul className="space-y-3 text-sm">
-              <li>
-                <Link
-                  href="/ai-analytics"
-                  className="text-muted-foreground transition-colors hover:text-primary"
-                >
-                  AI Analytics
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/cloud-services"
-                  className="text-muted-foreground transition-colors hover:text-primary"
-                >
-                  Cloud Services
-                </Link>
-              </li>
+              <li className="text-muted-foreground">Gunesh - 8806806479</li>
+              <li className="text-muted-foreground">Kaustuv - 9337837362</li>
             </ul>
           </div>
+
 
           <div className="space-y-4">
             <h3 className="text-sm font-medium">Company</h3>
@@ -68,7 +55,7 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h3 className="text-sm font-medium">Connect</h3>
+            <h3 className="text-sm font-medium">Find Us Here</h3>
             <div className="flex flex-wrap gap-4 items-center">
               <a
                 href="https://www.linkedin.com/company/my-equation/posts/?feedView=all"
@@ -76,7 +63,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="text-muted-foreground transition-colors hover:text-primary"
               >
-                <Linkedin className="h-5 w-5" />
+                <Linkedin className="h-4 w-4" />
                 <span className="sr-only">LinkedIn</span>
               </a>
               <a
