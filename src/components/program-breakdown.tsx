@@ -1,12 +1,20 @@
 import { Brain, Cloud, Shield, Zap } from "lucide-react";
 import { Check, Clock, Video } from "lucide-react";
 import AnimatedGradient from "./ui/animated-gradient";
+import pyProgram from "@/assets/py-Program.png";
+import AiIndustrial from "@/assets/Ai-Industrial-logo.png";
+import MachineLearning from "@/assets/Ml-Logo.png";
+import DeepLearning from "@/assets/DeepLearning-logo.png";
+
+import { imageConfigDefault } from "next/dist/shared/lib/image-config";
+import Image from "next/image"
 
 const courses = [
   {
     title: "Python Programming",
     subtitle: "Basic to Advanced",
-    icon: "🐍",
+    iconType: "image",
+    iconSrc: pyProgram,
     features: [
       "Complete Path: Data types, loops, functions, OOP, file handling.",
       "Advanced modules: NumPy, OpenCV, GUI, threading.",
@@ -18,7 +26,8 @@ const courses = [
   {
     title: "Machine Learning",
     subtitle: "Basic to Advanced",
-    icon: "🤖",
+    iconType: "image",
+    iconSrc: MachineLearning,
     features: [
       "ML Made Simple: Supervised & unsupervised learning, pipelines.",
       "Powerful Algorithms: KNN, SVM, Decision Trees, XGBoost.",
@@ -30,7 +39,8 @@ const courses = [
   {
     title: "Deep Learning",
     subtitle: "Basic to Advanced",
-    icon: "🧠",
+    iconType: "image",
+    iconSrc: DeepLearning,
     features: [
       "Neural Nets Unlocked: CNNs, RNNs, LSTMs from scratch to expert.",
       "Smart Vision & Text: Build image classifiers and text generators.",
@@ -42,7 +52,8 @@ const courses = [
   {
     title: "AI & Industrial Use Cases",
     subtitle: "Basic to Advanced",
-    icon: "⚡",
+    iconType: "image",
+    iconSrc: AiIndustrial,
     features: [
       "AI That Works: Real frameworks used in enterprises.",
       "LLMs & RL FTW: Build with Models and Reinforcement Learning.",
@@ -83,8 +94,18 @@ export default function ProgramBreakdown() {
                       {course.subtitle}
                     </p>
                   </div>
-                  <div className="ml-4 opacity-90 text-4xl md:text-5xl">
-                    {course.icon}
+                  <div className="ml-4 opacity-90">
+                    {course.iconType === "image" ? (
+                      <Image
+                        src={course.iconSrc || "/placeholder.svg"}
+                        alt={`${course.title} icon`}
+                        width={60}
+                        height={60}
+                        className="object-contain"
+                      />
+                    ) : (
+                      <div className="text-4xl md:text-5xl">{course.icon}</div>
+                    )}
                   </div>
                 </div>
 
