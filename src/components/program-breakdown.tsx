@@ -1,6 +1,6 @@
-import { Brain, Cloud, Shield, Zap } from "lucide-react"
-import { Check, Clock, Video } from "lucide-react"
-import AnimatedGradient from "./ui/animated-gradient"
+import { Brain, Cloud, Shield, Zap } from "lucide-react";
+import { Check, Clock, Video } from "lucide-react";
+import AnimatedGradient from "./ui/animated-gradient";
 
 const courses = [
   {
@@ -51,7 +51,7 @@ const courses = [
     videos: 10,
     hours: 10,
   },
-]
+];
 
 export default function ProgramBreakdown() {
   return (
@@ -67,19 +67,25 @@ export default function ProgramBreakdown() {
         </div>
 
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5">
             {courses.map((course, index) => (
               <div
                 key={index}
-                className="bg-black/50 backdrop-blur-lg border border-white/20 rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col justify-between"
+                className="bg-black/50 backdrop-blur-lg border border-white/20 rounded-3xl p-5 md:p-7 flex flex-col justify-between"
               >
                 {/* Header Section */}
-                < div className="flex justify-between items-start mb-6" >
+                <div className="flex justify-between items-start mb-6">
                   <div className="flex-1">
-                    <h2 className="font-bold leading-tight mb-1 text-2xl md:text-3xl text-white">{course.title}</h2>
-                    <p className="text-gray-400 font-medium text-base md:text-sm">{course.subtitle}</p>
+                    <h2 className="font-bold leading-tight mb-1 text-2xl md:text-3xl text-white">
+                      {course.title}
+                    </h2>
+                    <p className="text-gray-400 font-medium text-base md:text-sm">
+                      {course.subtitle}
+                    </p>
                   </div>
-                  <div className="ml-4 opacity-90 text-4xl md:text-5xl">{course.icon}</div>
+                  <div className="ml-4 opacity-90 text-4xl md:text-5xl">
+                    {course.icon}
+                  </div>
                 </div>
 
                 {/* Features Section */}
@@ -89,7 +95,9 @@ export default function ProgramBreakdown() {
                       <div className="flex-shrink-0 w-5 h-5 bg-blue-600 rounded-full flex items-center justify-center mt-0.5">
                         <Check className="w-3 h-3 text-white stroke-2" />
                       </div>
-                      <p className="text-white leading-relaxed font-normal text-base md:text-sm">{feature}</p>
+                      <p className="text-white leading-relaxed font-normal text-base md:text-sm">
+                        {feature}
+                      </p>
                     </div>
                   ))}
                 </div>
@@ -98,18 +106,22 @@ export default function ProgramBreakdown() {
                 <div className="flex flex-row sm:flex-row gap-3 sm:gap-4 sm:justify-between">
                   <div className="flex items-center gap-2 bg-black/30 border rounded-xl py-2 px-4 md:px-8 border-white/20">
                     <Video className="w-4 h-4 text-white" />
-                    <span className="text-white text-sm font-medium">{course.videos} Video Lectures</span>
+                    <span className="text-white text-sm font-medium">
+                      {course.videos} Video Lectures
+                    </span>
                   </div>
                   <div className="flex items-center gap-2 bg-black/30 border rounded-xl py-2 px-4 md:px-8 border-white/20">
                     <Clock className="w-4 h-4 text-white" />
-                    <span className="text-white text-sm font-medium">{course.hours} Hour Content</span>
+                    <span className="text-white text-sm font-medium">
+                      {course.hours} Hour Content
+                    </span>
                   </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-      </div >
-    </section >
+      </div>
+    </section>
   );
 }

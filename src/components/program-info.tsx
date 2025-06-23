@@ -61,24 +61,14 @@ export default function ProgramInfo() {
               {/* NVIDIA Logo */}
               <div className="flex flex-col items-center">
                 <div className="mb-2 h-[130px] w-[130px] relative">
-                  <Image
-                    src={nvidiaLogo}
-                    alt="NVIDIA Logo"
-                    fill
-                    className="object-contain"
-                  />
+                  <Image src={nvidiaLogo} alt="NVIDIA Logo" className="w-30" />
                 </div>
               </div>
 
               {/* IBM Logo */}
               <div className="flex flex-col items-center">
                 <div className="mb-2 h-32 w-32 relative">
-                  <Image
-                    src={ibmLogo}
-                    alt="IBM Logo"
-                    fill
-                    className="object-contain"
-                  />
+                  <Image src={ibmLogo} alt="IBM Logo" className="w-28" />
                 </div>
               </div>
             </div>

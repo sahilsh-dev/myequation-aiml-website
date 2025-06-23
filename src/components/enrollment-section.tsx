@@ -66,7 +66,7 @@ export default function EnrollmentSection() {
 
           {/* Form Section */}
           <div className="w-full lg:w-1/2">
-            <div className="bg-black/75 border border-gray-600 rounded-3xl p-6 sm:p-8 h-full flex flex-col justify-center">
+            <div className="bg-black/75 border border-gray-800 rounded-3xl p-6 sm:p-8 h-full flex flex-col justify-center">
               <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                 {/* Name Input */}
                 <input

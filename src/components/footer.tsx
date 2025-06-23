@@ -1,8 +1,15 @@
+<<<<<<< HEAD
 import Image from "next/image"
 import Link from "next/link"
 import { Github, Twitter, Linkedin } from "lucide-react"
 import { FaMedium, FaInstagram, FaYoutube, FaLink } from "react-icons/fa"
 import myEquationLogo from "@/assets/myequationlogo.png"
+=======
+import Link from "next/link";
+import { Github, Twitter, Linkedin } from "lucide-react";
+import myEquationLogo from "@/assets/myequationlogo.png";
+import Image from "next/image";
+>>>>>>> 7cbcbba1a7219967f621d8d6ed4f1e24c97e1abb
 
 export default function Footer() {
   return (
@@ -18,7 +25,11 @@ export default function Footer() {
             />
           </div>
           <p className="text-sm text-muted-foreground">
+<<<<<<< HEAD
             India's only startup to provide an ecosystem for core engineers.
+=======
+            Pioneering software solutions for the digital age.
+>>>>>>> 7cbcbba1a7219967f621d8d6ed4f1e24c97e1abb
           </p>
         </div>
 
@@ -126,5 +137,5 @@ export default function Footer() {
         </p>
       </div>
     </footer>
-  )
+  );
 }

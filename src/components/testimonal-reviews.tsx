@@ -8,6 +8,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 
 interface Review {
   id: number;
@@ -82,13 +83,11 @@ const reviews: Review[] = [
 ];
 
 export default function TestimonialReviews() {
-  const [selectedTestimonial, setSelectedTestimonial] = useState<Review | null>(
-    null
-  );
+  const [selectedReview, setSelectedReview] = useState<Review | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleReadMore = (testimonial: Review) => {
-    setSelectedTestimonial(testimonial);
+  const handleReadMore = (review: Review) => {
+    setSelectedReview(review);
     setIsModalOpen(true);
   };
 
@@ -105,81 +104,62 @@ export default function TestimonialReviews() {
     ));
   };
 
-  // Duplicate testimonials for seamless infinite scroll
-  const duplicatedTestimonials = [...reviews, ...reviews];
+  // Transform testimonials for the InfiniteMovingCards component
+  const movingCardItems = reviews.map((review) => ({
+    quote: (
+      <div className="flex flex-col items-center text-center space-y-4 h-full">
+        {/* Star Rating */}
+        <div className="flex gap-1 justify-center">
+          {renderStars(review.rating)}
+        </div>
 
-  return (
-    <div className="w-full overflow-hidden">
-      <div className="relative">
-        <div className="flex animate-scroll">
-          {duplicatedTestimonials.map((testimonial, index) => (
-            <div
-              key={`${testimonial.id}-${index}`}
-              className="flex flex-col justify-between flex-shrink-0 w-80 mx-4 bg-gray-900/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 hover:bg-gray-800/70 transition-all duration-300"
-            >
-              <div>
-                {/* Star Rating */}
-                <div className="flex justify-center mb-4">
-                  <div className="flex gap-1">
-                    {renderStars(testimonial.rating)}
-                  </div>
-                </div>
-
-                {/* Testimonial Text */}
-                <div className="text-center mb-6">
-                  <p className="text-gray-300 text-sm leading-relaxed">
-                    {testimonial.shortText}
-                  </p>
-                  <button
-                    onClick={() => handleReadMore(testimonial)}
-                    className="text-blue-400 hover:text-blue-300 text-sm mt-2 transition-colors duration-200"
-                  >
-                    Read more
-                  </button>
-                </div>
-              </div>
-
-              {/* Author Info */}
-              <div className="text-center">
-                <div className="w-10 h-10 bg-gray-600 rounded-full mx-auto mb-3 flex items-center justify-center">
-                  <span className="text-white font-semibold text-sm">
-                    {testimonial.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
-                  </span>
-                </div>
-                <h4 className="text-white font-semibold text-sm">
-                  {testimonial.name}
-                </h4>
-                <p className="text-gray-400 text-xs">{testimonial.title}</p>
-              </div>
-            </div>
-          ))}
+        {/* review Text */}
+        <div className="flex-1 flex flex-col justify-center">
+          <p className="text-sm leading-relaxed mb-2">{review.shortText}</p>
+          <button
+            onClick={() => handleReadMore(review)}
+            className="text-blue-400 hover:text-blue-300 text-sm transition-colors duration-200"
+          >
+            Read more
+          </button>
         </div>
       </div>
+    ),
+    name: review.name,
+    title: review.title,
+  }));
+
+  return (
+    <div className="w-full">
+      <InfiniteMovingCards
+        items={movingCardItems}
+        direction="left"
+        speed="slow"
+        pauseOnHover={true}
+        className="mx-auto"
+      />
 
       {/* Modal */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="bg-gray-800 border-gray-700 text-white max-w-2xl">
+        <DialogContent className="bg-gray-900 border-gray-600 text-white max-w-2xl">
           <DialogHeader>
             <DialogTitle className="text-xl font-semibold text-center">
               Full Testimonial
             </DialogTitle>
           </DialogHeader>
-          {selectedTestimonial && (
+          {selectedReview && (
             <div className="space-y-6">
               {/* Star Rating */}
               <div className="flex justify-center">
                 <div className="flex gap-1">
-                  {renderStars(selectedTestimonial.rating)}
+                  {renderStars(selectedReview.rating)}
                 </div>
               </div>
 
               {/* Full Text */}
               <div className="text-center">
                 <p className="text-gray-300 leading-relaxed">
-                  {selectedTestimonial.fullText}
+                  {selectedReview.fullText}
                 </p>
               </div>
 
@@ -187,42 +167,21 @@ export default function TestimonialReviews() {
               <div className="text-center pt-4 border-t border-gray-700">
                 <div className="w-12 h-12 bg-gray-600 rounded-full mx-auto mb-3 flex items-center justify-center">
                   <span className="text-white font-semibold">
-                    {selectedTestimonial.name
+                    {selectedReview.name
                       .split(" ")
                       .map((n) => n[0])
                       .join("")}
                   </span>
                 </div>
                 <h4 className="text-white font-semibold">
-                  {selectedTestimonial.name}
+                  {selectedReview.name}
                 </h4>
-                <p className="text-gray-400 text-sm">
-                  {selectedTestimonial.title}
-                </p>
+                <p className="text-gray-400 text-sm">{selectedReview.title}</p>
               </div>
             </div>
           )}
         </DialogContent>
       </Dialog>
-
-      <style jsx>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-
-        .animate-scroll {
-          animation: scroll 30s linear infinite;
-        }
-
-        .animate-scroll:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
     </div>
   );
 }
