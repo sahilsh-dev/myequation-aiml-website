@@ -56,11 +56,11 @@ export default function ProgramInfo() {
               </h2>
             </div>
 
-            {/* ✅ Logos Section with Imported Images */}
+            {/* Logos Section  */}
             <div className="flex items-center gap-6">
               {/* NVIDIA Logo */}
               <div className="flex flex-col items-center">
-                <div className="mb-2 h-[72px] w-[72px] relative">
+                <div className="mb-2 h-[130px] w-[130px] relative">
                   <Image
                     src={nvidiaLogo}
                     alt="NVIDIA Logo"
@@ -72,7 +72,7 @@ export default function ProgramInfo() {
 
               {/* IBM Logo */}
               <div className="flex flex-col items-center">
-                <div className="mb-2 h-16 w-16 relative">
+                <div className="mb-2 h-32 w-32 relative">
                   <Image
                     src={ibmLogo}
                     alt="IBM Logo"

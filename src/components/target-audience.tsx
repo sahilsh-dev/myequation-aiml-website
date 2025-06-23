@@ -1,10 +1,10 @@
 import { BadgeCheck } from "lucide-react";
 import Image from "next/image";
 
-import audienceImg1 from "@/assets/audience1.png";
-import audienceImg2 from "@/assets/audience2.png";
-import audienceImg3 from "@/assets/audience3.png";
-import audienceImg4 from "@/assets/audience4.png";
+import audienceImg1 from "@/assets/targetaudienceimage/audience1.png";
+import audienceImg2 from "@/assets/targetaudienceimage/audience2.png";
+import audienceImg3 from "@/assets/targetaudienceimage/audience3.png";
+import audienceImg4 from "@/assets/targetaudienceimage/audience4.png";
 
 const targetAudiences = [
   {

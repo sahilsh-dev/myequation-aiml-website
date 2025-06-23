@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-import mentor1 from "@/assets/mentor1.jpg";
-import mentor2 from "@/assets/mentor2.jpg";
+import mentor1 from "@/assets/mentors_image/mentor1.jpg";
+import mentor2 from "@/assets/mentors_image/mentor2.jpg";
 
 const mentors = [
 	{
