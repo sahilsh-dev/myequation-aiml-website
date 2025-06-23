@@ -2,28 +2,33 @@
 
 import { useState } from "react"
 import { cn } from "@/lib/utils"
+import Image from "next/image";
+import icon1 from "@/assets/icons/icon1.png";
+import icon2 from "@/assets/icons/icon2.png";
+import icon3 from "@/assets/icons/icon3.png";
+import icon4 from "@/assets/icons/icon4.png";
 
 const courseFeatures = [
 	{
-		icon: "🤖",
+		icon: icon1,
 		title: "Core Knowledge On AI & ML",
 		description:
 			"Master Python and ML basics to advanced. Explore supervised learning, pipelines, and key algorithms like SVM, KNN, and XGBoost.",
 	},
 	{
-		icon: "👨‍🏫",
+		icon: icon2,
 		title: "Industrial Grade Projects",
 		description:
 			"Build AI apps like Tesla & healthcare. Learn MLOps, deployment, and use real templates with guided code.",
 	},
 	{
-		icon: "🛠️",
+		icon: icon3,
 		title: "Expert Industrial Mentors",
 		description:
 			"Learn from AI professionals at NVIDIA & IBM using real-world tools to make you gain-skills in AI and be deployment-ready.",
 	},
 	{
-		icon: "🏆",
+		icon: icon4,
 		title: "Verified Certificates",
 		description:
 			"Earn industry-recognized certificates backed by expert reviews -used by professionals at IBM, NVIDIA, and top firms.",
@@ -63,10 +68,16 @@ export default function FeaturesOverview() {
 								}`
 							)}
 						>
-							{/* Icon in white rounded square */}
-							<div className="w-fit h-15 rounded-xl bg-white flex items-center justify-center text-[clamp(24px,4vw,32px)] flex-shrink-0 p-2 mb-1 sm:mb-2">
-								{feature.icon}
-							</div>
+						    <div className="w-fit h-[56px] w-[56px] rounded-xl bg-white flex items-center justify-center p-2 mb-1 sm:mb-2">
+                               <Image
+                                  src={feature.icon}
+                                  alt={feature.title}
+                                  className="object-contain"
+                                  width={40}
+                                  height={40}
+                                   />
+                            </div>
+
 
 							{/* Title */}
 							<h3 className="font-bold text-[clamp(20px,3vw,24px)] leading-tight text-white m-0 flex-shrink-0">
