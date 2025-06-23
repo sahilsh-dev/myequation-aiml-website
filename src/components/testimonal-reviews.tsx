@@ -136,12 +136,12 @@ export default function TestimonialReviews() {
         direction="left"
         speed="slow"
         pauseOnHover={true}
-        className="mx-auto bg-gray-950"
+        className="mx-auto"
       />
 
       {/* Modal */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="bg-black/20 border-gray-600 text-white max-w-2xl">
+        <DialogContent className="bg-gray-900 border-gray-600 text-white max-w-2xl">
           <DialogHeader>
             <DialogTitle className="text-xl font-semibold text-center">
               Full Testimonial

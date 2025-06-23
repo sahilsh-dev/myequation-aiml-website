@@ -90,33 +90,37 @@ export const InfiniteMovingCards = ({
             className="relative w-80 max-w-full shrink-0 rounded-xl border border-gray-600/50 bg-gray-900/80 backdrop-blur-sm px-6 py-6 hover:bg-gray-900/90 transition-all duration-300"
             key={item.name}
           >
-            <blockquote>
-              <div
-                aria-hidden="true"
-                className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
-              ></div>
-              <span className="relative z-20 text-sm leading-[1.6] font-normal text-gray-200">
-                {item.quote}
-              </span>
-              <div className="relative z-20 mt-6 flex flex-col items-center text-center">
-                <div className="w-10 h-10 bg-gray-600 rounded-full mb-3 flex items-center justify-center">
-                  <span className="text-white font-semibold text-sm">
-                    {item.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
-                  </span>
+            <div className="flex flex-col justify-between gap-4 h-full">
+              <div>
+                <div
+                  aria-hidden="true"
+                  className="user-select-none pointer-events-none absolute -top-0.5 -left-0.5 -z-1 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
+                ></div>
+                <div className="relative z-20 text-sm leading-[1.6] font-normal text-gray-200">
+                  {item.quote}
                 </div>
-                <span className="flex flex-col gap-1">
-                  <span className="text-sm leading-[1.6] font-semibold text-white">
-                    {item.name}
-                  </span>
-                  <span className="text-xs leading-[1.6] font-normal text-gray-400">
-                    {item.title}
-                  </span>
-                </span>
               </div>
-            </blockquote>
+              <div>
+                <div className="relative z-20 mt-6 flex flex-col items-center text-center">
+                  <div className="w-10 h-10 bg-gray-600 rounded-full mb-3 flex items-center justify-center">
+                    <span className="text-white font-semibold text-sm">
+                      {item.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")}
+                    </span>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <span className="text-sm leading-[1.6] font-semibold text-white">
+                      {item.name}
+                    </span>
+                    <span className="text-xs leading-[1.6] font-normal text-gray-400">
+                      {item.title}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </li>
         ))}
       </ul>
