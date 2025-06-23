@@ -1,32 +1,61 @@
 import { Brain, Cloud, Shield, Zap } from "lucide-react"
+import { Check, Clock, Video } from "lucide-react"
 import AnimatedGradient from "./ui/animated-gradient"
 
-const features = [
+const courses = [
   {
-    name: "AI-Powered Analytics",
-    description: "Harness the power of machine learning to derive actionable insights from your data.",
-    icon: Brain,
+    title: "Python Programming",
+    subtitle: "Basic to Advanced",
+    icon: "🐍",
+    features: [
+      "Complete Path: Data types, loops, functions, OOP, file handling.",
+      "Advanced modules: NumPy, OpenCV, GUI, threading.",
+      "Code Like a Pro: Performance optimization & debugging.",
+    ],
+    videos: 10,
+    hours: 12,
   },
   {
-    name: "Cloud-Native Architecture",
-    description: "Scalable, resilient, and efficient solutions built for the modern cloud ecosystem.",
-    icon: Cloud,
+    title: "Machine Learning",
+    subtitle: "Basic to Advanced",
+    icon: "🤖",
+    features: [
+      "ML Made Simple: Supervised & unsupervised learning, pipelines.",
+      "Powerful Algorithms: KNN, SVM, Decision Trees, XGBoost.",
+      "Job-Ready Tools: Scikit-learn, TensorFlow, PyTorch.",
+    ],
+    videos: 12,
+    hours: 14,
   },
   {
-    name: "Enterprise-Grade Security",
-    description: "State-of-the-art security measures to protect your most valuable assets.",
-    icon: Shield,
+    title: "Deep Learning",
+    subtitle: "Basic to Advanced",
+    icon: "🧠",
+    features: [
+      "Neural Nets Unlocked: CNNs, RNNs, LSTMs from scratch to expert.",
+      "Smart Vision & Text: Build image classifiers and text generators.",
+      "Deploy-Ready Skills: Use TensorFlow & Keras on real-world projects.",
+    ],
+    videos: 15,
+    hours: 16,
   },
   {
-    name: "High-Performance Systems",
-    description: "Optimized for speed and efficiency, our solutions deliver unparalleled performance.",
-    icon: Zap,
+    title: "AI & Industrial Use Cases",
+    subtitle: "Basic to Advanced",
+    icon: "⚡",
+    features: [
+      "AI That Works: Real frameworks used in enterprises.",
+      "LLMs & RL FTW: Build with Models and Reinforcement Learning.",
+      "Big Tech Tools: Learn what's used at IBM, NVIDIA & more.",
+    ],
+    videos: 10,
+    hours: 10,
   },
 ]
 
 export default function ProgramBreakdown() {
   return (
-    <section className="container relative min-h-[80dvh] space-y-16 py-24 md:py-32 w-[90vw] flex flex-col items-center justify-center">
+    <section className="container relative min-h-[80dvh] space-y-4 md-space-y-16 py-24 md:py-32 w-[90vw] flex flex-col items-center justify-center">
       <div className="absolute -z-10 w-full mx-auto h-[90%]">
         <AnimatedGradient className="rounded-3xl" />
       </div>
@@ -36,23 +65,51 @@ export default function ProgramBreakdown() {
             Program Breakdown
           </h2>
         </div>
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 md:grid-cols-2">
-          {features.map((feature) => (
-            <div
-              key={feature.name}
-              className="relative overflow-hidden rounded-lg border bg-background p-8"
-            >
-              <div className="flex items-center gap-4 justify-between">
-                <h3 className="font-bold">{feature.name}</h3>
-                <feature.icon className="h-8 w-8" />
+
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            {courses.map((course, index) => (
+              <div
+                key={index}
+                className="bg-black/50 backdrop-blur-lg border border-white/20 rounded-3xl p-6 sm:p-8 md:p-10 flex flex-col justify-between"
+              >
+                {/* Header Section */}
+                < div className="flex justify-between items-start mb-6" >
+                  <div className="flex-1">
+                    <h2 className="font-bold leading-tight mb-1 text-2xl md:text-3xl text-white">{course.title}</h2>
+                    <p className="text-gray-400 font-medium text-base md:text-sm">{course.subtitle}</p>
+                  </div>
+                  <div className="ml-4 opacity-90 text-4xl md:text-5xl">{course.icon}</div>
+                </div>
+
+                {/* Features Section */}
+                <div className="flex-1 space-y-4 mb-8">
+                  {course.features.map((feature, featureIndex) => (
+                    <div key={featureIndex} className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-5 h-5 bg-blue-600 rounded-full flex items-center justify-center mt-0.5">
+                        <Check className="w-3 h-3 text-white stroke-2" />
+                      </div>
+                      <p className="text-white leading-relaxed font-normal text-base md:text-sm">{feature}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Bottom Stats */}
+                <div className="flex flex-row sm:flex-row gap-3 sm:gap-4 sm:justify-between">
+                  <div className="flex items-center gap-2 bg-black/30 border rounded-xl py-2 px-4 md:px-8 border-white/20">
+                    <Video className="w-4 h-4 text-white" />
+                    <span className="text-white text-sm font-medium">{course.videos} Video Lectures</span>
+                  </div>
+                  <div className="flex items-center gap-2 bg-black/30 border rounded-xl py-2 px-4 md:px-8 border-white/20">
+                    <Clock className="w-4 h-4 text-white" />
+                    <span className="text-white text-sm font-medium">{course.hours} Hour Content</span>
+                  </div>
+                </div>
               </div>
-              <p className="mt-2 text-muted-foreground">
-                {feature.description}
-              </p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </div >
+    </section >
   );
 }
