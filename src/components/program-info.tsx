@@ -1,5 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { GraduationCap, Star, BookOpen, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import nvidiaLogo from "@/assets/nvidia-logo1.png";
+import ibmLogo from "@/assets/ibm-logo2.png";
 
 export default function ProgramInfo() {
   const programInfoData = [
@@ -27,7 +30,7 @@ export default function ProgramInfo() {
         <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-50 to-blue-100 p-8 md:p-12">
           {/* Stats section */}
           <div className="mb-8 flex justify-between -top-10 pt-[5%] sm:mx-[5%]">
-            {programInfoData.map((item, idx) => (
+            {programInfoData.map((item) => (
               <div className="flex items-center" key={item.label}>
                 <div className="relative rounded-2xl bg-white px-6 py-3 text-center">
                   <div className="relative font-medium text-gray-900 text-sm sm:text-lg">
@@ -53,22 +56,29 @@ export default function ProgramInfo() {
               </h2>
             </div>
 
-            {/* Company logos */}
+            {/* ✅ Logos Section with Imported Images */}
             <div className="flex items-center gap-6">
               {/* NVIDIA Logo */}
               <div className="flex flex-col items-center">
-                <div className="mb-2 h-12 w-16 bg-green-500 rounded flex items-center justify-center">
-                  <div className="text-white font-bold text-xs transform -skew-x-12">
-                    N
-                  </div>
+                <div className="mb-2 h-12 w-16 relative">
+                  <Image
+                    src={nvidiaLogo}
+                    alt="NVIDIA Logo"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
-                <div className="text-lg font-bold text-gray-900">NVIDIA</div>
               </div>
 
               {/* IBM Logo */}
               <div className="flex flex-col items-center">
-                <div className="mb-2 flex h-16 w-16 items-center justify-center rounded-full bg-black">
-                  <div className="text-white font-bold text-sm">IBM</div>
+                <div className="mb-2 h-16 w-16 relative">
+                  <Image
+                    src={ibmLogo}
+                    alt="IBM Logo"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
               </div>
             </div>
