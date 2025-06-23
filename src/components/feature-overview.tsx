@@ -3,10 +3,10 @@
 import { useState } from "react"
 import { cn } from "@/lib/utils"
 import Image from "next/image";
-import icon1 from "@/assets/icon1.png";
-import icon2 from "@/assets/icon2.png";
-import icon3 from "@/assets/icon3.png";
-import icon4 from "@/assets/icon4.png";
+import icon1 from "@/assets/icons/icon1.png";
+import icon2 from "@/assets/icons/icon2.png";
+import icon3 from "@/assets/icons/icon3.png";
+import icon4 from "@/assets/icons/icon4.png";
 
 const courseFeatures = [
 	{

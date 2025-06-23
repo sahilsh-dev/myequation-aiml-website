@@ -2,9 +2,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import AnimatedGradient from "./ui/animated-gradient";
 import Image from "next/image";
-import circleImage1 from "@/assets/circleimage1.png";
-import circleImage2 from "@/assets/circleimage2.png";
-import circleImage3 from "@/assets/circleimage3.png";
+import circleImage1 from "@/assets/hero_image/circleimage1.png";
+import circleImage2 from "@/assets/hero_image/circleimage2.png";
+import circleImage3 from "@/assets/hero_image/circleimage3.png";
 
 export default function Hero() {
   return (
