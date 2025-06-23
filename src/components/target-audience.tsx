@@ -1,12 +1,10 @@
-import { Check } from "lucide-react";
+import { BadgeCheck } from "lucide-react";
 import Image from "next/image";
-
 
 import audienceImg1 from "@/assets/audience1.png";
 import audienceImg2 from "@/assets/audience2.png";
 import audienceImg3 from "@/assets/audience3.png";
 import audienceImg4 from "@/assets/audience4.png";
-
 
 const targetAudiences = [
   {
@@ -50,7 +48,7 @@ export default function TargetAudience() {
                 {/* Check Icon */}
                 <div className="mb-4">
                   <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-                    <Check className="w-5 h-5 text-white" />
+                    <BadgeCheck className="w-5 h-5 text-white" />
                   </div>
                 </div>
 
