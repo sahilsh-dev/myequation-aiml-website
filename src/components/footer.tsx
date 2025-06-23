@@ -85,7 +85,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="text-muted-foreground transition-colors hover:text-primary"
               >
-                <FaMedium className="h-5 w-5" />
+                <FaMedium className="h-4 w-4" />
                 <span className="sr-only">Medium</span>
               </a>
               <a
@@ -94,7 +94,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="text-muted-foreground transition-colors hover:text-primary"
               >
-                <FaInstagram className="h-5 w-5" />
+                <FaInstagram className="h-4 w-4" />
                 <span className="sr-only">Instagram</span>
               </a>
               <a
@@ -103,7 +103,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="text-muted-foreground transition-colors hover:text-primary"
               >
-                <FaLink className="h-5 w-5" />
+                <FaLink className="h-4 w-4" />
                 <span className="sr-only">Linktree</span>
               </a>
               <a
@@ -112,7 +112,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="text-muted-foreground transition-colors hover:text-primary"
               >
-                <FaYoutube className="h-5 w-5" />
+                <FaYoutube className="h-4 w-4" />
                 <span className="sr-only">YouTube</span>
               </a>
             </div>
