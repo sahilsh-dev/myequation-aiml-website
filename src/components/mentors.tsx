@@ -7,6 +7,7 @@ const mentors = [
   {
     name: "Soumya SV",
     title: <p>Python & Deep Learning Expert</p>,
+    
     company: "IBM",
     image: mentor1,
   },
