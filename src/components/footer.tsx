@@ -1,12 +1,21 @@
 import Link from "next/link"
 import { Github, Twitter, Linkedin } from "lucide-react"
+import myEquationLogo from "@/assets/myequationlogo.png"
+import Image from "next/image"
 
 export default function Footer() {
   return (
     <footer className="border-t">
       <div className="container flex flex-col gap-8 py-8 md:flex-row md:py-12">
         <div className="flex-1 space-y-4">
-          <h2 className="font-bold">MyEquation</h2>
+          <div className="relative h-12 w-32">
+             <Image
+               src={myEquationLogo}
+               alt="MyEquation Logo"
+               fill
+               className="object-contain"
+              />
+          </div>
           <p className="text-sm text-muted-foreground">Pioneering software solutions for the digital age.</p>
         </div>
         <div className="grid flex-1 grid-cols-2 gap-12 sm:grid-cols-3">

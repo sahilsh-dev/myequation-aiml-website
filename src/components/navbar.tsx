@@ -4,6 +4,9 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { useIsMobile } from "@/hooks/use-mobile"
+import myEquationLogo from "@/assets/myequationlogo.png"
+import Image from "next/image"
+
 
 export default function Navbar() {
   const isMobile = useIsMobile()
@@ -32,7 +35,14 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 h-full">
       <div className="container flex max-w-screen-2xl items-center justify-between h-full">
         <Link href="/" className="mr-6 flex items-center space-x-2 h-14">
-          <span className="font-bold">MyEquation</span>
+          <div className="relative h-10 w-32"> {/* Adjust size as needed */}
+              <Image
+                src={myEquationLogo}
+                alt="MyEquation-Logo"
+                fill
+                className="object-contain"
+              />
+           </div>
         </Link>
         {isMobile ? (
           <>
