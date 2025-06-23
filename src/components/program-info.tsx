@@ -60,7 +60,7 @@ export default function ProgramInfo() {
             <div className="flex items-center gap-6">
               {/* NVIDIA Logo */}
               <div className="flex flex-col items-center">
-                <div className="mb-2 h-12 w-16 relative">
+                <div className="mb-2 h-[72px] w-[72px] relative">
                   <Image
                     src={nvidiaLogo}
                     alt="NVIDIA Logo"
