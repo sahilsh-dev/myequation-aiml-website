@@ -1,11 +1,10 @@
-import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import AnimatedGradient from "./ui/animated-gradient";
 import Image from "next/image";
 import circleImage1 from "@/assets/circleimage1.png";
 import circleImage2 from "@/assets/circleimage2.png";
 import circleImage3 from "@/assets/circleimage3.png";
-
 
 export default function Hero() {
   return (
@@ -17,7 +16,7 @@ export default function Hero() {
         {/* Social Proof Section */}
         <div className="flex items-center justify-center gap-2 mb-6">
           <div className="flex -space-x-3">
-             {/* ✅ Replaced placeholder images with imported ones */}
+            {/* ✅ Replaced placeholder images with imported ones */}
             <Image
               src={circleImage1}
               alt="Learner 1"
@@ -40,7 +39,9 @@ export default function Hero() {
               className="w-10 h-10 rounded-full border-2 border-white object-cover shadow-sm"
             />
           </div>
-          <span className="text-base text-black font-semibold">500+ learners enrolled</span>
+          <span className="text-base font-semibold">
+            500+ learners enrolled
+          </span>
         </div>
         <h1 className="bg-gradient-to-br from-foreground from-30% via-foreground/90 to-foreground/70 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-3xl md:text-5xl lg:text-6xl">
           Master AI & Machine Learning:
