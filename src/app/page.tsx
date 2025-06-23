@@ -12,6 +12,7 @@ import { WhyBuyCourse } from "@/components/why-buy-course";
 import CertificateSection from "@/components/certificate-section";
 import FAQ from "@/components/faq";
 import EnrollmentSection from "@/components/enrollment-section";
+import TestimonialSection from "@/components/testimonial-section";
 
 export default function Home() {
   return (
@@ -35,6 +36,7 @@ export default function Home() {
         <WhyBuyCourse />
         <CertificateSection />
         <EnrollmentSection />
+        <TestimonialSection />
         <FAQ />
         <CTA />
         <Footer />
