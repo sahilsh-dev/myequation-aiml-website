@@ -1,25 +1,33 @@
 import { Check } from "lucide-react";
+import Image from "next/image";
+
+
+import audienceImg1 from "@/assets/audience1.png";
+import audienceImg2 from "@/assets/audience2.png";
+import audienceImg3 from "@/assets/audience3.png";
+import audienceImg4 from "@/assets/audience4.png";
+
 
 const targetAudiences = [
   {
     id: 1,
     title: "Beginners & College Students",
-    image: "/placeholder.svg?height=200&width=300",
+    image: audienceImg1,
   },
   {
     id: 2,
     title: "Working Professionals & Engineers",
-    image: "/placeholder.svg?height=200&width=300",
+    image: audienceImg2,
   },
   {
     id: 3,
     title: "Career Switchers & Aspiring Data Scientists",
-    image: "/placeholder.svg?height=200&width=300",
+    image: audienceImg3,
   },
   {
     id: 4,
     title: "AI Enthusiasts & Tech Hobbyists",
-    image: "/placeholder.svg?height=200&width=300",
+    image: audienceImg4,
   },
 ];
 
@@ -52,12 +60,14 @@ export default function TargetAudience() {
                 </h3>
               </div>
 
-              {/* Image */}
+              {/* image */}
               <div className="rounded-lg overflow-hidden">
-                <img
-                  src={audience.image || "/placeholder.svg"}
+                <Image
+                  src={audience.image}
                   alt={audience.title}
                   className="w-full h-48 object-cover"
+                  width={300}
+                  height={200}
                 />
               </div>
             </div>
