@@ -87,7 +87,7 @@ export const InfiniteMovingCards = ({
       >
         {items.map((item, idx) => (
           <li
-            className="relative w-80 max-w-full shrink-0 rounded-xl border border-gray-600/50 bg-gray-900/80 backdrop-blur-sm px-6 py-6 hover:bg-gray-900/90 transition-all duration-300"
+            className="relative h-52 sm:h-auto w-52 sm:w-80 max-w-full shrink-0 rounded-xl border border-gray-600/50 bg-gray-900/80 backdrop-blur-sm px-2 md:px-6 py-2 md:py-6 hover:bg-gray-900/90 transition-all duration-300"
             key={item.name}
           >
             <div className="flex flex-col justify-between gap-4 h-full">
@@ -102,8 +102,8 @@ export const InfiniteMovingCards = ({
               </div>
               <div>
                 <div className="relative z-20 mt-2 mx-auto flex items-center justify-center gap-3">
-                  <div className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center">
-                    <span className="text-white font-semibold text-sm">
+                  <div className="w-6 h-6 md:w-10 md:h-10 bg-gray-600 rounded-full flex items-center justify-center">
+                    <span className="text-white font-semibold text-[10px]">
                       {item.name
                         .split(" ")
                         .map((n) => n[0])
@@ -111,10 +111,10 @@ export const InfiniteMovingCards = ({
                     </span>
                   </div>
                   <div className="flex flex-col items-start text-left">
-                    <span className="text-sm leading-[1.6] font-semibold text-white">
+                    <span className="text-xs leading-[1.6] font-semibold text-white">
                       {item.name}
                     </span>
-                    <span className="text-xs leading-[1.6] font-normal text-gray-400">
+                    <span className="text-[10px] leading-[1.6] font-normal text-gray-400">
                       {item.title}
                     </span>
                   </div>

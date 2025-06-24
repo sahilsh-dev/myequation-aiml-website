@@ -93,7 +93,7 @@ export const InfiniteMovingVideos = ({
           >
             <div className="flex flex-col items-center space-y-4">
               {/* Video Container */}
-              <div className="relative w-full h-20 md:h-80 bg-gray-900 rounded-lg overflow-hidden">
+              <div className="relative w-full h-60 md:h-80 bg-gray-900 rounded-lg overflow-hidden">
                 <video
                   className="w-80 md:w-[450px] h-full object-cover"
                   controls

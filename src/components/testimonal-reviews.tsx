@@ -26,7 +26,7 @@ const reviews: Review[] = [
     title: "Data Analyst",
     rating: 5,
     shortText:
-      "I recently completed the AI/ML course and overall, it was a highly rewarding experience. The course covered a wide range of topics including supervised and...",
+      "I recently completed the AI/ML course and overall, it was a highly rewarding experience...",
     fullText:
       "I recently completed the AI/ML course and overall, it was a highly rewarding experience. The course covered a wide range of topics including supervised and unsupervised learning, neural networks, deep learning, and practical applications. The instructors were knowledgeable and provided excellent support throughout the program. The hands-on projects were particularly valuable in reinforcing the theoretical concepts. I would highly recommend this course to anyone looking to advance their career in artificial intelligence and machine learning.",
   },
@@ -36,7 +36,7 @@ const reviews: Review[] = [
     title: "Software Engineer",
     rating: 5,
     shortText:
-      "The comprehensive curriculum and expert instructors made this course exceptional. I gained practical skills that I immediately applied in my work...",
+      "The comprehensive curriculum and expert instructors made this course exceptional. I gained...",
     fullText:
       "The comprehensive curriculum and expert instructors made this course exceptional. I gained practical skills that I immediately applied in my work environment. The course structure was well-organized, starting from fundamentals and gradually building up to advanced concepts. The real-world projects and case studies provided invaluable experience. The community support and peer interactions enhanced the learning experience significantly.",
   },
@@ -46,7 +46,7 @@ const reviews: Review[] = [
     title: "Product Manager",
     rating: 5,
     shortText:
-      "Outstanding course content with practical applications. The instructors were responsive and the learning materials were top-notch...",
+      "Outstanding course content with practical applications. The instructors were responsive and the learning materials were...",
     fullText:
       "Outstanding course content with practical applications. The instructors were responsive and the learning materials were top-notch. As a product manager, I needed to understand AI/ML concepts to better collaborate with technical teams. This course provided exactly what I needed - a perfect balance of theory and practical knowledge. The assignments were challenging yet achievable, and the feedback was constructive and timely.",
   },
@@ -95,7 +95,7 @@ export default function TestimonialReviews() {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
         key={i}
-        className={`w-4 h-4 ${
+        className={`w-3 h-3 md:w-4 md:h-4 ${
           i < rating
             ? "fill-yellow-400 text-yellow-400"
             : "fill-gray-600 text-gray-600"
@@ -107,7 +107,7 @@ export default function TestimonialReviews() {
   // Transform testimonials for the InfiniteMovingCards component
   const movingCardItems = reviews.map((review) => ({
     quote: (
-      <div className="flex flex-col items-center text-center space-y-4 h-full">
+      <div className="flex flex-col items-center text-center space-y-2 md:space-y-4 h-full">
         {/* Star Rating */}
         <div className="flex gap-1 justify-center">
           {renderStars(review.rating)}
@@ -115,10 +115,10 @@ export default function TestimonialReviews() {
 
         {/* review Text */}
         <div className="flex-1 flex flex-col justify-center">
-          <p className="text-sm leading-relaxed mb-2">{review.shortText}</p>
+          <p className="text-xs leading-relaxed mb-2">{review.shortText}</p>
           <button
             onClick={() => handleReadMore(review)}
-            className="text-blue-400 hover:text-blue-300 text-sm transition-colors duration-200"
+            className="text-xs text-blue-400 hover:text-blue-300 md:text-sm transition-colors duration-200"
           >
             Read more
           </button>
