@@ -33,7 +33,7 @@ export default function EnrollmentSection() {
   };
 
   return (
-    <div className="w-full  py-8 px-4 sm:py-12 md:py-16">
+    <div id="enroll" className="w-full py-8 px-4 sm:py-12 md:py-16">
       {/* Main Container */}
       <div className="mx-auto max-w-6xl rounded-2xl p-6 sm:p-8 md:p-12 flex flex-col gap-8 sm:gap-10 md:gap-12">
         {/* Heading and Description Section */}
