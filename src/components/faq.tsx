@@ -1,62 +1,44 @@
-"use client";
-
-import { useState } from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
 import faqImg from "@/assets/faq.png";
 import Image from "next/image";
+import Accordion from "./ui/accordion";
 
 const faqs = [
   {
     id: 1,
-    question: "How long is this program?",
-    answer:
+    title: "How long is this program?",
+    description:
       "The program consists of 55+ hours of pre-recorded lectures which you can watch at your own pace.",
-    isExpanded: true,
   },
   {
     id: 2,
-    question: "What prerequisites do I need?",
-    answer:
+    title: "What prerequisites do I need?",
+    description:
       "Basic programming knowledge is helpful but not required. We start from the fundamentals.",
-    isExpanded: false,
   },
   {
     id: 3,
-    question: "Do I get a certificate upon completion?",
-    answer:
+    title: "Do I get a certificate upon completion?",
+    description:
       "Yes, you'll receive a verified certificate that you can add to your LinkedIn profile and resume.",
-    isExpanded: false,
   },
   {
     id: 4,
-    question: "Is there lifetime access to the course?",
-    answer:
+    title: "Is there lifetime access to the course?",
+    description:
       "Yes, once you enroll, you get lifetime access to all course materials and future updates.",
-    isExpanded: false,
   },
   {
     id: 5,
-    question: "What kind of support do I get?",
-    answer:
+    title: "What kind of support do I get?",
+    description:
       "You get access to our community forum, weekly Q&A sessions, and direct instructor support.",
-    isExpanded: false,
   },
 ];
 
 export default function FAQ() {
-  const [expandedItems, setExpandedItems] = useState<number[]>([1]);
-
-  const toggleItem = (id: number) => {
-    setExpandedItems((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
-    );
-  };
-
   return (
     <section className="w-full py-16 px-4 md:py-24">
       <div className="container mx-auto max-w-7xl">
-        {/* Header - Remove this entire section */}
-
         {/* Main Content */}
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - FAQ Info */}
@@ -91,36 +73,7 @@ export default function FAQ() {
           </div>
 
           {/* Right Side - FAQ Accordion */}
-          <div className="space-y-3">
-            {faqs.map((faq) => (
-              <div
-                key={faq.id}
-                className="border border-gray-700 rounded-lg overflow-hidden bg-gray-800/30"
-              >
-                <button
-                  onClick={() => toggleItem(faq.id)}
-                  className="w-full px-6 py-4 text-left hover:bg-gray-700/30 transition-colors duration-300 flex items-center justify-between"
-                >
-                  <span className="text-white font-medium text-lg">
-                    {faq.question}
-                  </span>
-                  {expandedItems.includes(faq.id) ? (
-                    <ChevronUp className="w-5 h-5 text-yellow-400" />
-                  ) : (
-                    <ChevronDown className="w-5 h-5 text-yellow-400" />
-                  )}
-                </button>
-
-                {expandedItems.includes(faq.id) && (
-                  <div className="px-6 py-4 border-t border-gray-700">
-                    <p className="text-gray-300 leading-relaxed">
-                      {faq.answer}
-                    </p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+          <Accordion items={faqs} className="space-y-3" />
         </div>
       </div>
     </section>

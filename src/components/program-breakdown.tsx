@@ -1,13 +1,10 @@
-import { Brain, Cloud, Shield, Zap } from "lucide-react";
 import { Check, Clock, Video } from "lucide-react";
 import AnimatedGradient from "./ui/animated-gradient";
 import pyProgram from "@/assets/py-Program.png";
 import AiIndustrial from "@/assets/Ai-Industrial-logo.png";
 import MachineLearning from "@/assets/Ml-Logo.png";
 import DeepLearning from "@/assets/DeepLearning-logo.png";
-
-import { imageConfigDefault } from "next/dist/shared/lib/image-config";
-import Image from "next/image"
+import Image from "next/image";
 
 const courses = [
   {
@@ -95,17 +92,13 @@ export default function ProgramBreakdown() {
                     </p>
                   </div>
                   <div className="ml-4 opacity-90">
-                    {course.iconType === "image" ? (
-                      <Image
-                        src={course.iconSrc || "/placeholder.svg"}
-                        alt={`${course.title} icon`}
-                        width={60}
-                        height={60}
-                        className="object-contain"
-                      />
-                    ) : (
-                      <div className="text-4xl md:text-5xl">{course.icon}</div>
-                    )}
+                    <Image
+                      src={course.iconSrc}
+                      alt={`${course.title} icon`}
+                      width={60}
+                      height={60}
+                      className="object-contain hover:opacity-100 transition-opacity duration-300"
+                    />
                   </div>
                 </div>
 
