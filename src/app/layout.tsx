@@ -1,7 +1,9 @@
-import "./globals.css"
-import { primaryFont, secondaryFont } from "@/lib/fonts"
-import type React from "react"
+import "./globals.css";
+import { primaryFont, secondaryFont } from "@/lib/fonts";
+import type React from "react";
 import type { Metadata } from "next";
+import { ReactLenis } from "@/lib/lenis";
+import "lenis/dist/lenis.css";
 
 export const metadata: Metadata = {
   title: "MyEquation AI/ML Program",
@@ -53,13 +55,15 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en" className="dark">
-      <body className={`${primaryFont.className} ${secondaryFont.className} bg-background text-foreground h-dvh antialiased`}>
-        {children}
+      <body
+        className={`${primaryFont.className} ${secondaryFont.className} bg-background text-foreground h-dvh antialiased`}
+      >
+        <ReactLenis root>{children}</ReactLenis>
       </body>
     </html>
-  )
+  );
 }
