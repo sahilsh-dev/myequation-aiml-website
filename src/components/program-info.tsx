@@ -27,14 +27,14 @@ export default function ProgramInfo() {
     <section className="container my-[5%]">
       <div className="mx-auto max-w-4xl">
         {/* Main card container */}
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-blue-50 to-blue-100 p-8 md:p-12">
+        <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-blue-50 to-blue-100 p-2 pt-8 md:p-12">
           {/* Stats section */}
-          <div className="mb-8 flex justify-between -top-10 pt-[5%] sm:mx-[5%]">
+          <div className="mb-4 sm:mb-8 flex justify-between pt-[5%] sm:mx-[5%] gap-3">
             {programInfoData.map((item) => (
               <div className="flex items-center" key={item.label}>
-                <div className="relative rounded-2xl bg-white px-6 py-3 text-center">
-                  <div className="relative font-medium text-gray-900 text-sm sm:text-lg">
-                    <div className="absolute -top-10 sm:-top-14 left-1/2 -translate-x-1/2 flex items-center gap-2 rounded-2xl bg-blue-600 px-3 sm:px-6 py-3 text-white">
+                <div className="relative rounded-2xl bg-white px-2 sm:px-6 py-2 text-center">
+                  <div className="relative font-medium text-gray-900 text-sm sm:text-lg sm:py-2">
+                    <div className="absolute -top-10 left-1/2 -translate-x-1/2 flex items-center gap-2 rounded-2xl bg-blue-600 px-3 sm:px-6 py-3 text-white">
                       <item.icon className="h-4 w-4" />
                       <span className="font-semibold text-xs sm:text-base">
                         {item.value}
@@ -48,9 +48,9 @@ export default function ProgramInfo() {
           </div>
 
           {/* Main content */}
-          <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
-            <div className="flex-1">
-              <h2 className="text-2xl font-bold text-gray-900 md:text-3xl lg:text-4xl">
+          <div className="flex flex-col items-center justify-between gap-3 md:flex-row">
+            <div>
+              <h2 className="text-lg sm:text-2xl font-bold text-gray-900 md:text-3xl lg:text-4xl text-center sm:text-left">
                 A <span className="text-blue-600">55-Hour</span> Self-Paced
                 Program by NVIDIA & IBM Mentors
               </h2>
@@ -60,15 +60,23 @@ export default function ProgramInfo() {
             <div className="flex items-center gap-6">
               {/* NVIDIA Logo */}
               <div className="flex flex-col items-center">
-                <div className="mb-2 h-[130px] w-[130px] relative">
-                  <Image src={nvidiaLogo} alt="NVIDIA Logo" className="w-30" />
+                <div className="mb-2">
+                  <Image
+                    src={nvidiaLogo}
+                    alt="NVIDIA Logo"
+                    className="w-16 sm:w-44"
+                  />
                 </div>
               </div>
 
               {/* IBM Logo */}
               <div className="flex flex-col items-center">
-                <div className="mb-2 h-32 w-32 relative">
-                  <Image src={ibmLogo} alt="IBM Logo" className="w-28" />
+                <div className="mb-2">
+                  <Image
+                    src={ibmLogo}
+                    alt="IBM Logo"
+                    className="w-14 sm:w-40"
+                  />
                 </div>
               </div>
             </div>
@@ -76,7 +84,7 @@ export default function ProgramInfo() {
         </div>
 
         {/* Action buttons */}
-        <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
+        <div className="w-3/4 md:w-auto mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center mx-auto">
           <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
             Start Learning
           </Button>
