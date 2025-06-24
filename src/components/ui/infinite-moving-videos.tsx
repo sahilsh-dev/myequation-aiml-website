@@ -95,7 +95,7 @@ export const InfiniteMovingVideos = ({
               {/* Video Container */}
               <div className="relative w-full h-20 md:h-80 bg-gray-900 rounded-lg overflow-hidden">
                 <video
-                  className="w-80 md:w-96 h-full object-cover"
+                  className="w-80 md:w-[450px] h-full object-cover"
                   controls
                   preload="metadata"
                   poster={item.thumbnail}

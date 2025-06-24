@@ -101,8 +101,8 @@ export const InfiniteMovingCards = ({
                 </div>
               </div>
               <div>
-                <div className="relative z-20 mt-6 flex flex-col items-center text-center">
-                  <div className="w-10 h-10 bg-gray-600 rounded-full mb-3 flex items-center justify-center">
+                <div className="relative z-20 mt-6 mx-auto flex items-center justify-center gap-3">
+                  <div className="w-10 h-10 bg-gray-600 rounded-full flex items-center justify-center">
                     <span className="text-white font-semibold text-sm">
                       {item.name
                         .split(" ")
@@ -110,7 +110,7 @@ export const InfiniteMovingCards = ({
                         .join("")}
                     </span>
                   </div>
-                  <div className="flex flex-col gap-1">
+                  <div className="flex flex-col items-center">
                     <span className="text-sm leading-[1.6] font-semibold text-white">
                       {item.name}
                     </span>
