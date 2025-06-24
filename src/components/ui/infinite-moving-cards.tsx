@@ -103,7 +103,7 @@ export const InfiniteMovingCards = ({
               <div>
                 <div className="relative z-20 mt-2 mx-auto flex items-center justify-center gap-3">
                   <div className="w-6 h-6 md:w-10 md:h-10 bg-gray-600 rounded-full flex items-center justify-center">
-                    <span className="text-white font-semibold text-[10px]">
+                    <span className="text-white font-semibold text-[10px] md:text-sm">
                       {item.name
                         .split(" ")
                         .map((n) => n[0])
@@ -111,10 +111,10 @@ export const InfiniteMovingCards = ({
                     </span>
                   </div>
                   <div className="flex flex-col items-start text-left">
-                    <span className="text-xs leading-[1.6] font-semibold text-white">
+                    <span className="text-xs md:text-sm leading-[1.6] font-semibold text-white">
                       {item.name}
                     </span>
-                    <span className="text-[10px] leading-[1.6] font-normal text-gray-400">
+                    <span className="text-[10px] md:text-xs leading-[1.6] font-normal text-gray-400">
                       {item.title}
                     </span>
                   </div>

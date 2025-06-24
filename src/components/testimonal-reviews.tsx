@@ -115,7 +115,9 @@ export default function TestimonialReviews() {
 
         {/* review Text */}
         <div className="flex-1 flex flex-col justify-center">
-          <p className="text-xs leading-relaxed mb-2">{review.shortText}</p>
+          <p className="text-xs md:text-sm leading-relaxed mb-2">
+            {review.shortText}
+          </p>
           <button
             onClick={() => handleReadMore(review)}
             className="text-xs text-blue-400 hover:text-blue-300 md:text-sm transition-colors duration-200"
