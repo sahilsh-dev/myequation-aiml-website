@@ -1,9 +1,10 @@
 import TestimonialReviews from "./testimonal-reviews";
+import TestimonialVideos from "./testimonial-videos";
 
 export default function TestimonialSection() {
   return (
-    <div className="w-full py-6 px-4 sm:py-10 md:py-14">
-      <div className="max-w-screen-2xl rounded-2xl p-6 sm:p-8 md:p-12 flex flex-col gap-8 sm:gap-10 md:gap-12">
+    <div className="w-full py-6 px-4 sm:py-10 md:py-14 overflow-hidden">
+      <div className="max-w-screen-2xl rounded-2xl p-6 sm:p-8 md:p-12 flex flex-col gap-8 sm:gap-10 md:gap-12 mx-auto">
         {/* Heading and Description Section */}
         <div className="flex flex-col items-center text-center gap-3 sm:gap-4">
           <h2 className="text-white font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight tracking-tight">
@@ -15,6 +16,7 @@ export default function TestimonialSection() {
         </div>
 
         <TestimonialReviews />
+        <TestimonialVideos />
       </div>
     </div>
   );
