@@ -2,7 +2,7 @@ import { Check, Clock, Video } from "lucide-react";
 import AnimatedGradient from "./ui/animated-gradient";
 import pyProgram from "@/assets/py-Program.png";
 import AiIndustrial from "@/assets/Ai-Industrial-logo.png";
-import MachineLearning from "@/assets/Ml-Logo.png";
+import MachineLearning from "@/assets/ml-logo.png";
 import DeepLearning from "@/assets/DeepLearning-logo.png";
 import Image from "next/image";
 
@@ -64,7 +64,7 @@ const courses = [
 export default function ProgramBreakdown() {
   return (
     <section className="container relative min-h-[80dvh] space-y-4 md-space-y-16 py-24 md:py-32 w-[90vw] flex flex-col items-center justify-center">
-      <div className="absolute -z-10 w-full mx-auto h-[90%]">
+      <div className="absolute -z-10 w-full mx-auto h-[93%]">
         <AnimatedGradient className="rounded-3xl" />
       </div>
       <div>
