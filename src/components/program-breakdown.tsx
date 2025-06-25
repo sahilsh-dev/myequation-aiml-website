@@ -97,7 +97,7 @@ export default function ProgramBreakdown() {
                       alt={`${course.title} icon`}
                       width={60}
                       height={60}
-                      className="object-contain hover:opacity-100 transition-opacity duration-300 w-[15] "
+                      className="object-contain hover:opacity-100 transition-opacity duration-300 w-[15]  "
                     />
                   </div>
                 </div>
