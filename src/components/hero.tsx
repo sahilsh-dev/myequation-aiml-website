@@ -55,9 +55,9 @@ export default function Hero() {
         </p>
       </div>
       <div className="flex flex-col gap-4 sm:flex-row sm:justify-center ">
-        <Button size="lg" >
+        <Button size="lg">
           Start Learning Now
-          <IoRocketOutline size= {32} className="ml-1" />
+          <IoRocketOutline size={32} className="ml-1" />
         </Button>
         <Button variant="outline" size="lg">
           View Details

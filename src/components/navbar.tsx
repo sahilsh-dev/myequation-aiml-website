@@ -8,7 +8,6 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import myEquationLogo from "@/assets/myequationlogo.png";
 import Image from "next/image";
 
-
 export default function Navbar() {
   const isMobile = useIsMobile();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -52,16 +51,19 @@ export default function Navbar() {
               onClick={() => setMenuOpen((open) => !open)}
             >
               <span
-                className={`block h-0.5 w-5 bg-current transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-1.5" : ""
-                  }`}
+                className={`block h-0.5 w-5 bg-current transition-all duration-300 ${
+                  menuOpen ? "rotate-45 translate-y-1.5" : ""
+                }`}
               ></span>
               <span
-                className={`block h-0.5 w-5 bg-current my-1 transition-all duration-300 ${menuOpen ? "opacity-0" : ""
-                  }`}
+                className={`block h-0.5 w-5 bg-current my-1 transition-all duration-300 ${
+                  menuOpen ? "opacity-0" : ""
+                }`}
               ></span>
               <span
-                className={`block h-0.5 w-5 bg-current transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-1.5" : ""
-                  }`}
+                className={`block h-0.5 w-5 bg-current transition-all duration-300 ${
+                  menuOpen ? "-rotate-45 -translate-y-1.5" : ""
+                }`}
               ></span>
             </button>
             {menuOpen && (
@@ -100,7 +102,7 @@ export default function Navbar() {
                   <Button className="w-[85vw] text-base" asChild>
                     <Link href="#enroll" onClick={() => setMenuOpen(false)}>
                       Register Now
-                      <IoRocketOutline />
+                      <IoRocketOutline size={32} />
                     </Link>
                   </Button>
                 </div>
@@ -135,8 +137,11 @@ export default function Navbar() {
               <Button variant="ghost" size="sm" asChild>
                 <Link href="#contact">Contact</Link>
               </Button>
-              <Button size="sm" asChild>
-                <Link href="#enroll">Register Now</Link>
+              <Button size="sm" asChild className="hover:cursor-pointer">
+                <div>
+                  <Link href="#enroll">Register Now</Link>
+                  <IoRocketOutline size={40} />
+                </div>
               </Button>
             </div>
           </>
