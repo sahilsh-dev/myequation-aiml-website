@@ -51,7 +51,7 @@ export default function FeaturesOverview() {
 				</div>
 
 				{/* Course Feature Cards - Responsive Grid */}
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full px-4">
+				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full px-4 ">
 					{courseFeatures.map((feature, index) => (
 						<div
 							key={index}
@@ -60,23 +60,22 @@ export default function FeaturesOverview() {
 							className={cn(
 								"rounded-2xl p-4 sm:p-6 cursor-pointer transition-all duration-300 backdrop-blur-sm",
 								"border border-white/20 flex flex-col gap-3 sm:gap-4",
-								"min-h-0 sm:min-h-[360px]",
-								`${
-									hoveredCard === index
-										? "bg-gradient-to-br from-[hsl(var(--card))] to-[#0a1736]"
-										: "bg-[hsl(var(--card)/0.7)]"
+								"min-h-0 sm:min-h-[360px] hover:scale-105 cursor-pointer rounded-lg duration-300",
+								`${hoveredCard === index
+									? "bg-gradient-to-br from-[hsl(var(--card))] to-[#304a86]"
+									: "bg-[hsl(var(--card)/0.7)] hover:-translate-y-2"
 								}`
 							)}
 						>
-						    <div className="w-fit h-[56px] w-[56px] rounded-xl bg-white flex items-center justify-center p-2 mb-1 sm:mb-2">
-                               <Image
-                                  src={feature.icon}
-                                  alt={feature.title}
-                                  className="object-contain"
-                                  width={40}
-                                  height={40}
-                                   />
-                            </div>
+							<div className="w-fit h-[56px] w-[56px] rounded-xl bg-white flex items-center justify-center p-2 mb-1 sm:mb-2">
+								<Image
+									src={feature.icon}
+									alt={feature.title}
+									className="object-contain"
+									width={40}
+									height={40}
+								/>
+							</div>
 
 
 							{/* Title */}

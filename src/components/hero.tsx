@@ -14,7 +14,7 @@ export default function Hero() {
       </div>
       <div className="space-y-4">
         {/* Social Proof Section */}
-        <div className="flex items-center justify-center gap-2 mb-6">
+        <div className="flex items-center justify-center gap-2 mb-6 ">
           <div className="flex -space-x-3">
             {/* ✅ Replaced placeholder images with imported ones */}
             <Image
@@ -39,7 +39,7 @@ export default function Hero() {
               className="w-10 h-10 rounded-full border-2 border-white object-cover shadow-sm"
             />
           </div>
-          <span className="text-base font-semibold">
+          <span className="text-base font-semibold ">
             500+ learners enrolled
           </span>
         </div>

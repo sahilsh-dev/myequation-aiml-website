@@ -16,27 +16,39 @@ h2 {
   .text-balance {
     text-wrap: balance;
   }
+
   .animate-scroll {
-    animation: scroll var(--animation-duration, 40s)
-      var(--animation-direction, forwards) linear infinite;
+    animation: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
   }
 
   .scroller {
-    mask-image: linear-gradient(
-      to right,
-      transparent,
-      black 20%,
-      black 80%,
-      transparent
-    );
-    -webkit-mask-image: linear-gradient(
-      to right,
-      transparent,
-      black 20%,
-      black 80%,
-      transparent
-    );
+    mask-image: linear-gradient(to right,
+        transparent,
+        black 20%,
+        black 80%,
+        transparent);
+    -webkit-mask-image: linear-gradient(to right,
+        transparent,
+        black 20%,
+        black 80%,
+        transparent);
   }
+}
+
+@keyframes bounce-slow {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s ease-in-out infinite;
 }
 
 @layer base {
@@ -75,6 +87,7 @@ h2 {
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -121,6 +134,7 @@ h2 {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
