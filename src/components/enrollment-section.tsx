@@ -1,8 +1,8 @@
 "use client";
 
 import type React from "react";
-
 import Image from "next/image";
+import enrollImg from "@/assets/enroll.png";
 import { useState } from "react";
 
 interface FormData {
@@ -55,10 +55,10 @@ export default function EnrollmentSection() {
           <div className="w-full lg:w-1/2">
             <div className="relative w-full h-48 sm:h-64 md:h-72 lg:h-80 xl:h-96 rounded-lg overflow-hidden">
               <Image
-                src={require("@/assets/enroll.png").default}
+                src={enrollImg}
                 alt="AI & ML Learning Student"
                 fill
-                className="object-cover"
+                className="object-cover rounded-3xl"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
