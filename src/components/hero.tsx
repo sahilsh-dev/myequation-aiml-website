@@ -14,7 +14,7 @@ export default function Hero() {
       </div>
       <div className="space-y-4">
         {/* Social Proof Section */}
-        <div className="flex items-center justify-center gap-2 mb-6 ">
+        <div className="flex items-center justify-center gap-2 mb-6 animate-bounce-slow">
           <div className="flex -space-x-3">
             {/* ✅ Replaced placeholder images with imported ones */}
             <Image

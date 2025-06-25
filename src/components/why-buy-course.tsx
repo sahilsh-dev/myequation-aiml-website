@@ -57,8 +57,8 @@ export function WhyBuyCourse() {
       >
         <CarouselContent>
           {carouselItems.map((item, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4 ">
-              <div className="p-1">
+            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4  ">
+              <div className="p-1 hover:scale-105 cursor-pointer rounded-lg">
                 <Card>
                   <CardContent className="flex aspect-square items-center justify-center p-6">
                     <div className="text-left">
