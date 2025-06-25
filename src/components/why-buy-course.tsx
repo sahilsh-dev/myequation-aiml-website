@@ -42,7 +42,7 @@ const carouselItems = [
   },
 ];
 
-export function WhyBuyCourse() {
+export default function WhyBuyCourse() {
   return (
     <section className="container w-full my-[10%] px-16 flex flex-col items-center justify-center">
       <div className="text-center mb-5 md:mb-16">

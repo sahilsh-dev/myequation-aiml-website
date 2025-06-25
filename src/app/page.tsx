@@ -8,7 +8,7 @@ import FeaturesOverview from "@/components/feature-overview";
 import Mentors from "@/components/mentors";
 import ProjectsSection from "@/components/projects-section";
 import TargetAudience from "@/components/target-audience";
-import { WhyBuyCourse } from "@/components/why-buy-course";
+import WhyBuyCourse from "@/components/why-buy-course";
 import CertificateSection from "@/components/certificate-section";
 import FAQ from "@/components/faq";
 import EnrollmentSection from "@/components/enrollment-section";
