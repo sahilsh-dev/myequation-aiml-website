@@ -24,7 +24,7 @@ export default function Footer() {
 
         <div className="grid flex-1 grid-cols-2 gap-12 sm:grid-cols-3">
           <div className="space-y-4">
-           <h3 className="text-sm font-medium">Onboarding Manager's</h3>
+            <h3 className="text-sm font-medium">Onboarding Manager's</h3>
             <ul className="space-y-3 text-sm">
               <li className="text-muted-foreground">Gunesh - 8806806479</li>
               <li className="text-muted-foreground">Kaustuv - 9337837362</li>
@@ -32,7 +32,7 @@ export default function Footer() {
           </div>
 
 
-          <div className="space-y-4">
+          <div className="space-y-4 px-12 md:px-0">
             <h3 className="text-sm font-medium">Company</h3>
             <ul className="space-y-3 text-sm">
               <li>
