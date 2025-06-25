@@ -20,7 +20,7 @@ const mentors = [
 
 export default function Mentors() {
 	return (
-		<section id= "Mentors" className="scroll-mt-28 container w-full max-w-[1200px] mx-auto pt-20 mb-16 sm:mb-32">
+		<section id="Mentors" className="scroll-mt-28 container w-full max-w-[1200px] mx-auto pt-20 mb-16 sm:mb-32">
 			{/* Section Title */}
 			<div className="text-center mb-12 px-4">
 				<h2 className="font-bold text-[clamp(28px,5vw,48px)] leading-tight text-white m-0">

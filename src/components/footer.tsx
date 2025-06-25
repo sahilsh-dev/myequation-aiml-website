@@ -32,7 +32,7 @@ export default function Footer() {
           </div>
 
 
-          <div className="space-y-4 px-12 md:px-0">
+          <div className="space-y-4 px-8 md:px-0">
             <h3 className="text-sm font-medium">Company</h3>
             <ul className="space-y-3 text-sm">
               <li>
