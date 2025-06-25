@@ -58,12 +58,12 @@ export default function FeaturesOverview() {
 							onMouseEnter={() => setHoveredCard(index)}
 							onMouseLeave={() => setHoveredCard(null)}
 							className={cn(
-								"rounded-2xl p-4 sm:p-6 cursor-pointer transition-all duration-300 backdrop-blur-sm",
+								"rounded-2x p-4 sm:p-6 cursor-pointer transition-all duration-300 backdrop-blur-sm",
 								"border border-white/20 flex flex-col gap-3 sm:gap-4",
 								"min-h-0 sm:min-h-[360px] hover:scale-105 cursor-pointer rounded-lg duration-300",
 								`${hoveredCard === index
-									? "bg-gradient-to-br from-[hsl(var(--card))] to-[#304a86]"
-									: "bg-[hsl(var(--card)/0.7)] hover:-translate-y-2"
+									? "bg-gradient-to-br from-[hsl(var(--card))] to-[#304b8c]"
+									: "bg-slate-900 hover:-translate-y-2"
 								}`
 							)}
 						>
