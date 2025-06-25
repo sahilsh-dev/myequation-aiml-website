@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import AnimatedGradient from "./ui/animated-gradient";
+import { IoRocketOutline } from "react-icons/io5";
 import Image from "next/image";
 import circleImage1 from "@/assets/hero_image/circleimage1.png";
 import circleImage2 from "@/assets/hero_image/circleimage2.png";
@@ -56,7 +57,7 @@ export default function Hero() {
       <div className="flex flex-col gap-4 sm:flex-row sm:justify-center ">
         <Button size="lg" >
           Start Learning Now
-          <ArrowRight className="ml-2 h-4 w-4" />
+          <IoRocketOutline size= {32} className="ml-1" />
         </Button>
         <Button variant="outline" size="lg">
           View Details

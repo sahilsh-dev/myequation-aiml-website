@@ -3,9 +3,11 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { IoRocketOutline } from "react-icons/io5";
 import { useIsMobile } from "@/hooks/use-mobile";
 import myEquationLogo from "@/assets/myequationlogo.png";
 import Image from "next/image";
+
 
 export default function Navbar() {
   const isMobile = useIsMobile();
@@ -98,6 +100,7 @@ export default function Navbar() {
                   <Button className="w-[85vw] text-base" asChild>
                     <Link href="#enroll" onClick={() => setMenuOpen(false)}>
                       Register Now
+                      <IoRocketOutline />
                     </Link>
                   </Button>
                 </div>
