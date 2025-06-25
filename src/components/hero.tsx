@@ -9,7 +9,7 @@ import circleImage3 from "@/assets/hero_image/circleimage3.png";
 export default function Hero() {
   return (
     <section className="container flex min-h-[calc(100dvh-3.5rem)] max-w-screen-2xl flex-col items-center justify-center space-y-8 py-10 text-center md:py-32">
-      <div className="absolute h-[80dvh] -z-10 w-[90%]">
+      <div className="absolute h-[80dvh] -z-10 w-[90%] max-w-screen-2xl">
         <AnimatedGradient className="rounded-3xl" />
       </div>
       <div className="space-y-4">
