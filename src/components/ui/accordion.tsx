@@ -17,7 +17,7 @@ export default function Accordion({
   items: DropdownItem[];
   className?: string;
 }) {
-  const [expandedItems, setExpandedItems] = useState<number[]>([1]);
+  const [expandedItems, setExpandedItems] = useState<number[]>([]);
 
   const toggleItem = (id: number) => {
     setExpandedItems((prev) =>
