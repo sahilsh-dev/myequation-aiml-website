@@ -32,6 +32,9 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: "/favicon.ico",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
