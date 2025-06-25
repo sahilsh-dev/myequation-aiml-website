@@ -25,7 +25,7 @@ export default function ProgramInfo() {
 
   return (
     <section className="container my-[5%]">
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-5xl">
         {/* Main card container */}
         <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-blue-50 to-blue-100 p-2 pt-8 md:p-12">
           {/* Stats section */}

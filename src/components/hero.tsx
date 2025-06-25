@@ -53,8 +53,8 @@ export default function Hero() {
           55 - Hour Program
         </p>
       </div>
-      <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-        <Button size="lg">
+      <div className="flex flex-col gap-4 sm:flex-row sm:justify-center ">
+        <Button size="lg" >
           Start Learning Now
           <ArrowRight className="ml-2 h-4 w-4" />
         </Button>
