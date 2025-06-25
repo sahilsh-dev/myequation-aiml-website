@@ -44,13 +44,21 @@ export default function Accordion({
             )}
           </button>
 
-          {expandedItems.includes(item.id) && (
-            <div className="px-6 py-4 border-t border-gray-600">
-              <p className="text-gray-300 leading-relaxed">
-                {item.description}
-              </p>
-            </div>
-          )}
+          {/* Animated content */}
+          <div
+            className={cn(
+              "transition-all duration-300  overflow-hidden px-6 border-t border-gray-600",
+              expandedItems.includes(item.id)
+                ? "max-h-96 opacity-100 py-4"
+                : "max-h-0 opacity-0 py-0"
+            )}
+            style={{
+              // fallback for maxHeight if content is larger
+              transitionProperty: "max-height, opacity, padding",
+            }}
+          >
+            <p className="text-gray-300 leading-relaxed">{item.description}</p>
+          </div>
         </div>
       ))}
     </div>
