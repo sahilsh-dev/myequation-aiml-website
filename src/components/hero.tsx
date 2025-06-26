@@ -1,15 +1,18 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
 import AnimatedGradient from "./ui/animated-gradient";
 import { IoRocketOutline } from "react-icons/io5";
 import Image from "next/image";
 import circleImage1 from "@/assets/hero_image/circleimage1.png";
 import circleImage2 from "@/assets/hero_image/circleimage2.png";
 import circleImage3 from "@/assets/hero_image/circleimage3.png";
+import doodleImg from "@/assets/doodle.svg";
 
 export default function Hero() {
   return (
-    <section id="overview" className="container flex min-h-[calc(100dvh-3.5rem)] max-w-screen-2xl flex-col items-center justify-center space-y-8 py-10 text-center md:py-32">
+    <section
+      id="overview"
+      className="container flex min-h-[calc(100dvh-3.5rem)] max-w-screen-2xl flex-col items-center justify-center space-y-8 py-10 text-center md:py-32"
+    >
       <div className="absolute h-[80dvh] -z-10 w-[90%] max-w-screen-2xl">
         <AnimatedGradient className="rounded-3xl" />
       </div>
@@ -44,11 +47,27 @@ export default function Hero() {
             500+ learners enrolled
           </span>
         </div>
-        <h1 className="bg-gradient-to-br from-foreground from-30% via-foreground/90 to-foreground/70 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-3xl md:text-5xl lg:text-6xl">
-          Master AI & Machine Learning:
+        {/* Hero Title */}
+        <h1 className="text-4xl font-bold tracking-tight sm:text-3xl md:text-5xl lg:text-6xl">
+          <span className="relative inline-block">
+            {/* Solid “Master AI” above the doodle */}
+            <span className="relative">Master AI</span>
+            {/* Doodle behind the text */}
+            <Image
+              src={doodleImg}
+              alt="Doodle"
+              className="absolute -bottom-2 w-full"
+            />
+          </span>
+          {/* Gradient‐clipped subtitle */}
+          <span className="ml-2 bg-gradient-to-br from-white via-white/90 to-white/70 bg-clip-text text-transparent">
+            & Machine Learning:
+          </span>
           <br />
+          {/* Remaining line in plain text */}
           From Zero to Industry Expert
         </h1>
+
         <p className="mx-auto max-w-[42rem] leading-normal sm:text-xl sm:leading-8">
           The complete AI, ML & Python - Learn from NVIDIA & IBM Mentors in this
           55 - Hour Program

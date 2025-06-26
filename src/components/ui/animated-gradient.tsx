@@ -20,13 +20,13 @@ export default function AnimatedGradient({
       { name: "red", rgba: "rgba(255, 10, 10, 1.0)" },
       { name: "green", rgba: "rgba(0, 255, 60, 1.0)" },
       { name: "blue", rgba: "rgba(10, 140, 255, 1.0)" },
+      { name: "black", rgba: "rgba(0, 0, 0, 1.0)" },
       { name: "purple", rgba: "rgba(220, 30, 255, 1.0)" },
       { name: "orange", rgba: "rgba(255, 100, 0, 1.0)" },
-      { name: "black", rgba: "rgba(0, 0, 0, 1.0)" },
+      { name: "yellow", rgba: "rgba(240, 40, 255, 1.0)" },
       { name: "amber", rgba: "rgba(255, 210, 0, 0.95)" },
       { name: "lime", rgba: "rgba(160, 255, 20, 0.95)" },
       { name: "sky", rgba: "rgba(0, 190, 255, 1.0)" },
-      { name: "fuchsia", rgba: "rgba(240, 40, 255, 1.0)" },
       { name: "black", rgba: "rgba(0, 0, 0, 0.9)" },
       { name: "purple", rgba: "rgba(220, 30, 255, 1.0)" },
     ];
@@ -60,7 +60,7 @@ export default function AnimatedGradient({
       return (
         <div
           key={`gradient-${index}`}
-          className={`absolute rounded-full blur-2xl w-screen h-screen max-w-[60rem] max-h-[60rem]`}
+          className={`absolute rounded-full blur-2xl w-screen h-screen`}
           style={{
             background: `radial-gradient(circle, ${color.rgba} 0%, transparent 70%)`,
             animation: `${animationName} ${duration}s ease-in-out infinite`,
