@@ -65,12 +65,14 @@ const courses = [
 export default function ProgramBreakdown() {
   return (
     <ScrollReveal direction="up" delay={0.1}>
-      <section id="curriculum" className="scroll-mt-28 container relative min-h-[80dvh] space-y-4 md-space-y-16 py-24 md:py-32 w-[90vw] flex flex-col items-center justify-center">
+      <section
+        id="curriculum"
+        className="scroll-mt-28 container relative min-h-[80dvh] space-y-4 md-space-y-16 py-24 md:py-32 w-[90vw] flex flex-col items-center justify-center"
+      >
         <div className="absolute -z-10 w-full mx-auto h-[93%]">
           <AnimatedGradient className="rounded-3xl" />
         </div>
         <ScrollReveal direction="up" delay={0.2}>
-
           <div>
             <div className="mx-auto max-w-[58rem] text-center">
               <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-5xl mb-[7%]">
@@ -109,7 +111,10 @@ export default function ProgramBreakdown() {
                     {/* Features Section */}
                     <div className="flex-1 space-y-4 mb-8">
                       {course.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-start gap-3">
+                        <div
+                          key={featureIndex}
+                          className="flex items-start gap-3"
+                        >
                           <div className="flex-shrink-0 w-5 h-5 bg-blue-600 rounded-full flex items-center justify-center mt-0.5">
                             <Check className="w-3 h-3 text-white stroke-2" />
                           </div>
