@@ -49,7 +49,7 @@ export default function Navbar() {
         "sticky z-50 w-full transition-all duration-500 ease-in-out",
         isScrolled
           ? "top-0 border-b-white backdrop-blur supports-[backdrop-filter]:bg-background/60 h-full bg-background/95"
-          : "top-4 px-16"
+          : "top-4 md:px-16"
       )}
     >
       <div className="container flex max-w-screen-2xl items-center justify-between h-full">

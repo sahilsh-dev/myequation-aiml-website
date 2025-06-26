@@ -13,14 +13,13 @@ export default function Hero() {
       id="overview"
       className="container flex min-h-[calc(100dvh-3.5rem)] max-w-screen-2xl flex-col items-center justify-center space-y-8 py-10 text-center md:py-32"
     >
-      <div className="absolute h-[80dvh] -z-10 w-[95%] max-w-screen-2xl">
+      <div className="absolute h-[85dvh] mt-[2vh] -z-10 w-[90%] md:w-[95%] max-w-screen-2xl">
         <AnimatedGradient className="rounded-3xl" />
       </div>
       <div className="space-y-4">
         {/* Social Proof Section */}
         <div className="flex items-center justify-center gap-2 mb-6 animate-bounce-slow">
           <div className="flex -space-x-3">
-            {/* ✅ Replaced placeholder images with imported ones */}
             <Image
               src={circleImage1}
               alt="Learner 1"

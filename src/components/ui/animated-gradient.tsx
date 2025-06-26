@@ -48,7 +48,7 @@ export default function AnimatedGradient({
 
     // Generate random animation durations
     const generateDuration = () => {
-      return 60 + Math.floor(Math.random() * 20);
+      return 100 + Math.floor(Math.random() * 20);
     };
 
     // Generate gradients
@@ -60,7 +60,7 @@ export default function AnimatedGradient({
       return (
         <div
           key={`gradient-${index}`}
-          className={`absolute rounded-full blur-2xl w-screen h-screen`}
+          className={`absolute rounded-full blur-2xl w-[90vw] h-[90vh]`}
           style={{
             background: `radial-gradient(circle, ${color.rgba} 0%, transparent 70%)`,
             animation: `${animationName} ${duration}s ease-in-out infinite`,
