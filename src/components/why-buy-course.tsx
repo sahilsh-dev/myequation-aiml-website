@@ -6,6 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const carouselItems = [
   {
@@ -46,32 +47,37 @@ export default function WhyBuyCourse() {
   return (
     <section className="container w-full my-[10%] px-16 flex flex-col items-center justify-center">
       <div className="text-center mb-5 md:mb-16">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8">
-          Why you should{" "}
-          <span className="text-yellow-500">Buy this Course</span>
-        </h2>
+        <ScrollReveal direction="up">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8">
+            Why you should{" "}
+            <span className="text-yellow-500">Buy this Course</span>
+          </h2>
+        </ScrollReveal>
       </div>
       <Carousel
         className="w-full max-w-screen-xl mx-auto"
         opts={{ align: "start", dragFree: true }}
       >
+
         <CarouselContent>
           {carouselItems.map((item, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4  ">
               <div className="p-1  ">
-                <Card className=" bg-gray-900 hover:bg-gradient-to-br hover:from-[hsl(var(--card))] hover:to-[#304a86] hover:scale-105 cursor-pointer rounded-lg transition-all duration-300 my-5">
-                  <CardContent className="flex aspect-square items-center justify-center p-6">
-                    <div className="text-left">
-                      <span className="text-2xl font-bold text-blue-500 mb-4">
-                        {index + 1}
-                      </span>
-                      <h3 className="text-xl font-semibold mb-2">
-                        {item.heading}
-                      </h3>
-                      <p className="text-gray-400">{item.body}</p>
-                    </div>
-                  </CardContent>
-                </Card>
+                <ScrollReveal direction="up" delay={0.2 * index}>
+                  <Card className=" bg-gray-900 hover:bg-gradient-to-br hover:from-[hsl(var(--card))] hover:to-[#304a86] hover:scale-105 cursor-pointer rounded-lg transition-all duration-300 my-5">
+                    <CardContent className="flex aspect-square items-center justify-center p-6">
+                      <div className="text-left">
+                        <span className="text-2xl font-bold text-blue-500 mb-4">
+                          {index + 1}
+                        </span>
+                        <h3 className="text-xl font-semibold mb-2">
+                          {item.heading}
+                        </h3>
+                        <p className="text-gray-400">{item.body}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </ScrollReveal>
               </div>
             </CarouselItem>
           ))}
@@ -79,6 +85,7 @@ export default function WhyBuyCourse() {
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
+
     </section>
   );
 }

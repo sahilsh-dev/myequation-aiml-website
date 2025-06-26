@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 interface DropdownItem {
   id: number;
@@ -28,38 +29,41 @@ export default function Accordion({
   return (
     <div className={cn("space-y-4", className)}>
       {items.map((item) => (
-        <div
-          key={item.id}
-          className="border border-gray-600 rounded-lg overflow-hidden"
-        >
-          <button
-            onClick={() => toggleItem(item.id)}
-            className="w-full px-6 py-4 text-left  hover:bg-gray-900 transition-colors duration-300 flex items-center justify-between"
-          >
-            <span className="text-white font-medium text-lg">{item.title}</span>
-            {expandedItems.includes(item.id) ? (
-              <ChevronUp className="w-5 h-5 text-yellow-400" />
-            ) : (
-              <ChevronDown className="w-5 h-5 text-yellow-400" />
-            )}
-          </button>
+        <ScrollReveal direction="up" key={item.id} delay={0.1 * item.id}>
 
-          {/* Animated content */}
           <div
-            className={cn(
-              "transition-all duration-300  overflow-hidden px-6 border-t border-gray-600",
-              expandedItems.includes(item.id)
-                ? "max-h-96 opacity-100 py-4"
-                : "max-h-0 opacity-0 py-0"
-            )}
-            style={{
-              // fallback for maxHeight if content is larger
-              transitionProperty: "max-height, opacity, padding",
-            }}
+            key={item.id}
+            className="border border-gray-600 rounded-lg overflow-hidden"
           >
-            <p className="text-gray-300 leading-relaxed">{item.description}</p>
+            <button
+              onClick={() => toggleItem(item.id)}
+              className="w-full px-6 py-4 text-left  hover:bg-gray-900 transition-colors duration-300 flex items-center justify-between"
+            >
+              <span className="text-white font-medium text-lg">{item.title}</span>
+              {expandedItems.includes(item.id) ? (
+                <ChevronUp className="w-5 h-5 text-yellow-400" />
+              ) : (
+                <ChevronDown className="w-5 h-5 text-yellow-400" />
+              )}
+            </button>
+
+            {/* Animated content */}
+            <div
+              className={cn(
+                "transition-all duration-300  overflow-hidden px-6 border-t border-gray-600",
+                expandedItems.includes(item.id)
+                  ? "max-h-96 opacity-100 py-4"
+                  : "max-h-0 opacity-0 py-0"
+              )}
+              style={{
+                // fallback for maxHeight if content is larger
+                transitionProperty: "max-height, opacity, padding",
+              }}
+            >
+              <p className="text-gray-300 leading-relaxed">{item.description}</p>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       ))}
     </div>
   );

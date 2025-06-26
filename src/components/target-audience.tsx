@@ -6,6 +6,9 @@ import audienceImg2 from "@/assets/targetaudienceimage/audience2.png";
 import audienceImg3 from "@/assets/targetaudienceimage/audience3.png";
 import audienceImg4 from "@/assets/targetaudienceimage/audience4.png";
 
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { ScrollSplitText } from "@/components/ui/ScrollSplit";
+
 const targetAudiences = [
   {
     id: 1,
@@ -34,46 +37,54 @@ export default function TargetAudience() {
     <section className="container w-full py-16 px-4 my-10">
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8">
-            Who is This For?
-          </h2>
-        </div>
+        <ScrollReveal direction="up">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8">
+              Who is This For?
+            </h2>
+          </div>
+        </ScrollReveal>
 
         {/* Grid of Target Audiences */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {targetAudiences.map((audience) => (
-            <div
-              key={audience.id}
-              className="flex flex-col justify-between border rounded-2xl bg-black/20"
-            >
-              <div className="p-3">
-                {/* Check Icon */}
-                <div className="mb-4">
-                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-                    <BadgeCheck className="w-5 h-5 text-white" />
+        <ScrollReveal direction="up" delay={0.2}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {targetAudiences.map((audience) => (
+              <ScrollReveal direction="up" delay={0.2 * audience.id} key={audience.id}>
+                <div
+                  key={audience.id}
+                  className="flex flex-col justify-between border rounded-2xl bg-black/20"
+                >
+                  <div className="p-3">
+                    {/* Check Icon */}
+                    <div className="mb-4">
+                      <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                        <BadgeCheck className="w-5 h-5 text-white" />
+                      </div>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-white font-semibold text-lg mb-4 leading-tight">
+                      {audience.title}
+                    </h3>
                   </div>
+
+                  {/* image */}
+                  <div className="rounded-lg overflow-hidden">
+                    <Image
+                      src={audience.image}
+                      alt={audience.title}
+                      className="w-full h-48 object-cover"
+                      width={300}
+                      height={200}
+                    />
+                  </div>
+
                 </div>
+              </ScrollReveal>
+            ))}
 
-                {/* Title */}
-                <h3 className="text-white font-semibold text-lg mb-4 leading-tight">
-                  {audience.title}
-                </h3>
-              </div>
-
-              {/* image */}
-              <div className="rounded-lg overflow-hidden">
-                <Image
-                  src={audience.image}
-                  alt={audience.title}
-                  className="w-full h-48 object-cover"
-                  width={300}
-                  height={200}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

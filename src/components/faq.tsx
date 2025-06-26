@@ -1,6 +1,7 @@
 import faqImg from "@/assets/faq.png";
 import Image from "next/image";
 import Accordion from "./ui/accordion";
+import { ScrollReveal } from "./ui/scroll-reveal";
 
 const faqs = [
   {
@@ -37,45 +38,48 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section className="w-full py-16 px-4 md:py-24">
-      <div className="container mx-auto max-w-7xl">
-        {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Left Side - FAQ Info */}
-          <div>
-            <Image src={faqImg} alt="FAQ" className="w-24 mb-4" />
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Have questions?
-            </h2>
-            <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              We're here to help. Check out the listed answers to some of the
-              most frequently asked questions.
-            </p>
-            <p className="text-gray-300 text-base mb-8">
-              Reach out to us in case of any doubts!
-            </p>
-            <button className="inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-lg border border-gray-600 transition-colors duration-300">
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                />
-              </svg>
-              Download Brochure
-            </button>
+    <ScrollReveal direction="up" delay={0.1}>
+      <section className="w-full py-16 px-4 md:py-24">
+        <div className="container mx-auto max-w-7xl">
+          {/* Main Content */}
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            {/* Left Side - FAQ Info */}
+            <ScrollReveal direction="up">
+              <div>
+                <Image src={faqImg} alt="FAQ" className="w-24 mb-4" />
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  Have questions?
+                </h2>
+                <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                  We're here to help. Check out the listed answers to some of the
+                  most frequently asked questions.
+                </p>
+                <p className="text-gray-300 text-base mb-8">
+                  Reach out to us in case of any doubts!
+                </p>
+                <button className="inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-lg border border-gray-600 transition-colors duration-300">
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                    />
+                  </svg>
+                  Download Brochure
+                </button>
+              </div>
+            </ScrollReveal>
+            {/* Right Side - FAQ Accordion */}
+            <Accordion items={faqs} className="space-y-3" />
           </div>
-
-          {/* Right Side - FAQ Accordion */}
-          <Accordion items={faqs} className="space-y-3" />
         </div>
-      </div>
-    </section>
+      </section>
+    </ScrollReveal>
   );
 }

@@ -7,6 +7,7 @@ import icon1 from "@/assets/icons/icon1.png";
 import icon2 from "@/assets/icons/icon2.png";
 import icon3 from "@/assets/icons/icon3.png";
 import icon4 from "@/assets/icons/icon4.png";
+import { ScrollReveal } from "@/components/ui/scroll-reveal";
 
 const courseFeatures = [
 	{
@@ -43,53 +44,62 @@ export default function FeaturesOverview() {
 			{/* What You'll Get From This Course Section */}
 			<div className="w-full max-w-[1200px] mx-auto pt-16 pb-20">
 				{/* Section Title */}
-				<div className="text-center mb-12 px-4">
-					<h2 className="font-bold text-white m-0 text-[clamp(28px,5vw,48px)] leading-tight">
-						What You'll Get From{" "}
-						<span className="text-yellow-400">This Course</span>
-					</h2>
-				</div>
-
-				{/* Course Feature Cards - Responsive Grid */}
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full px-4 ">
-					{courseFeatures.map((feature, index) => (
-						<div
-							key={index}
-							onMouseEnter={() => setHoveredCard(index)}
-							onMouseLeave={() => setHoveredCard(null)}
-							className={cn(
-								"rounded-2x p-4 sm:p-6 cursor-pointer transition-all duration-300 backdrop-blur-sm",
-								"border border-white/20 flex flex-col gap-3 sm:gap-4",
-								"min-h-0 sm:min-h-[360px] hover:scale-105 cursor-pointer rounded-lg duration-300",
-								`${hoveredCard === index
-									? "bg-gradient-to-br from-[hsl(var(--card))] to-[#304b8c]"
-									: "bg-slate-900 hover:-translate-y-2"
-								}`
-							)}
-						>
-							<div className="w-fit h-[56px] w-[56px] rounded-xl bg-white flex items-center justify-center p-2 mb-1 sm:mb-2">
-								<Image
-									src={feature.icon}
-									alt={feature.title}
-									className="object-contain"
-									width={40}
-									height={40}
-								/>
-							</div>
+				<ScrollReveal direction="up">
+					<div className="text-center mb-12 px-4">
+						<h2 className="font-bold text-white m-0 text-[clamp(28px,5vw,48px)] leading-tight">
+							What You'll Get From{" "}
+							<span className="text-yellow-400">This Course</span>
+						</h2>
+					</div>
 
 
-							{/* Title */}
-							<h3 className="font-bold text-[clamp(20px,3vw,24px)] leading-tight text-white m-0 flex-shrink-0">
-								{feature.title}
-							</h3>
+					{/* Course Feature Cards - Responsive Grid */}
+					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 w-full px-4 ">
+						{courseFeatures.map((feature, index) => (
+							<ScrollReveal
+								direction="up"
+								delay={0.1 * index}
+								key={index}
+							>
+								<div
+									key={index}
+									onMouseEnter={() => setHoveredCard(index)}
+									onMouseLeave={() => setHoveredCard(null)}
+									className={cn(
+										"rounded-2x p-4 sm:p-6 cursor-pointer transition-all duration-300 backdrop-blur-sm",
+										"border border-white/20 flex flex-col gap-3 sm:gap-4",
+										"min-h-0 sm:min-h-[360px] hover:scale-105 cursor-pointer rounded-lg duration-300",
+										`${hoveredCard === index
+											? "bg-gradient-to-br from-[hsl(var(--card))] to-[#304b8c]"
+											: "bg-slate-900 hover:-translate-y-2"
+										}`
+									)}
+								>
+									<div className="w-fit h-[56px] w-[56px] rounded-xl bg-white flex items-center justify-center p-2 mb-1 sm:mb-2">
+										<Image
+											src={feature.icon}
+											alt={feature.title}
+											className="object-contain"
+											width={40}
+											height={40}
+										/>
+									</div>
 
-							{/* Description */}
-							<p className="leading-relaxed text-white/70 m-0 flex-shrink-0 sm:flex-grow">
-								{feature.description}
-							</p>
-						</div>
-					))}
-				</div>
+
+									{/* Title */}
+									<h3 className="font-bold text-[clamp(20px,3vw,24px)] leading-tight text-white m-0 flex-shrink-0">
+										{feature.title}
+									</h3>
+
+									{/* Description */}
+									<p className="leading-relaxed text-white/70 m-0 flex-shrink-0 sm:flex-grow">
+										{feature.description}
+									</p>
+								</div>
+							</ScrollReveal>
+						))}
+					</div>
+				</ScrollReveal>
 			</div>
 		</div>
 	);
