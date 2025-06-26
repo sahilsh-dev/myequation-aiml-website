@@ -7,10 +7,22 @@ import { IoRocketOutline } from "react-icons/io5";
 import { useIsMobile } from "@/hooks/use-mobile";
 import myEquationLogo from "@/assets/myequationlogo.png";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 export default function Navbar() {
   const isMobile = useIsMobile();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Track scroll position to show/hide border
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Prevent scroll on mobile when menu is open
   useEffect(() => {
@@ -32,7 +44,14 @@ export default function Navbar() {
   }, [menuOpen, isMobile]);
 
   return (
-    <header className="sticky top-0 z-50 w-full sm:border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 h-full">
+    <header
+      className={cn(
+        "sticky z-50 w-full transition-all duration-500 ease-in-out",
+        isScrolled
+          ? "top-0 border-b-white backdrop-blur supports-[backdrop-filter]:bg-background/60 h-full bg-background/95"
+          : "top-4 px-16"
+      )}
+    >
       <div className="container flex max-w-screen-2xl items-center justify-between h-full">
         <Link href="/" className="mr-6 flex items-center space-x-2 h-14">
           <div className="flex items-center justify-center h-10 w-32">
