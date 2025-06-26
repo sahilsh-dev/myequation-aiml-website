@@ -32,7 +32,7 @@ export default function Navbar() {
   }, [menuOpen, isMobile]);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 h-full">
+    <header className="sticky top-0 z-50 w-full sm:border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 h-full">
       <div className="container flex max-w-screen-2xl items-center justify-between h-full">
         <Link href="/" className="mr-6 flex items-center space-x-2 h-14">
           <div className="flex items-center justify-center h-10 w-32">
