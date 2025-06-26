@@ -35,7 +35,7 @@ export default function Mentors() {
         <div className="flex w-full px-2 mx-auto items-center justify-center gap-4 flex-wrap">
           {mentors.map((mentor, index) => (
             <Card
-              className="md:h-32 sm:w-[min(45vw, 30rem)] sm:h-60 bg-gradient-to-br from-[#01010a] to-[#090a13] border border-white/20 shadow-lg rounded-2xl flex-grow"
+              className="sm:w-[min(45vw, 30rem)] sm:h-60 bg-gradient-to-br from-[#01010a] to-[#090a13] border border-white/20 shadow-lg rounded-2xl flex-grow"
               key={mentor.name}
             >
               <CardContent className="p-4 sm:p-7 h-full flex flex-col justify-center text-white">
@@ -43,7 +43,7 @@ export default function Mentors() {
                   <Image
                     src={mentor.image}
                     alt="Mentor"
-                    className="w-[40%] h-fit md:w-fit rounded-2xl"
+                    className="w-[40%] h-fit md:h-full md:w-fit rounded-2xl"
                   />
                   <div className="flex flex-col justify-center gap-y-1">
                     <h2 className="text-xl sm:text-3xl font-bold mb-1">
