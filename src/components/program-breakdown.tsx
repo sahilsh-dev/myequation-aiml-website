@@ -79,7 +79,7 @@ export default function ProgramBreakdown() {
                 Program Breakdown
               </h2>
             </div>
-            <div className="max-w-6xl mx-auto w-full px-2 sm:px-4">
+            <div className="max-w-6xl mx-auto w-full sm:px-2">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
                 {courses.map((course, index) => (
                   <div
@@ -126,13 +126,13 @@ export default function ProgramBreakdown() {
 
                     {/* Bottom Stats */}
                     <div className="flex md:flex-row gap-2 sm:gap-4 sm:justify-between">
-                      <div className="flex items-center gap-2 bg-black/30 border rounded-xl py-2 px-4 md:px-8 border-white/20">
+                      <div className="flex items-center gap-2 bg-black/30 border rounded-xl py-2 px-2 md:px-8 border-white/20">
                         <Video className="w-6 h-6 md:w-4 md:h-4 text-white" />
                         <span className="text-white text-xs md:text-sm font-medium">
                           {course.videos} Video Lectures
                         </span>
                       </div>
-                      <div className="flex items-center gap-2 bg-black/30 border rounded-xl py-2 px-4 md:px-8 border-white/20">
+                      <div className="flex items-center gap-2 bg-black/30 border rounded-xl py-2 px-2 md:px-8 border-white/20">
                         <Clock className="w-6 h-6 md:w-4 md:h-4 text-white" />
                         <span className="text-white text-xs md:text-sm font-medium">
                           {course.hours} Hour Content

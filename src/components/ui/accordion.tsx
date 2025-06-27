@@ -39,7 +39,7 @@ export default function Accordion({
               onClick={() => toggleItem(item.id)}
               className="w-full px-6 py-4 text-left  hover:bg-gray-900 transition-colors duration-300 flex items-center justify-between"
             >
-              <span className="text-white font-medium text-lg">{item.title}</span>
+              <span className="text-white font-medium text-sm md:text-lg">{item.title}</span>
               {expandedItems.includes(item.id) ? (
                 <ChevronUp className="w-5 h-5 text-yellow-400" />
               ) : (
@@ -60,7 +60,7 @@ export default function Accordion({
                 transitionProperty: "max-height, opacity, padding",
               }}
             >
-              <p className="text-gray-300 leading-relaxed">{item.description}</p>
+              <p className="text-gray-300 leading-relaxed text-xs md:text-sm">{item.description}</p>
             </div>
           </div>
         </ScrollReveal>
