@@ -48,7 +48,7 @@ export default function Navbar() {
       className={cn(
         "sticky z-50 w-full transition-all duration-500 ease-in-out",
         isScrolled
-          ? "top-0 border-b-white backdrop-blur supports-[backdrop-filter]:bg-background/60 h-full bg-background/95"
+          ? "top-0 border-b backdrop-blur supports-[backdrop-filter]:bg-background/60 h-full bg-background/95"
           : "top-4 md:px-16"
       )}
     >

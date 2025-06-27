@@ -15,9 +15,13 @@ export default function CertificateSection() {
             Certificates awarded in partnership with
           </h2>
           <div className="flex items-center justify-center mt-5">
-            <Image src={nvidiaLogo} alt="NVIDIA Logo" className="w-24" />
+            <Image
+              src={nvidiaLogo}
+              alt="NVIDIA Logo"
+              className="w-16 md:w-24"
+            />
             <Separator orientation="vertical" className="mx-7 h-16" />
-            <Image src={ibmLogo} alt="IBM Logo" className="w-32" />
+            <Image src={ibmLogo} alt="IBM Logo" className="w-24 md:w-32" />
           </div>
         </ScrollReveal>
       </div>
