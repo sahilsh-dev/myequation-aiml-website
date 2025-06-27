@@ -75,7 +75,7 @@ export default function Hero() {
       <div className="flex flex-col gap-4 sm:flex-row sm:justify-center ">
         <Button size="lg">
           Start Learning Now
-          <IoRocketOutline size={32} className="ml-1" />
+          <IoRocketOutline size={32} className="ml-1 animate-bounce" />
         </Button>
         <Button variant="outline" size="lg">
           View Details

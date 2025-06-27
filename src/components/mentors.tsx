@@ -39,7 +39,7 @@ export default function Mentors() {
               key={mentor.name}
             >
               <CardContent className="p-4 sm:p-7 h-full flex flex-col justify-center text-white">
-                <div className="flex gap-4 sm:gap-7 h-full">
+                <div className="flex gap-4 sm:gap-7 h-full justify-center items-center">
                   <Image
                     src={mentor.image}
                     alt="Mentor"

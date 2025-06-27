@@ -159,7 +159,7 @@ export default function Navbar() {
               <Button size="sm" asChild className="hover:cursor-pointer">
                 <div>
                   <Link href="#enroll">Register Now</Link>
-                  <IoRocketOutline size={40} />
+                  <IoRocketOutline size={40} className="animate-bounce" />
                 </div>
               </Button>
             </div>
