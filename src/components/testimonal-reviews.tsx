@@ -95,11 +95,10 @@ export default function TestimonialReviews() {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
         key={i}
-        className={`w-3 h-3 md:w-4 md:h-4 ${
-          i < rating
-            ? "fill-yellow-400 text-yellow-400"
-            : "fill-gray-600 text-gray-600"
-        }`}
+        className={`w-3 h-3 md:w-4 md:h-4  ${i < rating
+          ? "fill-yellow-400 text-yellow-400"
+          : "fill-gray-600 text-gray-600"
+          }`}
       />
     ));
   };
@@ -107,14 +106,14 @@ export default function TestimonialReviews() {
   // Transform testimonials for the InfiniteMovingCards component
   const movingCardItems = reviews.map((review) => ({
     quote: (
-      <div className="flex flex-col items-center text-center space-y-2 md:space-y-4 h-full">
+      <div className="flex flex-col items-center text-center space-y-2 md:space-y-4 h-full ">
         {/* Star Rating */}
         <div className="flex gap-1 justify-center">
           {renderStars(review.rating)}
         </div>
 
         {/* review Text */}
-        <div className="flex-1 flex flex-col justify-center">
+        <div className="flex-1 flex flex-col justify-center ">
           <p className="text-xs md:text-sm leading-relaxed mb-2">
             {review.shortText}
           </p>
