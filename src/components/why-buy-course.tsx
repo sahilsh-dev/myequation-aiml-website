@@ -46,7 +46,7 @@ const carouselItems = [
 
 export default function WhyBuyCourse() {
   return (
-    <section className="container w-full my-[10%] px-6 md:px-16 flex flex-col items-center justify-center">
+    <section className="overflow-hidden container w-full my-[10%] px-16 md:px-16 flex flex-col items-center justify-center">
       <div className="text-center mb-5 md:mb-16">
         <ScrollReveal direction="up">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8">
@@ -61,11 +61,14 @@ export default function WhyBuyCourse() {
       >
         <CarouselContent>
           {carouselItems.map((item, index) => (
-            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
+            <CarouselItem
+              key={index}
+              className="md:basis-1/2 lg:basis-1/4 z-50"
+            >
               <div className="p-1">
-                <ScrollReveal direction="up" delay={0.2 * index}>
+                <ScrollReveal direction="up" delay={0.1 * index}>
                   <Card className="bg-gray-900 hover:bg-gradient-to-br hover:from-[hsl(var(--card))] hover:to-[#304a86] hover:scale-105 cursor-pointer rounded-lg transition-all duration-300 my-5">
-                  <CardContent className="flex flex-col gap-4 aspect-square items-start justify-center p-6">
+                    <CardContent className="flex flex-col gap-4 aspect-square items-start justify-center p-6">
                       <GiAchievement className="text-blue-500 text-4xl mb-2" />
                       <div className="text-left">
                         <h3 className="text-xl font-semibold mb-2 text-white">
@@ -73,7 +76,7 @@ export default function WhyBuyCourse() {
                         </h3>
                         <p className="text-gray-400">{item.body}</p>
                       </div>
-                  </CardContent>
+                    </CardContent>
                   </Card>
                 </ScrollReveal>
               </div>
