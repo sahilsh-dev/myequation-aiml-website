@@ -65,7 +65,6 @@ const courses = [
 export default function ProgramBreakdown() {
   return (
     <ScrollReveal direction="up" delay={0.2}>
-
       <section
         id="curriculum"
         className="scroll-mt-28 container relative min-h-[80dvh] space-y-4 md-space-y-16 py-24 md:py-32 w-[90vw] flex flex-col items-center justify-center"
@@ -109,7 +108,7 @@ export default function ProgramBreakdown() {
                     </div>
 
                     {/* Features Section */}
-                    <div className="flex-1 space-y-4 mb-8">
+                    <div className="flex-1 space-y-4 mb-2 md:mb-8">
                       {course.features.map((feature, featureIndex) => (
                         <div
                           key={featureIndex}
@@ -126,15 +125,15 @@ export default function ProgramBreakdown() {
                     </div>
 
                     {/* Bottom Stats */}
-                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 sm:justify-between">
+                    <div className="flex md:flex-row gap-2 sm:gap-4 sm:justify-between">
                       <div className="flex items-center gap-2 bg-black/30 border rounded-xl py-2 px-4 md:px-8 border-white/20">
-                        <Video className="w-4 h-4 text-white" />
+                        <Video className="w-6 h-6 md:w-4 md:h-4 text-white" />
                         <span className="text-white text-xs md:text-sm font-medium">
                           {course.videos} Video Lectures
                         </span>
                       </div>
                       <div className="flex items-center gap-2 bg-black/30 border rounded-xl py-2 px-4 md:px-8 border-white/20">
-                        <Clock className="w-4 h-4 text-white" />
+                        <Clock className="w-6 h-6 md:w-4 md:h-4 text-white" />
                         <span className="text-white text-xs md:text-sm font-medium">
                           {course.hours} Hour Content
                         </span>
@@ -148,6 +147,5 @@ export default function ProgramBreakdown() {
         </ScrollReveal>
       </section>
     </ScrollReveal>
-
   );
 }
