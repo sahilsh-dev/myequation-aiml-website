@@ -66,7 +66,6 @@ export default function RootLayout({
         className={`${primaryFont.className} ${secondaryFont.className} bg-background text-foreground h-dvh antialiased`}
       >
         <ReactLenis root>{children}</ReactLenis>
-        <PromotionalBanner />
       </body>
     </html>
   );
