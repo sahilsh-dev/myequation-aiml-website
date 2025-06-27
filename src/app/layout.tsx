@@ -4,7 +4,7 @@ import type React from "react";
 import type { Metadata } from "next";
 import { ReactLenis } from "@/lib/lenis";
 import "lenis/dist/lenis.css";
-
+import PromotionalBanner from "@/components/promotional-banner";
 export const metadata: Metadata = {
   title: "MyEquation AI/ML Program",
   description:
@@ -66,6 +66,7 @@ export default function RootLayout({
         className={`${primaryFont.className} ${secondaryFont.className} bg-background text-foreground h-dvh antialiased`}
       >
         <ReactLenis root>{children}</ReactLenis>
+        <PromotionalBanner />
       </body>
     </html>
   );
