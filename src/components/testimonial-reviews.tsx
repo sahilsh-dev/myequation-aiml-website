@@ -143,7 +143,7 @@ export default function TestimonialReviews() {
 
       {/* Modal */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="bg-gray-900 border-gray-600 text-white w-[85vw] max-w-2xl px-4 md:px-6">
+        <DialogContent className="bg-gray-900 border-gray-600 text-white w-[85vw] max-w-2xl px-4 md:px-6 rounded-2xl">
           <DialogHeader>
             <DialogTitle className="text-xl font-semibold text-center">
               Full Testimonial
