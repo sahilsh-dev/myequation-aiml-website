@@ -46,7 +46,7 @@ const carouselItems = [
 
 export default function WhyBuyCourse() {
   return (
-    <section className="overflow-hidden container w-full my-[5%] px-16 md:px-16 flex flex-col items-center justify-center">
+    <section className="overflow-hidden container w-full my-[5%] md:my-[10%] px-16 md:px-16 flex flex-col items-center justify-center">
       <div className="text-center mb-5 md:mb-16">
         <ScrollReveal direction="up">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8">
