@@ -55,7 +55,7 @@ export default function Hero() {
             <Image
               src={doodleImg}
               alt="Doodle"
-              className="absolute -bottom-2 w-full"
+              className="absolute -bottom-1 md:-bottom-2 w-full"
             />
           </span>
           {/* Gradient‐clipped subtitle */}

@@ -24,12 +24,12 @@ export default function ProgramInfo() {
   ];
 
   return (
-    <section className="container my-[5%]">
+    <section className="container my-[5%] w-[95vw] px-2 md:px-8">
       <div className="mx-auto max-w-5xl">
         {/* Main card container */}
         <div className="overflow-hidden rounded-3xl bg-gradient-to-br from-blue-50 to-blue-100 p-2 pt-8 md:p-12">
           {/* Stats section */}
-          <div className="mb-4 sm:mb-8 flex justify-between pt-[5%] sm:mx-[5%] gap-3">
+          <div className="mb-4 sm:mb-8 flex justify-evenly pt-[5%] sm:mx-[5%] gap-3">
             {programInfoData.map((item) => (
               <div className="flex items-center" key={item.label}>
                 <div className="relative rounded-2xl bg-white px-2 sm:px-6 py-2 text-center">
