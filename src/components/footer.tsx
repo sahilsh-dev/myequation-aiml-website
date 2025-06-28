@@ -1,8 +1,8 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Github, Twitter, Linkedin } from "lucide-react"
-import { FaMedium, FaInstagram, FaYoutube, FaLink } from "react-icons/fa"
-import myEquationLogo from "@/assets/myequationlogo.png"
+import Image from "next/image";
+import Link from "next/link";
+import { Github, Twitter, Linkedin } from "lucide-react";
+import { FaMedium, FaInstagram, FaYoutube, FaLink } from "react-icons/fa";
+import myEquationLogo from "@/assets/myequationlogo.png";
 
 export default function Footer() {
   return (
@@ -22,7 +22,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="grid flex-1 grid-cols-2 gap-12 sm:grid-cols-3">
+        <div className="flex-1 flex justify-between flex-wrap">
           <div className="space-y-4">
             <h3 className="text-sm font-medium">Onboarding Manager's</h3>
             <ul className="space-y-3 text-sm">
@@ -30,7 +30,6 @@ export default function Footer() {
               <li className="text-muted-foreground">Kaustuv - 9337837362</li>
             </ul>
           </div>
-
 
           <div className="space-y-4 px-8 md:px-0">
             <h3 className="text-sm font-medium">Company</h3>
@@ -54,26 +53,17 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="space-y-4">
+          <div className="space-y-4 flex-grow-0 mt-10 md:mt-0">
             <h3 className="text-sm font-medium">Find Us Here</h3>
             <div className="flex flex-wrap gap-4 items-center">
               <a
-                href="https://www.linkedin.com/company/my-equation/posts/?feedView=all"
+                href="https://www.youtube.com/@MyEquation"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground transition-colors hover:text-primary"
               >
-                <Linkedin className="h-4 w-4" />
-                <span className="sr-only">LinkedIn</span>
-              </a>
-              <a
-                href="https://medium.com/@myequation"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-muted-foreground transition-colors hover:text-primary"
-              >
-                <FaMedium className="h-4 w-4" />
-                <span className="sr-only">Medium</span>
+                <FaYoutube className="h-4 w-4" />
+                <span className="sr-only">YouTube</span>
               </a>
               <a
                 href="https://www.instagram.com/myequation.in/"
@@ -85,6 +75,15 @@ export default function Footer() {
                 <span className="sr-only">Instagram</span>
               </a>
               <a
+                href="https://www.linkedin.com/company/my-equation/posts/?feedView=all"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground transition-colors hover:text-primary"
+              >
+                <Linkedin className="h-4 w-4" />
+                <span className="sr-only">LinkedIn</span>
+              </a>
+              <a
                 href="https://linktr.ee/MyEquation"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -94,13 +93,13 @@ export default function Footer() {
                 <span className="sr-only">Linktree</span>
               </a>
               <a
-                href="https://www.youtube.com/@MyEquation"
+                href="https://medium.com/@myequation"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground transition-colors hover:text-primary"
               >
-                <FaYoutube className="h-4 w-4" />
-                <span className="sr-only">YouTube</span>
+                <FaMedium className="h-4 w-4" />
+                <span className="sr-only">Medium</span>
               </a>
             </div>
           </div>
@@ -113,5 +112,5 @@ export default function Footer() {
         </p>
       </div>
     </footer>
-  )
+  );
 }
