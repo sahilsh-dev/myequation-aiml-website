@@ -22,7 +22,7 @@ export default function Footer() {
           </p>
         </div>
 
-        <div className="flex-1 flex justify-between flex-wrap">
+        <div className="flex-1 flex justify-between flex-wrap gap-2 gap-y-8">
           <div className="space-y-4">
             <h3 className="text-sm font-medium">Onboarding Manager's</h3>
             <ul className="space-y-3 text-sm">
@@ -53,7 +53,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="space-y-4 flex-grow-0 mt-10 md:mt-0">
+          <div className="space-y-4 flex-grow-1">
             <h3 className="text-sm font-medium">Find Us Here</h3>
             <div className="flex flex-wrap gap-4 items-center">
               <a
