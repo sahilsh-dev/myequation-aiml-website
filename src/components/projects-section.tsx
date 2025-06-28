@@ -38,7 +38,7 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <section className="w-full py-16 md:px-2 md:py-32 my-10">
+    <section className="w-full py-7 md:px-2 md:py-32 my-10">
       <ScrollReveal direction="up">
         <div className="container mx-auto max-w-7xl">
           {/* Header */}
@@ -68,7 +68,6 @@ export default function ProjectsSection() {
             </div>
 
             <Accordion items={projects} className="space-y-4" />
-
           </div>
         </div>
       </ScrollReveal>
