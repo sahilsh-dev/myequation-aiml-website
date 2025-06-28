@@ -1,47 +1,57 @@
 import { InfiniteMovingVideos } from "@/components/ui/infinite-moving-videos";
-
 const videoTestimonials = [
   {
     videoUrl:
       "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
     name: "Alex Thompson",
     title: "Software Engineer",
-    thumbnail: "/placeholder.svg?height=256&width=600",
+    thumbnail: "/video-thumbnail.png",
+    thumbnailWidth: 600,
+    thumbnailHeight: 256,
   },
   {
     videoUrl:
       "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
     name: "Maria Garcia",
-    title: "Data Scientist",
-    thumbnail: "/placeholder.svg?height=256&width=600",
+    title: "/video-thumbnail.png",
+    thumbnailWidth: 600,
+    thumbnailHeight: 256,
   },
   {
     videoUrl:
       "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
     name: "James Wilson",
     title: "Product Manager",
-    thumbnail: "/placeholder.svg?height=256&width=650",
+    thumbnail: "/video-thumbnail.png",
+    thumbnailWidth: 650,
+    thumbnailHeight: 256,
   },
   {
     videoUrl:
       "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
     name: "Sarah Chen",
     title: "UX Designer",
-    thumbnail: "/placeholder.svg?height=256&width=680",
+    thumbnail: "/video-thumbnail.png",
+    thumbnailWidth: 680,
+    thumbnailHeight: 256,
   },
   {
     videoUrl:
       "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4",
     name: "David Kumar",
     title: "DevOps Engineer",
-    thumbnail: "/placeholder.svg?height=256&width=620",
+    thumbnail: "/video-thumbnail.png",
+    thumbnailWidth: 620,
+    thumbnailHeight: 256,
   },
   {
     videoUrl:
       "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
     name: "Emma Rodriguez",
     title: "Business Analyst",
-    thumbnail: "/placeholder.svg?height=256&width=660",
+    thumbnail: "/video-thumbnail.png",
+    thumbnailWidth: 660,
+    thumbnailHeight: 256,
   },
 ];
 
