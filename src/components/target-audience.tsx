@@ -46,10 +46,10 @@ export default function TargetAudience() {
         </ScrollReveal>
 
         {/* Grid of Target Audiences */}
-        <ScrollReveal direction="up" delay={0.2}>
+        <ScrollReveal direction="up" delay={0.1}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {targetAudiences.map((audience) => (
-              <ScrollReveal direction="up" delay={0.2 * audience.id} key={audience.id}>
+              <ScrollReveal direction="up" delay={0.1 * audience.id} key={audience.id}>
                 <div
                   key={audience.id}
                   className="flex flex-col justify-between border rounded-2xl bg-black/20"

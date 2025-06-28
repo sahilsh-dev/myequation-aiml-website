@@ -38,7 +38,7 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <ScrollReveal direction="up" delay={0.1}>
+    <ScrollReveal direction="up" >
       <section className="w-full py-16 md:px-4 md:py-24">
         <div className="container mx-auto max-w-7xl">
           {/* Main Content */}

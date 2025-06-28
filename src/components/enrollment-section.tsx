@@ -58,7 +58,7 @@ export default function EnrollmentSection() {
           <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12">
             {/* Image Section */}
             <div className="w-full lg:w-1/2">
-              <ScrollReveal direction="up" delay={0.1}>
+              <ScrollReveal direction="up" >
                 <div className="relative w-full h-48 sm:h-64 md:h-72 lg:h-80 xl:h-96 rounded-lg overflow-hidden">
                   <Image
                     src={enrollImg}
@@ -75,7 +75,7 @@ export default function EnrollmentSection() {
             <div className="w-full lg:w-1/2">
               <div className="bg-black/75 border border-gray-800 rounded-3xl p-6 sm:p-8 h-full flex flex-col justify-center">
 
-                <ScrollReveal direction="up" delay={0.1}>
+                <ScrollReveal direction="up" >
                   <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                     {/* Name Input */}
                     <input

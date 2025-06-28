@@ -64,7 +64,7 @@ const courses = [
 
 export default function ProgramBreakdown() {
   return (
-    <ScrollReveal direction="up" delay={0.2}>
+    <ScrollReveal direction="up" >
       <section
         id="curriculum"
         className="scroll-mt-28 container relative min-h-[80dvh] space-y-4 md-space-y-16 py-24 md:py-32 w-[90vw] flex flex-col items-center justify-center"
@@ -72,7 +72,7 @@ export default function ProgramBreakdown() {
         <div className="absolute -z-10 w-full mx-auto h-[93%]">
           <AnimatedGradient className="rounded-3xl" />
         </div>
-        <ScrollReveal direction="up" delay={0.2}>
+        <ScrollReveal direction="up" delay={0.1}>
           <div>
             <div className="mx-auto max-w-[58rem] text-center">
               <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-5xl mb-[7%]">

@@ -4,7 +4,7 @@ import { ScrollReveal } from "./ui/scroll-reveal";
 
 export default function TestimonialSection() {
   return (
-    <ScrollReveal direction="up" delay={0.1}>
+    <ScrollReveal direction="up" >
       <div className="section w-full py-6 sm:py-10 md:py-14 overflow-hidden">
         <div className="max-w-screen-2xl rounded-2xl p-6 sm:p-8 md:p-12 flex flex-col gap-8 sm:gap-10 md:gap-12 mx-auto">
           {/* Heading and Description Section */}

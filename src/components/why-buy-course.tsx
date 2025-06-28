@@ -48,7 +48,7 @@ export default function WhyBuyCourse() {
   return (
     <section className="overflow-hidden container w-full my-[5%] md:my-[10%] px-16 md:px-16 flex flex-col items-center justify-center">
       <div className="text-center mb-5 md:mb-16">
-        <ScrollReveal direction="up">
+        <ScrollReveal direction="up" delay={0.1}>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8">
             Why you should{" "}
             <span className="text-yellow-500">Buy this Course</span>
@@ -59,14 +59,15 @@ export default function WhyBuyCourse() {
         className="w-full max-w-screen-xl mx-auto"
         opts={{ align: "start", dragFree: true }}
       >
+
         <CarouselContent>
           {carouselItems.map((item, index) => (
             <CarouselItem
               key={index}
               className="md:basis-1/2 lg:basis-1/4 z-50"
             >
-              <div className="p-1">
-                <ScrollReveal direction="up">
+              <ScrollReveal direction="up" delay={0.1 + index * 0.1}>
+                <div className="p-1">
                   <Card className="bg-gray-900 hover:bg-gradient-to-br hover:from-[hsl(var(--card))] hover:to-[#304a86] hover:scale-105 cursor-pointer rounded-lg transition-all duration-300 my-5">
                     <CardContent className="flex flex-col gap-4 aspect-square items-start justify-center p-4">
                       <GiAchievement className="text-blue-500 text-4xl mb-2" />
@@ -80,14 +81,14 @@ export default function WhyBuyCourse() {
                       </div>
                     </CardContent>
                   </Card>
-                </ScrollReveal>
-              </div>
+                </div>
+              </ScrollReveal>
             </CarouselItem>
           ))}
         </CarouselContent>
         <CarouselPrevious />
         <CarouselNext />
       </Carousel>
-    </section>
+    </section >
   );
 }

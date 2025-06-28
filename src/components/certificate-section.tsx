@@ -25,7 +25,7 @@ export default function CertificateSection() {
           </div>
         </ScrollReveal>
       </div>
-      <ScrollReveal direction="up" delay={0.2}>
+      <ScrollReveal direction="up" delay={0.1}>
         <Certificate />
       </ScrollReveal>
     </section>
