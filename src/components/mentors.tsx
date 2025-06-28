@@ -3,6 +3,8 @@ import Image from "next/image";
 import mentor1 from "@/assets/mentors_image/mentor1.png";
 import mentor2 from "@/assets/mentors_image/mentor2.png";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
+
 const mentors = [
   {
     name: "Soumya SV",
@@ -32,36 +34,48 @@ export default function Mentors() {
           </h2>
         </div>
 
-        <div className="flex w-full px-2 mx-auto items-center justify-center gap-4 flex-wrap">
+        <div className="flex w-full px-2 mx-auto items-center justify-center gap-3 md:gap-5 flex-wrap">
           {mentors.map((mentor, index) => (
-            <Card
-              className="sm:w-[min(45vw, 30rem)] sm:h-60 bg-gradient-to-br from-[#01010a] to-[#090a13] border border-white/20 shadow-lg rounded-2xl flex-grow"
-              key={mentor.name}
-            >
-              <CardContent className="p-4 sm:p-7 h-full flex flex-col justify-center text-white">
-                <div className="flex gap-4 sm:gap-7 h-full justify-center items-center">
-                  <Image
-                    src={mentor.image}
-                    alt="Mentor"
-                    className="w-[40%] h-fit md:h-full md:w-fit rounded-2xl"
-                  />
-                  <div className="flex flex-col justify-center gap-y-1">
-                    <h2 className="text-xl sm:text-3xl font-bold mb-1">
-                      {mentor.name}
-                    </h2>
-                    <h3 className="text-sm sm:text-lg opacity-90 mb-0.5">
-                      {mentor.title}
-                    </h3>
-                    <h3 className="text-sm sm:text-lg opacity-80">
-                      {mentor.company}
-                    </h3>
+            <MentorCard key={index}>
+              <Card
+                className="sm:w-[min(45vw, 30rem)] sm:h-60 bg-gradient-to-br from-[#01010a] to-[#090a13] border border-white/20 shadow-lg rounded-2xl flex-grow"
+                key={mentor.name}
+              >
+                <CardContent className="p-4 sm:p-7 h-full flex flex-col justify-center text-white">
+                  <div className="flex gap-4 sm:gap-7 h-full justify-center items-center">
+                    <Image
+                      src={mentor.image}
+                      alt="Mentor"
+                      className="w-[40%] h-fit md:h-full md:w-fit rounded-2xl"
+                    />
+                    <div className="flex flex-col justify-center gap-y-1">
+                      <h2 className="text-xl sm:text-3xl font-bold mb-1">
+                        {mentor.name}
+                      </h2>
+                      <h3 className="text-sm sm:text-lg opacity-90 mb-0.5">
+                        {mentor.title}
+                      </h3>
+                      <h3 className="text-sm sm:text-lg opacity-80">
+                        {mentor.company}
+                      </h3>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </MentorCard>
           ))}
         </div>
       </ScrollReveal>
     </section>
+  );
+}
+
+function MentorCard({ children }: { children: React.ReactNode }) {
+  return (
+    <CardContainer className="inter-var">
+      <CardBody className="w-auto">
+        <CardItem translateZ="50">{children}</CardItem>
+      </CardBody>
+    </CardContainer>
   );
 }
