@@ -21,6 +21,10 @@ export default function Accordion({
   const [expandedItem, setExpandedItem] = useState<number>();
 
   const toggleItem = (id: number) => {
+    if (expandedItem === id) {
+      setExpandedItem(undefined);
+      return;
+    }
     setExpandedItem(id);
   };
 

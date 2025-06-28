@@ -57,7 +57,7 @@ export default function FAQ() {
                 <p className="text-gray-300 text-base mb-8">
                   Reach out to us in case of any doubts!
                 </p>
-                <button className="flex mx-auto items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-lg border border-gray-600 transition-colors duration-300">
+                <button className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-lg border border-gray-600 transition-colors duration-300">
                   <svg
                     className="w-4 h-4"
                     fill="none"
