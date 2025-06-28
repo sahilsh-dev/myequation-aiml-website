@@ -30,8 +30,8 @@ export default function Accordion({
 
   return (
     <div className={cn("space-y-4", className)}>
-      {items.map((item) => (
-        <ScrollReveal direction="up" key={item.id} delay={0.1 * item.id}>
+      <ScrollReveal direction="up">
+        {items.map((item) => (
           <div
             key={item.id}
             className="border border-gray-600 rounded-lg overflow-hidden"
@@ -67,8 +67,8 @@ export default function Accordion({
               </p>
             </div>
           </div>
-        </ScrollReveal>
-      ))}
+        ))}
+      </ScrollReveal>
     </div>
   );
 }
