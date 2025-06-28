@@ -46,7 +46,7 @@ const reviews: Review[] = [
     title: "Product Manager",
     rating: 5,
     shortText:
-      "Outstanding course content with practical applications. The instructors were responsive and the learning materials were...",
+      "Outstanding course content with practical applications. The instructors were responsive and the learning...",
     fullText:
       "Outstanding course content with practical applications. The instructors were responsive and the learning materials were top-notch. As a product manager, I needed to understand AI/ML concepts to better collaborate with technical teams. This course provided exactly what I needed - a perfect balance of theory and practical knowledge. The assignments were challenging yet achievable, and the feedback was constructive and timely.",
   },
@@ -95,10 +95,11 @@ export default function TestimonialReviews() {
     return Array.from({ length: 5 }, (_, i) => (
       <Star
         key={i}
-        className={`w-3 h-3 md:w-4 md:h-4  ${i < rating
-          ? "fill-yellow-400 text-yellow-400"
-          : "fill-gray-600 text-gray-600"
-          }`}
+        className={`w-3 h-3 md:w-4 md:h-4  ${
+          i < rating
+            ? "fill-yellow-400 text-yellow-400"
+            : "fill-gray-600 text-gray-600"
+        }`}
       />
     ));
   };
@@ -142,7 +143,7 @@ export default function TestimonialReviews() {
 
       {/* Modal */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="bg-gray-900 border-gray-600 text-white max-w-2xl">
+        <DialogContent className="bg-gray-900 border-gray-600 text-white w-[85vw] max-w-2xl px-4 md:px-6">
           <DialogHeader>
             <DialogTitle className="text-xl font-semibold text-center">
               Full Testimonial
