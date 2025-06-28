@@ -34,7 +34,10 @@ export default function EnrollmentSection() {
   };
 
   return (
-    <div id="enroll" className="scroll-mt-28 w-full py-8 px-4 sm:py-12 md:py-16">
+    <div
+      id="enroll"
+      className="scroll-mt-28 w-full py-8 px-4 sm:py-12 md:py-16"
+    >
       {/* Main Container */}
       <ScrollReveal direction="up">
         <div className="mx-auto max-w-6xl rounded-2xl p-6 sm:p-8 md:p-12 flex flex-col gap-8 sm:gap-10 md:gap-12">
@@ -52,13 +55,12 @@ export default function EnrollmentSection() {
             </p>
           </div>
 
-
           {/* Image and Form Section */}
 
           <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12">
             {/* Image Section */}
             <div className="w-full lg:w-1/2">
-              <ScrollReveal direction="up" delay={0.1}>
+              <ScrollReveal direction="up">
                 <div className="relative w-full h-48 sm:h-64 md:h-72 lg:h-80 xl:h-96 rounded-lg overflow-hidden">
                   <Image
                     src={enrollImg}
@@ -74,51 +76,51 @@ export default function EnrollmentSection() {
             {/* Form Section */}
             <div className="w-full lg:w-1/2">
               <div className="bg-black/75 border border-gray-800 rounded-3xl p-6 sm:p-8 h-full flex flex-col justify-center">
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-4 sm:space-y-6"
+                >
+                  {/* Name Input */}
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className="w-full h-12 sm:h-14 rounded-xl px-4 bg-gray-800 border border-gray-600 text-white placeholder-gray-400 text-sm sm:text-base outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
+                    required
+                  />
 
-                <ScrollReveal direction="up" delay={0.1}>
-                  <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-                    {/* Name Input */}
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      className="w-full h-12 sm:h-14 rounded-xl px-4 bg-gray-800 border border-gray-600 text-white placeholder-gray-400 text-sm sm:text-base outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
-                      required
-                    />
+                  {/* Email Input */}
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full h-12 sm:h-14 rounded-xl px-4 bg-gray-800 border border-gray-600 text-white placeholder-gray-400 text-sm sm:text-base outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
+                    required
+                  />
 
-                    {/* Email Input */}
-                    <input
-                      type="email"
-                      name="email"
-                      placeholder="Email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="w-full h-12 sm:h-14 rounded-xl px-4 bg-gray-800 border border-gray-600 text-white placeholder-gray-400 text-sm sm:text-base outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
-                      required
-                    />
+                  {/* Phone Input */}
+                  <input
+                    type="tel"
+                    name="phone"
+                    placeholder="Phone Number*"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="w-full h-12 sm:h-14 rounded-xl px-4 bg-gray-800 border border-gray-600 text-white placeholder-gray-400 text-sm sm:text-base outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
+                    required
+                  />
 
-                    {/* Phone Input */}
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder="Phone Number*"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="w-full h-12 sm:h-14 rounded-xl px-4 bg-gray-800 border border-gray-600 text-white placeholder-gray-400 text-sm sm:text-base outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
-                      required
-                    />
-
-                    {/* Submit Button */}
-                    <button
-                      type="submit"
-                      className="w-full h-12 sm:h-14 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
-                    >
-                      Submit
-                    </button>
-                  </form>
-                </ScrollReveal>
+                  {/* Submit Button */}
+                  <button
+                    type="submit"
+                    className="w-full h-12 sm:h-14 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
+                  >
+                    Submit
+                  </button>
+                </form>
               </div>
             </div>
           </div>
