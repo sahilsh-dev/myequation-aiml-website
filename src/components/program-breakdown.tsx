@@ -64,7 +64,7 @@ const courses = [
 
 export default function ProgramBreakdown() {
   return (
-    <ScrollReveal direction="up" >
+    <ScrollReveal direction="up">
       <section
         id="curriculum"
         className="scroll-mt-28 container relative min-h-[80dvh] space-y-4 md-space-y-16 py-24 md:py-32 w-[90vw] flex flex-col items-center justify-center"
