@@ -91,11 +91,11 @@ export const InfiniteMovingVideos = ({
             className="relative shrink-0 rounded-xl border border-gray-600/50 bg-gray-900/80 backdrop-blur-sm p-4 hover:bg-gray-900/90 transition-all duration-300"
             key={`${item.name}-${idx}`}
           >
-            <div className="flex flex-col items-center space-y-4">
+            <div className="flex flex-col items-center space-y-4 h-full">
               {/* Video Container */}
-              <div className="relative w-full h-60 md:h-80 bg-gray-900 rounded-lg overflow-hidden">
+              <div className="relative w-full h-32 md:h-80 bg-gray-900 rounded-lg overflow-hidden">
                 <video
-                  className="w-80 md:w-[450px] h-full object-cover"
+                  className="w-48 md:w-[450px] h-full object-cover"
                   controls
                   preload="metadata"
                   poster={item.thumbnail}
