@@ -24,17 +24,17 @@ export default function Mentors() {
   return (
     <section
       id="Mentors"
-      className="scroll-mt-28 container w-full max-w-[1200px] mx-auto pt-20 mb-16 sm:mb-32"
+      className="scroll-mt-28 container w-full max-w-[1200px] mx-auto pt-10 md:pt-20 mb-10 sm:mb-32"
     >
       {/* Section Title */}
       <ScrollReveal direction="up">
-        <div className="text-center mb-12 px-4">
+        <div className="text-center mb-5 md:mb-12 px-4">
           <h2 className="font-bold text-[clamp(28px,5vw,48px)] leading-tight text-white m-0">
             Learn From The <span className="text-yellow-400">Best Mentors</span>
           </h2>
         </div>
 
-        <div className="flex w-full px-2 mx-auto items-center justify-center gap-3 md:gap-5 flex-wrap">
+        <div className="flex w-full px-2 mx-auto items-center justify-center md:gap-5 flex-wrap">
           {mentors.map((mentor, index) => (
             <MentorCard key={index}>
               <Card
