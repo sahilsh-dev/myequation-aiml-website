@@ -29,8 +29,8 @@ export default function Accordion({
   };
 
   return (
-    <div className={cn("space-y-4", className)}>
-      <ScrollReveal direction="up">
+    <ScrollReveal direction="up">
+      <div className={cn("space-y-4", className)}>
         {items.map((item) => (
           <div
             key={item.id}
@@ -68,7 +68,7 @@ export default function Accordion({
             </div>
           </div>
         ))}
-      </ScrollReveal>
-    </div>
+      </div>
+    </ScrollReveal>
   );
 }
