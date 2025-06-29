@@ -1,21 +1,41 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function PromotionalBanner() {
-  const [showBanner, setShowBanner] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [showBanner, setShowBanner] = useState(false);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      setShowBanner(currentScrollY > lastScrollY);
-      setLastScrollY(currentScrollY);
-    };
+    const mentorsSection = document.getElementById("mentors");
+    if (!mentorsSection) return;
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+    // Clean up any previous observer
+    if (observerRef.current) {
+      observerRef.current.disconnect();
+    }
+
+    observerRef.current = new window.IntersectionObserver(
+      ([entry]) => {
+        // If the mentors section is NOT intersecting (out of view), show the banner
+        setShowBanner(
+          !entry.isIntersecting && entry.boundingClientRect.top < 0
+        );
+      },
+      {
+        root: null,
+        threshold: 0,
+      }
+    );
+
+    observerRef.current.observe(mentorsSection);
+    // Clean up observer on unmount
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, []);
 
   return (
     <div
@@ -42,10 +62,10 @@ export default function PromotionalBanner() {
             {/* Right-side: Price + Button grouped */}
             <div className="flex items-center gap-6 ml-auto">
               <div className="flex items-center gap-3">
-                <span className="text-yellow-300 font-bold text-4xl">
+                <span className="text-yellow-300 font-bold text-3xl">
                   Rs. 4999
                 </span>
-                <span className="text-gray-400 line-through text-xl font-medium">
+                <span className="text-gray-400 line-through text-lg font-medium">
                   Rs. 8000
                 </span>
               </div>
@@ -56,7 +76,7 @@ export default function PromotionalBanner() {
           </div>
 
           {/* Mobile Layout */}
-          <div className="md:hidden space-y-2">
+          <div className="md:hidden space-y-1">
             {/* First Line: Offer Text - Centered */}
             <div className="flex items-center justify-center gap-2">
               <span className="text-xl">🎉</span>
@@ -72,7 +92,7 @@ export default function PromotionalBanner() {
             {/* Second Line: Price and Button - Balanced */}
             <div className="flex items-center justify-between px-2">
               <div className="flex items-center gap-2">
-                <span className="text-yellow-300 font-bold text-1xl">
+                <span className="text-yellow-300 font-bold text-xl">
                   Rs. 4999
                 </span>
                 <span className="text-gray-400 line-through text-sm font-medium">

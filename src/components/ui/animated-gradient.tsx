@@ -17,7 +17,7 @@ export default function AnimatedGradient({
       "rgba(255, 0, 180, 1.0)",
       "rgba(180, 0, 255, 1.0)",
       "rgba(0, 255, 255, 1.0)",
-      "rgba(10, 140, 255, 1.0)",
+      "rgba(60, 0, 120, 1.0)", // purplish and darker blue
       "rgba(220, 30, 255, 1.0)",
       "rgba(255, 100, 0, 1.0)",
       "rgba(128, 0, 255, 0.95)",
@@ -33,7 +33,7 @@ export default function AnimatedGradient({
       { bottom: "20%", right: "30%" },
       { top: "22%", right: "5%" },
       { bottom: "20%", left: "25%" },
-      { bottom: "10%", left: "50%" },
+      { bottom: "10%", left: "60%" },
     ];
 
     const durations = [22, 20, 18, 21, 19, 23, 17, 25];

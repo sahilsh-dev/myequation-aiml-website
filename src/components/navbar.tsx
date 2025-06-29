@@ -146,7 +146,7 @@ export default function Navbar() {
                   Curriculum
                 </UnderlinedLink>
                 <UnderlinedLink
-                  href="#Mentors"
+                  href="#mentors"
                   className="transition-colors hover:text-primary"
                 >
                   Mentors

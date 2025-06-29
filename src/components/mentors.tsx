@@ -23,7 +23,7 @@ const mentors = [
 export default function Mentors() {
   return (
     <section
-      id="Mentors"
+      id="mentors"
       className="scroll-mt-28 container w-full max-w-[1200px] mx-auto pt-10 md:pt-20 mb-10 sm:mb-32"
     >
       {/* Section Title */}
