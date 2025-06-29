@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import UnderlinedLink from "./ui/underlined-link";
 import { Github, Twitter, Linkedin } from "lucide-react";
 import { FaMedium, FaInstagram, FaYoutube, FaLink } from "react-icons/fa";
 import myEquationLogo from "@/assets/myequationlogo.png";
@@ -35,20 +35,20 @@ export default function Footer() {
             <h3 className="text-sm font-medium">Company</h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <Link
+                <UnderlinedLink
                   href="/about"
                   className="text-muted-foreground transition-colors hover:text-primary"
                 >
                   About Us
-                </Link>
+                </UnderlinedLink>
               </li>
               <li>
-                <Link
+                <UnderlinedLink
                   href="/careers"
                   className="text-muted-foreground transition-colors hover:text-primary"
                 >
                   Careers
-                </Link>
+                </UnderlinedLink>
               </li>
             </ul>
           </div>

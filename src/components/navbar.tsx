@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import UnderlinedLink from "./ui/underlined-link";
 import { Button } from "@/components/ui/button";
 import { IoRocketOutline } from "react-icons/io5";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -132,30 +133,28 @@ export default function Navbar() {
           <>
             <div className="flex-1 flex justify-center">
               <nav className="flex items-center space-x-10 text-sm font-medium">
-                <Link
+                <UnderlinedLink
                   href="#overview"
                   className="transition-colors hover:text-primary"
                 >
                   Overview
-                </Link>
-                <Link
+                </UnderlinedLink>
+                <UnderlinedLink
                   href="#curriculum"
                   className="transition-colors hover:text-primary"
                 >
                   Curriculum
-                </Link>
-                <Link
+                </UnderlinedLink>
+                <UnderlinedLink
                   href="#Mentors"
                   className="transition-colors hover:text-primary"
                 >
                   Mentors
-                </Link>
+                </UnderlinedLink>
               </nav>
             </div>
-            <div className="flex items-center space-x-4">
-              <Button variant="ghost" size="sm" asChild>
-                <Link href="#contact">Contact</Link>
-              </Button>
+            <div className="flex items-center space-x-8">
+              <UnderlinedLink href="#contact">Contact</UnderlinedLink>
               <Button size="sm" asChild className="hover:cursor-pointer">
                 <div>
                   <Link href="#enroll">Register Now</Link>
