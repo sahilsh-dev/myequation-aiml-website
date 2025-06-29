@@ -1,8 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Download } from "lucide-react"
-import { GiPartyPopper } from "react-icons/gi"
 
 export default function PromotionalBanner() {
   const [showBanner, setShowBanner] = useState(true)
@@ -11,11 +9,7 @@ export default function PromotionalBanner() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
-      if (currentScrollY > lastScrollY) {
-        setShowBanner(true) // scrolling down
-      } else {
-        setShowBanner(false) // scrolling up
-      }
+      setShowBanner(currentScrollY > lastScrollY)
       setLastScrollY(currentScrollY)
     }
 
@@ -25,38 +19,59 @@ export default function PromotionalBanner() {
 
   return (
     <div
-      className={`
-        fixed bottom-0 left-0 right-0 z-50 transition-transform duration-300
-        ${showBanner ? "translate-y-0" : "translate-y-full"}
-      `}
+      className={`fixed bottom-0 left-0 right-0 z-50 transition-transform duration-300 ${
+        showBanner ? "translate-y-0" : "translate-y-full"
+      }`}
     >
-      <div className="container mx-auto max-w-screen-xl bg-gradient-to-r from-gray-100 via-gray-200 to-black flex items-center justify-between px-4 md:px-6 py-2 md:py-3 rounded-t-lg shadow-lg">
-        {/* Left section with offer text */}
-        <div className="flex items-center gap-2 md:gap-3">
-          <GiPartyPopper
-            /*className="text-xl md:text-2xl bg-gradient-to-r from-pink-500 via-red-500 via-blue-500 to-green-500 bg-clip-text text-transparent"*/
-           />
-           <span className="text-3xl">🎉</span>
-          <span className="text-black font-semibold text-sm md:text-lg">
-            Limited Time Offer
-          </span>
-        </div>
+      <div className="w-full bg-gradient-to-r from-black via-blue-900 via-blue-800 to-black px-4 py-2 md:py-3 rounded-t-lg shadow-lg">
+        <div className="max-w-screen-xl mx-auto">
+          {/* Desktop Layout */}
+          <div className="hidden md:flex items-center gap-6">
+            {/* Offer Text */}
+            <div className="flex items-center gap-2">
+              <span className="text-3xl">🎉</span>
+              <span className="text-xl font-medium text-gray-300">
+                Special <span className="font-extrabold text-white drop-shadow-[0_0_1px_white]">NEW LIMITED OFFER</span>
+                , Grab Now!
+              </span>
+            </div>
 
-        {/* Center section with pricing */}
-        <div className="flex items-center gap-2">
-          <span className="text-yellow-500 font-bold text-xl md:text-3xl">Rs. 4999</span>
-          <span className="text-gray-500 line-through text-sm md:text-lg">Rs. 8000</span>
-        </div>
+            {/* Price Info */}
+            <div className="flex items-center gap-3">
+              <span className="text-yellow-300 font-bold text-4xl">Rs. 4999</span>
+              <span className="text-gray-400 line-through text-xl font-medium">Rs. 8000</span>
+            </div>
 
-        {/* Right section with buttons */}
-        <div className="flex items-center gap-2 md:gap-4">
-          <button className="bg-blue-600 hover:bg-blue-700 text-grey font-semibold px-4 md:px-6 py-2 md:py-3 rounded-lg transition-all duration-200 ease-in-out text-sm md:text-base">
-            Enroll Today
-          </button>
-          <button className="bg-gray-800 hover:bg-gray-700 text-grey font-semibold px-4 md:px-6 py-2 md:py-3 rounded-lg flex items-center gap-1 md:gap-2 transition-all duration-200 ease-in-out text-sm md:text-base">
-            <Download className="w-4 h-4" />
-            Brochure
-          </button>
+            {/* Action Button - Moved slightly towards center */}
+            <div className="ml-auto mr-4">
+              <button className="bg-blue-800 hover:bg-blue-700 text-white font-bold px-6 py-2.5 rounded-xl text-base shadow-lg hover:shadow-blue-400/60 transition-all duration-300 ease-in-out transform hover:scale-105 border-2 border-blue-600 hover:border-blue-400">
+                <span className="relative z-10">Register Now</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Mobile Layout */}
+          <div className="md:hidden space-y-2">
+            {/* First Line: Offer Text - Centered */}
+            <div className="flex items-center justify-center gap-2">
+              <span className="text-xl">🎉</span>
+              <span className="text-sm font-medium text-gray-300">
+                Special <span className="font-extrabold text-white drop-shadow-[0_0_1px_white]">NEW LIMITED OFFER</span>
+                , Grab Now!
+              </span>
+            </div>
+
+            {/* Second Line: Price and Button - Balanced */}
+            <div className="flex items-center justify-between px-2">
+              <div className="flex items-center gap-2">
+                <span className="text-yellow-300 font-bold text-lg">Rs. 4999</span>
+                <span className="text-gray-400 line-through text-sm font-medium">Rs. 8000</span>
+              </div>
+              <button className="bg-blue-800 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded-lg text-sm shadow-lg hover:shadow-blue-400/60 transition-all duration-300 ease-in-out transform hover:scale-105 border-2 border-blue-600 hover:border-blue-400">
+                <span className="relative z-10">Register Now</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
