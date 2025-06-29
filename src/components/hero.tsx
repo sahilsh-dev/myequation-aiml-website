@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { GlassButton } from "@/components/ui/glass-button";
 import AnimatedGradient from "./ui/animated-gradient";
 import { IoRocketOutline } from "react-icons/io5";
 import Image from "next/image";
@@ -77,9 +78,7 @@ export default function Hero() {
           Start Learning Now
           <IoRocketOutline size={32} className="ml-1 animate-bounce" />
         </Button>
-        <Button variant="outline" size="lg">
-          View Details
-        </Button>
+        <GlassButton size="lg">View Details</GlassButton>
       </div>
     </section>
   );

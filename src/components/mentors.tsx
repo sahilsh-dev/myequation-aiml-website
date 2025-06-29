@@ -38,10 +38,10 @@ export default function Mentors() {
           {mentors.map((mentor, index) => (
             <MentorCard key={index}>
               <Card
-                className="sm:w-[min(45vw, 30rem)] sm:h-60 bg-gradient-to-br from-[#01010a] to-[#090a13] border border-white/20 shadow-lg rounded-2xl flex-grow"
+                className="sm:w-[min(40vw, 20rem)] sm:h-60 bg-gradient-to-br from-[#01010a] to-[#090126] border border-white/20 shadow-lg rounded-2xl flex-grow"
                 key={mentor.name}
               >
-                <CardContent className="p-4 sm:p-7 h-full flex flex-col justify-center text-white">
+                <CardContent className="p-4 sm:p-6 h-full flex flex-col justify-center text-white">
                   <div className="flex gap-4 sm:gap-7 h-full justify-center items-center">
                     <Image
                       src={mentor.image}
@@ -74,7 +74,7 @@ function MentorCard({ children }: { children: React.ReactNode }) {
   return (
     <CardContainer className="inter-var">
       <CardBody className="w-auto">
-        <CardItem translateZ="50">{children}</CardItem>
+        <CardItem translateZ="40">{children}</CardItem>
       </CardBody>
     </CardContainer>
   );
