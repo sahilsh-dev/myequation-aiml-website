@@ -25,7 +25,7 @@ export default function ProgramInfo() {
   ];
 
   return (
-    <ScrollReveal direction="up" >
+    <ScrollReveal direction="up">
       <section className="container mt-[15%] md:my-[8%] w-[95vw] px-2 md:px-8">
         <div className="mx-auto max-w-5xl">
           {/* Main card container */}
@@ -36,7 +36,7 @@ export default function ProgramInfo() {
                 <div className="flex items-center" key={item.label}>
                   <div className="relative rounded-2xl bg-white px-2 sm:px-6 py-2 text-center">
                     <div className="relative font-medium text-gray-900 text-sm sm:text-lg sm:py-2">
-                      <div className="absolute -top-10 left-1/2 -translate-x-1/2 flex items-center gap-2 rounded-2xl bg-blue-600 px-3 sm:px-6 py-3 text-white">
+                      <div className="absolute -top-11 left-1/2 -translate-x-1/2 flex items-center gap-2 rounded-2xl bg-blue-600 px-3 sm:px-6 py-3 text-white">
                         <item.icon className="h-4 w-4" />
                         <span className="font-semibold text-xs sm:text-base">
                           {item.value}
