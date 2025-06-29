@@ -23,7 +23,7 @@ export default function PromotionalBanner() {
         showBanner ? "translate-y-0" : "translate-y-full"
       }`}
     >
-      <div className="w-full bg-gradient-to-r from-gray-900 via-blue-950  to-black px-4 py-2 rounded-t-lg shadow-lg">
+      <div className="w-full bg-gradient-to-r from-gray-900 via-blue-950 to-black px-4 py-2 rounded-t-lg shadow-lg">
         <div className="max-w-screen-xl mx-auto">
           {/* Desktop Layout */}
           <div className="hidden md:flex items-center gap-6">
@@ -39,18 +39,16 @@ export default function PromotionalBanner() {
               </span>
             </div>
 
-            {/* Price Info */}
-            <div className="flex items-center gap-3">
-              <span className="text-yellow-300 font-bold text-4xl">
-                Rs. 4999
-              </span>
-              <span className="text-gray-400 line-through text-xl font-medium">
-                Rs. 8000
-              </span>
-            </div>
-
-            {/* Action Button - Moved slightly towards center */}
-            <div className="ml-auto mr-4">
+            {/* Right-side: Price + Button grouped */}
+            <div className="flex items-center gap-6 ml-auto">
+              <div className="flex items-center gap-3">
+                <span className="text-yellow-300 font-bold text-4xl">
+                  Rs. 4999
+                </span>
+                <span className="text-gray-400 line-through text-xl font-medium">
+                  Rs. 8000
+                </span>
+              </div>
               <button className="bg-blue-800 hover:bg-blue-700 text-white font-bold px-6 py-2.5 rounded-xl text-base shadow-lg hover:shadow-blue-400/60 transition-all duration-300 ease-in-out transform hover:scale-105 border-2 border-blue-600 hover:border-blue-400">
                 <span className="relative z-10">Register Now</span>
               </button>
@@ -74,7 +72,7 @@ export default function PromotionalBanner() {
             {/* Second Line: Price and Button - Balanced */}
             <div className="flex items-center justify-between px-2">
               <div className="flex items-center gap-2">
-                <span className="text-yellow-300 font-bold text-lg">
+                <span className="text-yellow-300 font-bold text-1xl">
                   Rs. 4999
                 </span>
                 <span className="text-gray-400 line-through text-sm font-medium">
