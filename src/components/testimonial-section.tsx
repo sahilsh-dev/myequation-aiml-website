@@ -1,6 +1,7 @@
 import TestimonialReviews from "./testimonial-reviews";
 import TestimonialVideos from "./testimonial-videos";
 import { ScrollReveal } from "./ui/scroll-reveal";
+import WhatsappImage from "./testimonial-whatsapp-image";
 
 export default function TestimonialSection() {
   return (
@@ -19,6 +20,7 @@ export default function TestimonialSection() {
 
           <TestimonialReviews />
           <TestimonialVideos />
+          <WhatsappImage />
         </div>
       </div>
     </ScrollReveal>
