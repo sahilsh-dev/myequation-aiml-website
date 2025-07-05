@@ -1,3 +1,5 @@
+"use client";
+import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -6,6 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { GiAchievement } from "react-icons/gi";
 
@@ -45,19 +48,26 @@ const carouselItems = [
 ];
 
 export default function WhyBuyCourse() {
+  const plugin = React.useRef(
+    Autoplay({ delay: 4000, stopOnInteraction: true })
+  );
+
   return (
     <section className="overflow-hidden container w-full my-[5%] md:my-[10%] px-6 md:px-16 flex flex-col items-center justify-center">
       <div className="text-center mb-5 md:mb-16">
         <ScrollReveal direction="up" delay={0.1}>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8">
             Why you should{" "}
-            <span className="text-yellow-500">Buy this Course</span>
+            <span className="text-yellow-500">Buy this Program</span>
           </h2>
         </ScrollReveal>
       </div>
       <Carousel
         className="w-full max-w-screen-xl mx-auto px-5"
         opts={{ align: "start", dragFree: true }}
+        plugins={[plugin.current]}
+        onMouseEnter={plugin.current.stop}
+        onMouseLeave={plugin.current.reset}
       >
         <CarouselContent>
           {carouselItems.map((item, index) => (
@@ -83,8 +93,8 @@ export default function WhyBuyCourse() {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious className="bg-gray-900/50" />
+        <CarouselNext className="bg-gray-900/50" />
       </Carousel>
     </section>
   );
