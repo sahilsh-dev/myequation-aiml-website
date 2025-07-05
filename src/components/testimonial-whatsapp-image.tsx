@@ -1,10 +1,15 @@
 "use client"
-
+import {
+    Dialog,
+    DialogContent,
+    DialogHeader,
+    DialogTitle,
+} from "@/components/ui/dialog";
 import Image, { StaticImageData } from "next/image"
 import { useState } from "react"
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-image"
 import { ZoomIn } from "lucide-react"
-import { Dialog, DialogContent } from "@/components/ui/dialog"
+
 import ananya from "@/assets/WhatsappImage/ananya.png";
 import manav from "@/assets/WhatsappImage/manav.png";
 import shorya from "@/assets/WhatsappImage/shorya.png";
@@ -79,32 +84,20 @@ const images: ImageItem[] = [
     },
 
 ]
-
-export default function WhatsappImage() {
-    const [selectedImage, setSelectedImage] = useState<ImageItem | null>(null)
-    const [isModalOpen, setIsModalOpen] = useState(false)
-
-    const handleImageClick = (image: ImageItem) => {
-        setSelectedImage(image)
-        setIsModalOpen(true)
-    }
-
+export default function ImageGallery() {
     const movingCardItems = images.map((image) => ({
         quote: (
-            <div className="relative group cursor-pointer">
+            <div>
                 <Image
                     src={image.src || "/placeholder.svg"}
                     alt={image.alt}
-                    width={image.width || 280}
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    width={image.width || 250}
+                    className="object-cover"
                     style={{
                         width: `${image.width}px`,
+                        height: `${image.height}px`,
                     }}
                 />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-                    <ZoomIn className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
             </div>
         ),
         name: "",
@@ -113,48 +106,13 @@ export default function WhatsappImage() {
 
     return (
         <div className="w-full">
-            <div
-                onClick={(e) => {
-                    const target = e.target as HTMLElement
-                    const imageContainer = target.closest("[data-image-index]")
-                    if (imageContainer) {
-                        const imageIndex = Number.parseInt(imageContainer.getAttribute("data-image-index") || "0")
-                        const image = images[imageIndex]
-                        if (image) {
-                            handleImageClick(image)
-                        }
-                    }
-                }}
-            >
-                <InfiniteMovingCards
-                    items={movingCardItems.map((item, index) => ({
-                        ...item,
-                        quote: <div data-image-index={index}>{item.quote}</div>,
-                    }))}
-                    direction="left"
-                    speed="slow"
-                    pauseOnHover={true}
-                    className="mx-auto"
-                />
-            </div>
-
-            {/* Modal for Full Size Image */}
-            <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-                <DialogContent className="bg-gray-900 border-gray-600 text-white w-[75vw] max-w-lg p-4 rounded-2xl overflow-hidden">
-                    {selectedImage && (
-                        <div className="flex justify-center items-center bg-black/20 rounded-lg overflow-hidden">
-                            <Image
-                                src={selectedImage.src || "/placeholder.svg"}
-                                alt={selectedImage.alt}
-                                width={selectedImage.width ? selectedImage.width * 2 : 800}
-                                height={selectedImage.height ? selectedImage.height * 2 : 1200}
-                                className="object-contain max-w-full max-h-[80vh] w-auto h-auto"
-                                priority
-                            />
-                        </div>
-                    )}
-                </DialogContent>
-            </Dialog>
+            <InfiniteMovingCards
+                items={movingCardItems}
+                direction="left"
+                speed="slow"
+                pauseOnHover={true}
+                className="mx-auto"
+            />
         </div>
     )
 }
