@@ -49,7 +49,7 @@ const carouselItems = [
 
 export default function WhyBuyCourse() {
   const plugin = React.useRef(
-    Autoplay({ delay: 4000, stopOnInteraction: false })
+    Autoplay({ delay: 2500, stopOnInteraction: false })
   );
 
   return (
