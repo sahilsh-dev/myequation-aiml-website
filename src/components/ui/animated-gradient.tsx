@@ -16,8 +16,8 @@ export default function AnimatedGradient({
     const colors = [
       "rgba(255, 0, 180, 1.0)",
       "rgba(180, 0, 255, 1.0)",
-      "rgba(0, 255, 255, 1.0)",
-      "rgba(60, 0, 120, 1.0)", // purplish and darker blue
+      "rgba(0, 180, 180, 1.0)",
+      "rgba(60, 0, 120, 1.0)",
       "rgba(220, 30, 255, 1.0)",
       "rgba(255, 100, 0, 1.0)",
       "rgba(128, 0, 255, 0.95)",

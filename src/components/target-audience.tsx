@@ -2,7 +2,7 @@
 
 import { BadgeCheck } from "lucide-react";
 import Image from "next/image";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
 
 import { useIsMobile } from "@/hooks/use-mobile";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
@@ -12,6 +12,7 @@ import {
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 import audienceImg1 from "@/assets/targetaudienceimage/audience1.png";
 import audienceImg2 from "@/assets/targetaudienceimage/audience2.png";
@@ -41,7 +42,6 @@ const targetAudiences = [
   },
 ];
 
-// Custom dot navigation component
 function CarouselDots({
   api,
   current,
@@ -81,6 +81,7 @@ export default function TargetAudience() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const [count, setCount] = useState(0);
+  const plugin = useRef(Autoplay({ delay: 4000, stopOnInteraction: true }));
 
   useEffect(() => {
     if (!api) {
@@ -117,6 +118,7 @@ export default function TargetAudience() {
                   align: "start",
                   loop: true,
                 }}
+                plugins={[plugin.current]}
               >
                 <CarouselContent className="-ml-2 md:-ml-4">
                   {targetAudiences.map((audience) => (
