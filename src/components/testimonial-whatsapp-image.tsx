@@ -1,10 +1,4 @@
 "use client"
-import {
-    Dialog,
-    DialogContent,
-    DialogHeader,
-    DialogTitle,
-} from "@/components/ui/dialog";
 import Image, { StaticImageData } from "next/image"
 import { useState } from "react"
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-image"
