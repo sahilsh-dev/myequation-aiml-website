@@ -73,7 +73,7 @@ export default function ProgramBreakdown() {
         id="curriculum"
         className="scroll-mt-28 container relative min-h-[80dvh] space-y-4 md-space-y-16 py-24 md:py-32 w-[90vw] flex flex-col items-center justify-center"
       >
-        <div className="absolute -z-10 w-full mx-auto h-[94%] md:h-[88%]">
+        <div className="absolute -z-10 w-full mx-auto h-[95%] md:h-[88%]">
           <AnimatedGradient className="rounded-3xl" />
         </div>
         <ScrollReveal direction="up" delay={0.1}>
