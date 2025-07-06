@@ -69,7 +69,7 @@ export default function Hero() {
         </h1>
 
         <p className="mx-auto max-w-[42rem] leading-normal sm:text-xl sm:leading-8">
-          The complete AI, ML & Python - Learn from NVIDIA & IBM Mentors in this
+          The complete AI, ML, Deep Learning & Python - Learn from NVIDIA & IBM Mentors in this
           55 - Hour Program
         </p>
       </div>

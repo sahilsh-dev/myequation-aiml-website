@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import certificateImg from "@/assets/certificate.jpg";
+import certificateImg from "@/assets/Certificate.png";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 
 export default function Certificate() {
