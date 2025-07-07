@@ -65,7 +65,7 @@ const videoTestimonials = [
   },
   {
     id: 8,
-    videoUrl: "/VideoTestimonial/Umnona.mp4",
+    videoUrl: "/VideoTestimonial/Unmona.mp4",
     name: "Umnona",
     title: "Machine Learning Engineer",
     thumbnail: "/video-thumbnail.png",

@@ -48,7 +48,7 @@ export default function Hero() {
           </span>
         </div>
         {/* Hero Title */}
-        <h1 className="text-4xl font-bold tracking-tight sm:text-3xl md:text-5xl lg:text-6xl">
+        <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
           <span className="relative inline-block">
             {/* Solid “Master AI” above the doodle */}
             <span className="relative">Master AI</span>
@@ -69,8 +69,8 @@ export default function Hero() {
         </h1>
 
         <p className="mx-auto max-w-[42rem] leading-normal sm:text-xl sm:leading-8">
-          The complete AI, ML, Deep Learning & Python - Learn from NVIDIA & IBM Mentors in this
-          55 - Hour Program
+          The complete AI, ML, Deep Learning & Python - Learn from NVIDIA & IBM
+          Mentors in this 55 - Hour Program
         </p>
       </div>
       <div className="flex flex-col gap-4 sm:flex-row sm:justify-center ">

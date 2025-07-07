@@ -83,7 +83,7 @@ export default function ProgramBreakdown() {
                 Program Breakdown
               </h2>
             </div>
-            <div className="w-[80vw] mx-auto w-full sm:px-2">
+            <div className="mx-auto w-full sm:px-2">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
                 {courses.map((course, index) => (
                   <div
