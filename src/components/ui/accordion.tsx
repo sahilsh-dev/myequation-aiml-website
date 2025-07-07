@@ -62,9 +62,10 @@ export default function Accordion({
                 transitionProperty: "max-height, opacity, padding",
               }}
             >
-              <p className="text-gray-300 leading-relaxed text-xs md:text-sm">
-                {item.description}
-              </p>
+              <p
+                 className="text-gray-300 leading-relaxed text-xs md:text-sm"
+                 dangerouslySetInnerHTML={{ __html: item.description }}
+               />
             </div>
           </div>
         ))}
