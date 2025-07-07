@@ -14,7 +14,7 @@ const courses = [
     iconType: "image",
     iconSrc: pyProgram,
     features: [
-      "Python Fundamentals: Solid understanding of core concepts including data types, loops, functions, OOP, file handling, and exception management.",
+      "Python Fundamentals: Solid understanding of core concepts including data types, loops, functions, OOPs, file handling, and exception management.",
       "Tooling & Ecosystem Mastery: Worked with virtual environments, pip/conda, and created custom modules and packages for modular Python development.",
       "Advanced Libraries & Techniques: Practical experience with NumPy, OpenCV, datetime, threading, decorators, and GUI development; applied list comprehensions, generators, lambdas, and context managers effectively.",
       "Debugging & Real-World Applications: Proficient in debugging with PDB, performance tuning, AsyncIO, and building real-world apps involving image processing, face detection, Pandas, Matplotlib, and API integrations.",
@@ -30,7 +30,7 @@ const courses = [
     features: [
       "ML Foundations & Workflow:  Covered supervised and unsupervised learning, AI system design, predictive maintenance, and key ML concepts like features, labels, overfitting/underfitting, and end-to-end pipelines on Google Colab.",
       "Data Handling & Visualization: Proficient in NumPy, Pandas for data wrangling and CSV operations; utilized Matplotlib and Seaborn for visualizations including trends, heatmaps, and pairplots.",
-      "Core ML Algorithms: Hands-on experience with Linear/Logistic Regression, SVM, Naive Bayes, Decision Trees, Random Forest, XGBoost, CatBoost; explored clustering methods like KNN, K-Means, Hierarchical Clustering, and dimensionality reduction using PCA and LDA.",
+      "Core ML Algorithms: Hands-on experience with Linear/Logistic Regression, SVM, Naive Bayes, Decision Trees, Random Forest, XGBoost, CatBoost; explored clustering methods like K-Means, Hierarchical Clustering, and dimensionality reduction using PCA and LDA.",
       "Real-World Application & Practice: Built classification models, implemented machine learning pipelines, and created interactive dashboards as part of practical, real-world project work.",
     ],
     videos: 12,
