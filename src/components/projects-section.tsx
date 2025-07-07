@@ -49,7 +49,7 @@ const projects = [
     id: 5,
     title: "Smart Traffic Management System (AI + IoT)",
     description: `
-    • Smart Traffic Management System using AI and IoT – Real-time traffic control and emergency management.<br/>
+    • Major Project -Real-time traffic control and emergency management.<br/>
     • AI-Powered Real-Time Traffic Control: Uses deep learning (YOLOv8/SSD) for vehicle detection from video feeds and dynamically adjusts traffic signals based on live traffic density.<br/>
     • Emergency & Forecasting Intelligence: Integrates AI modules to prioritize emergency vehicles and applies ML for traffic prediction using historical data.<br/>
     • Prototype & Simulation Integration: Includes software simulation (OpenCV/SUMO) and optional Raspberry Pi + camera hardware setup to emulate a smart traffic intersection.
