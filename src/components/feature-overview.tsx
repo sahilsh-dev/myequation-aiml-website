@@ -71,7 +71,7 @@ export default function FeaturesOverview() {
                     }`
                   )}
                 >
-                  <div className="w-fit h-[56px] w-[56px] rounded-xl bg-white flex items-center justify-center p-2 mb-1 sm:mb-2">
+                  <div className="h-[56px] w-[56px] rounded-xl bg-white flex items-center justify-center p-2 mb-1 sm:mb-2">
                     <Image
                       src={feature.icon}
                       alt={feature.title}

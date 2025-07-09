@@ -1,18 +1,18 @@
 import Image, { StaticImageData } from "next/image";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-image";
 
-import ananya from "@/assets/WhatsappImage/ananya.png";
-import manav from "@/assets/WhatsappImage/manav.png";
-import shorya from "@/assets/WhatsappImage/shorya.png";
-import GroupB from "@/assets/WhatsappImage/GroupB.png";
-import GroupC from "@/assets/WhatsappImage/GroupC.png";
-import GroupD from "@/assets/WhatsappImage/GroupD.png";
-import GroupE from "@/assets/WhatsappImage/GroupE.png";
-import GroupF from "@/assets/WhatsappImage/GroupF.png";
-import GroupG from "@/assets/WhatsappImage/GroupG.png";
-import GroupH from "@/assets/WhatsappImage/GroupH.png";
-import GroupI from "@/assets/WhatsappImage/GroupI.png";
-import GroupK from "@/assets/WhatsappImage/GroupK.png";
+import ananya from "@/assets/whatsapp-images/ananya.png";
+import manav from "@/assets/whatsapp-images/manav.png";
+import shorya from "@/assets/whatsapp-images/shorya.png";
+import GroupB from "@/assets/whatsapp-images/GroupB.png";
+import GroupC from "@/assets/whatsapp-images/GroupC.png";
+import GroupD from "@/assets/whatsapp-images/GroupD.png";
+import GroupE from "@/assets/whatsapp-images/GroupE.png";
+import GroupF from "@/assets/whatsapp-images/GroupF.png";
+import GroupG from "@/assets/whatsapp-images/GroupG.png";
+import GroupH from "@/assets/whatsapp-images/GroupH.png";
+import GroupI from "@/assets/whatsapp-images/GroupI.png";
+import GroupK from "@/assets/whatsapp-images/GroupK.png";
 
 interface ImageItem {
   src: string | StaticImageData;
