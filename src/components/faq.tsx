@@ -1,3 +1,5 @@
+"use client";
+
 import faqImg from "@/assets/faq.png";
 import Image from "next/image";
 import Accordion from "./ui/accordion";
@@ -56,7 +58,21 @@ export default function FAQ() {
               <p className="text-gray-300 text-base mb-8">
                 Reach out to us in case of any doubts!
               </p>
-              <button className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-lg border border-gray-600 transition-colors duration-300">
+              <button
+                onClick={() => {
+                  const heroBtn = document.getElementById(
+                    "enroll-now-btn"
+                  ) as HTMLButtonElement | null;
+                  if (heroBtn) {
+                    heroBtn.click();
+                    return;
+                  }
+                  const el = document.getElementById("enroll");
+                  if (el)
+                    el.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
+                className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-lg border border-gray-600 transition-colors duration-300"
+              >
                 <svg
                   className="w-4 h-4"
                   fill="none"

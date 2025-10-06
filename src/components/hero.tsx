@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { GlassButton } from "@/components/ui/glass-button";
 import AnimatedGradient from "./ui/animated-gradient";
@@ -7,12 +10,14 @@ import circleImage1 from "@/assets/hero_image/circleimage1.png";
 import circleImage2 from "@/assets/hero_image/circleimage2.png";
 import circleImage3 from "@/assets/hero_image/circleimage3.png";
 import doodleImg from "@/assets/doodle.svg";
+import EnrollModal from "@/components/ui/enroll-modal";
 
 export default function Hero() {
+  const [open, setOpen] = useState(false);
   return (
     <section
       id="overview"
-      className="container flex min-h-[calc(100dvh-3.5rem)] max-w-screen-2xl flex-col items-center justify-center space-y-8 py-10 text-center md:py-32"
+      className="container flex min-h-[calc(100dvh-3.5rem)] max-w-screen-2xl flex-col items-center justify-center py-10 text-center md:py-32"
     >
       <div className="absolute h-[85dvh] mt-[2vh] -z-10 w-[90%] md:w-[95%] max-w-screen-2xl">
         <AnimatedGradient className="rounded-3xl" />
@@ -73,13 +78,21 @@ export default function Hero() {
           Mentors in this 55 - Hour Program
         </p>
       </div>
-      <div className="flex flex-col gap-4 sm:flex-row sm:justify-center ">
-        <Button size="lg">
-          Start Learning Now
+      <div className="flex flex-col gap-4 sm:flex-row sm:justify-center mt-6 ">
+        <Button
+          id="enroll-now-btn"
+          size="lg"
+          onClick={() => {
+            console.log("Hero: Enroll button clicked");
+            setOpen(true);
+          }}
+        >
+          Enroll Now
           <IoRocketOutline size={32} className="ml-1 animate-bounce" />
         </Button>
-        <GlassButton size="lg">View Details</GlassButton>
+        <GlassButton size="lg">Pay Now</GlassButton>
       </div>
+      <EnrollModal open={open} onClose={() => setOpen(false)} />
     </section>
   );
 }
