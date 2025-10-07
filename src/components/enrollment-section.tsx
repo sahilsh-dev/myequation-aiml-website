@@ -5,6 +5,13 @@ import Image from "next/image";
 import enrollImg from "@/assets/enroll.png";
 import { useState } from "react";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 interface FormData {
   name: string;
@@ -18,6 +25,10 @@ export default function EnrollmentSection() {
     email: "",
     phone: "",
   });
+  const [errors, setErrors] = useState<Partial<FormData>>({});
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [message, setMessage] = useState<string>("");
+  const [dialogOpen, setDialogOpen] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
@@ -27,10 +38,55 @@ export default function EnrollmentSection() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
+  const validate = (data: FormData) => {
+    const next: Partial<FormData> = {};
+    if (!data.name || data.name.trim().length < 2) {
+      next.name = "Please enter your full name (min 2 characters)";
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(data.email)) {
+      next.email = "Please enter a valid email address";
+    }
+    const phoneRegex = /^[0-9+\-()\s]{7,20}$/;
+    if (!phoneRegex.test(data.phone)) {
+      next.phone = "Enter a valid phone (digits, spaces, +, -, () allowed)";
+    }
+    return next;
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission logic here
+    setMessage("");
+    setStatus("idle");
+    const fieldErrors = validate(formData);
+    setErrors(fieldErrors);
+    if (Object.keys(fieldErrors).length > 0) return;
+
+    try {
+      setStatus("submitting");
+      const res = await fetch("/api/enroll", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const json = await res.json();
+      if (!res.ok) {
+        const serverErr = json?.errors as Partial<FormData> | undefined;
+        if (serverErr) setErrors(serverErr);
+        setStatus("error");
+        setMessage(json?.message || "Submission failed. Fix errors and try again.");
+        return;
+      }
+      setStatus("success");
+      setMessage("Thanks! We received your details. We'll be in touch soon.");
+      setDialogOpen(true);
+      setFormData({ name: "", email: "", phone: "" });
+      setErrors({});
+    } catch (err) {
+      setStatus("error");
+      setMessage("Network error. Please try again.");
+      console.error(err);
+    }
   };
 
   return (
@@ -90,6 +146,9 @@ export default function EnrollmentSection() {
                     className="w-full h-12 sm:h-14 rounded-xl px-4 bg-gray-800 border border-gray-600 text-white placeholder-gray-400 text-sm sm:text-base outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
                     required
                   />
+                  {errors.name && (
+                    <p className="text-red-400 text-xs sm:text-sm">{errors.name}</p>
+                  )}
 
                   {/* Email Input */}
                   <input
@@ -101,6 +160,9 @@ export default function EnrollmentSection() {
                     className="w-full h-12 sm:h-14 rounded-xl px-4 bg-gray-800 border border-gray-600 text-white placeholder-gray-400 text-sm sm:text-base outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
                     required
                   />
+                  {errors.email && (
+                    <p className="text-red-400 text-xs sm:text-sm">{errors.email}</p>
+                  )}
 
                   {/* Phone Input */}
                   <input
@@ -112,17 +174,45 @@ export default function EnrollmentSection() {
                     className="w-full h-12 sm:h-14 rounded-xl px-4 bg-gray-800 border border-gray-600 text-white placeholder-gray-400 text-sm sm:text-base outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
                     required
                   />
+                  {errors.phone && (
+                    <p className="text-red-400 text-xs sm:text-sm">{errors.phone}</p>
+                  )}
 
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full h-12 sm:h-14 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
+                    disabled={status === "submitting"}
+                    className="w-full h-12 sm:h-14 rounded-xl bg-blue-600 hover:bg-blue-700 active:bg-blue-800 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold text-sm sm:text-base shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98]"
                   >
-                    Submit
+                    {status === "submitting" ? "Submitting..." : "Submit"}
                   </button>
+
+                  {status === "error" && message && (
+                    <p className="text-red-400 text-sm">{message}</p>
+                  )}
                 </form>
               </div>
             </div>
+            {/* Success Dialog */}
+            <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+              <DialogContent className="bg-gray-900 border border-gray-800 text-white">
+                <DialogHeader>
+                  <DialogTitle>Thank you!</DialogTitle>
+                  <DialogDescription className="text-gray-300">
+                    {message || "Thanks! We received your details. We'll be in touch soon."}
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="mt-4 flex justify-end">
+                  <button
+                    type="button"
+                    onClick={() => setDialogOpen(false)}
+                    className="px-4 py-2 rounded-md bg-blue-600 hover:bg-blue-700 text-white text-sm"
+                  >
+                    OK
+                  </button>
+                </div>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
       </ScrollReveal>

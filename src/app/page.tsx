@@ -15,6 +15,8 @@ import CertificateSection from "@/components/certificate-section";
 import FAQ from "@/components/faq";
 import EnrollmentSection from "@/components/enrollment-section";
 import TestimonialSection from "@/components/testimonial-section";
+import StatsSection from "@/components/stats-section";
+import MenteesWhatsappSection from "@/components/mentees-whatsapp-section";
 
 export default function Home() {
   return (
@@ -35,10 +37,12 @@ export default function Home() {
         <ProgramBreakdown />
         <ProjectsSection />
         <TargetAudience />
-        <WhyBuyCourse />
         <CertificateSection />
         <EnrollmentSection />
         <TestimonialSection />
+        <WhyBuyCourse />
+        <StatsSection />
+        <MenteesWhatsappSection />
         <FAQ />
         <CTA />
         <Footer />

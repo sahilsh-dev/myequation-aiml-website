@@ -34,6 +34,10 @@ export default function EnrollModal({
     console.log("Enroll form submitted", form);
     console.log("EnrollModal: calling onClose after submit");
     onClose();
+    // Open brochure in new tab after submit (optional behavior)
+    try {
+      window.open("/api/brochure", "_blank");
+    } catch {}
   };
 
   return (
@@ -122,6 +126,13 @@ export default function EnrollModal({
             className="w-full bg-blue-500 hover:bg-blue-600 text-white rounded-lg py-3 font-medium"
           >
             Submit
+          </button>
+          <button
+            type="button"
+            onClick={() => window.open("/api/brochure", "_blank")}
+            className="w-full bg-gray-100 hover:bg-gray-200 text-gray-900 rounded-lg py-3 font-medium"
+          >
+            Download brochure
           </button>
         </form>
       </div>

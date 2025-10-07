@@ -22,7 +22,8 @@
       "@/*": ["./src/*"]
     },
     "target": "es2022",
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "ignoreDeprecations": "6.0"
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/**/*", "postcss.config.mjs"],
   "exclude": ["node_modules"]

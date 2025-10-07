@@ -14,18 +14,18 @@ interface DropdownItem {
 export default function Accordion({
   items,
   className,
+  onChange,
 }: {
   items: DropdownItem[];
   className?: string;
+  onChange?: (id: number | undefined) => void;
 }) {
   const [expandedItem, setExpandedItem] = useState<number>();
 
   const toggleItem = (id: number) => {
-    if (expandedItem === id) {
-      setExpandedItem(undefined);
-      return;
-    }
-    setExpandedItem(id);
+    const next = expandedItem === id ? undefined : id;
+    setExpandedItem(next);
+    if (onChange) onChange(next);
   };
 
   return (

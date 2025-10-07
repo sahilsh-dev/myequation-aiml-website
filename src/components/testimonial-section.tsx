@@ -1,7 +1,7 @@
 import TestimonialReviews from "./testimonial-reviews";
 import TestimonialVideos from "./testimonial-videos";
 import { ScrollReveal } from "./ui/scroll-reveal";
-import WhatsappImage from "./testimonial-whatsapp-image";
+// Whatsapp carousel moved to its own section after WhyBuyCourse
 
 export default function TestimonialSection() {
   return (
@@ -18,9 +18,8 @@ export default function TestimonialSection() {
             </p>
           </div>
 
-          <TestimonialReviews />
+          {/* <TestimonialReviews /> */}
           <TestimonialVideos />
-          <WhatsappImage />
         </div>
       </div>
     </ScrollReveal>

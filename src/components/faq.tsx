@@ -59,18 +59,7 @@ export default function FAQ() {
                 Reach out to us in case of any doubts!
               </p>
               <button
-                onClick={() => {
-                  const heroBtn = document.getElementById(
-                    "enroll-now-btn"
-                  ) as HTMLButtonElement | null;
-                  if (heroBtn) {
-                    heroBtn.click();
-                    return;
-                  }
-                  const el = document.getElementById("enroll");
-                  if (el)
-                    el.scrollIntoView({ behavior: "smooth", block: "start" });
-                }}
+                onClick={() => window.open("/api/brochure", "_blank")}
                 className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-lg border border-gray-600 transition-colors duration-300"
               >
                 <svg
