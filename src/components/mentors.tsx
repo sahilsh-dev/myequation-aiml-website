@@ -4,18 +4,19 @@ import mentor1 from "@/assets/mentors_image/mentor1.png";
 import mentor2 from "@/assets/mentors_image/mentor2.png";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
+import { Linkedin } from "lucide-react";
 
 const mentors = [
   {
     name: "Soumya SV",
-    title: <p>Python & Deep Learning Expert</p>,
-    company: "IBM",
+    title: <p>AI Engineer</p>,
+    company: "NLP Specialist @IBM",
     image: mentor1,
   },
   {
     name: "Yashashvi Singh",
-    title: <p>Machine Learning & AI Specialist</p>,
-    company: "NVIDIA",
+    title: <p>SSW Engineer</p>,
+    company: "Conversational AI @NVIDIA ",
     image: mentor2,
   },
 ];
@@ -38,15 +39,15 @@ export default function Mentors() {
           {mentors.map((mentor, index) => (
             <MentorCard key={index}>
               <Card
-                className="sm:w-[min(40vw, 20rem)] sm:h-60 bg-gradient-to-br from-[#01010a] to-[#090126] border border-white/20 shadow-lg rounded-2xl flex-grow"
+                className=" sm:h-60 w-[355px] lg:w-[550px] lg:flex-none bg-gradient-to-br from-[#01010a] to-[#090126] border border-white/20 shadow-lg rounded-2xl flex-grow"
                 key={mentor.name}
               >
-                <CardContent className="p-4 sm:p-6 h-full flex flex-col justify-center text-white">
-                  <div className="flex gap-4 sm:gap-7 h-full justify-center items-center">
+                <CardContent className="p-4 sm:p-6 h-full flex flex-col text-white">
+                  <div className="flex gap-4 sm:gap-7 h-full">
                     <Image
                       src={mentor.image}
                       alt="Mentor"
-                      className="w-[40%] h-fit md:h-full md:w-fit rounded-2xl"
+                      className="w-[35%] lg:w-[40%]  h-fit md:h-full md:w-fit rounded-2xl"
                     />
                     <div className="flex flex-col justify-center gap-y-1">
                       <h2 className="text-xl sm:text-3xl font-bold mb-1">
@@ -58,6 +59,18 @@ export default function Mentors() {
                       <h3 className="text-sm sm:text-lg opacity-80">
                         {mentor.company}
                       </h3>
+                      <div className="mt-2 flex items-center gap-3">
+                        <a
+                          href="#"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground transition-colors hover:text-primary"
+                          aria-label={`${mentor.name} LinkedIn`}
+                        >
+                          <Linkedin className="h-4 w-4" />
+                          <span className="sr-only">LinkedIn</span>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </CardContent>

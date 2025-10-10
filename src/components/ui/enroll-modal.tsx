@@ -20,6 +20,10 @@ export default function EnrollModal({
     year: "",
   });
 
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState(false);
+
   if (!open) return null;
 
   const handleChange = (
@@ -29,15 +33,52 @@ export default function EnrollModal({
     setForm((s) => ({ ...s, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validateEmail = (value: string) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  };
+
+  const validatePhone = (value: string) => {
+    return /^\+?\d{7,15}$/.test(value.replace(/\s+/g, ""));
+  };
+
+  const isFormValid = () => {
+    return (
+      validateEmail(form.email) &&
+      validatePhone(form.phone) &&
+      form.college.trim().length > 0 &&
+      form.year.trim().length > 0
+    );
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Enroll form submitted", form);
-    console.log("EnrollModal: calling onClose after submit");
-    onClose();
-    // Open brochure in new tab after submit (optional behavior)
+    if (!isFormValid()) {
+      setError("Please fill all required fields with valid values.");
+      return;
+    }
+
+    setLoading(true);
+    setError(null);
+
     try {
-      window.open("/api/brochure", "_blank");
-    } catch {}
+      await new Promise((res) => setTimeout(res, 700));
+      setSuccess(true);
+
+      try {
+        window.open("/api/brochure", "_blank");
+      } catch {}
+
+      setTimeout(() => {
+        setLoading(false);
+        onClose();
+        setForm({ name: "", email: "", phone: "", college: "", year: "" });
+        setSuccess(false);
+      }, 600);
+    } catch (err: any) {
+      console.error("Enroll submit error (simulated)", err);
+      setError("Something went wrong. Please try again.");
+      setLoading(false);
+    }
   };
 
   return (
@@ -121,18 +162,28 @@ export default function EnrollModal({
             <option>Other</option>
           </select>
 
+          {error && (
+            <div className="text-sm text-red-600 bg-red-50 p-2 rounded">
+              {error}
+            </div>
+          )}
+
+          {success && (
+            <div className="text-sm text-green-700 bg-green-50 p-2 rounded">
+              Submitted successfully!
+            </div>
+          )}
+
           <button
             type="submit"
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white rounded-lg py-3 font-medium"
+            disabled={!isFormValid() || loading}
+            className={`w-full rounded-lg py-3 font-medium text-white ${
+              loading || !isFormValid()
+                ? "bg-blue-300 cursor-not-allowed"
+                : "bg-blue-500 hover:bg-blue-600"
+            }`}
           >
-            Submit
-          </button>
-          <button
-            type="button"
-            onClick={() => window.open("/api/brochure", "_blank")}
-            className="w-full bg-gray-100 hover:bg-gray-200 text-gray-900 rounded-lg py-3 font-medium"
-          >
-            Download brochure
+            {loading ? "Submitting..." : "Submit"}
           </button>
         </form>
       </div>
