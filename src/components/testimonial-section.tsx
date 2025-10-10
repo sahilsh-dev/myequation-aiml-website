@@ -1,7 +1,6 @@
 import TestimonialReviews from "./testimonial-reviews";
 import TestimonialVideos from "./testimonial-videos";
 import { ScrollReveal } from "./ui/scroll-reveal";
-// Whatsapp carousel moved to its own section after WhyBuyCourse
 
 export default function TestimonialSection() {
   return (

@@ -37,7 +37,6 @@ export default function ProofSection() {
       <ScrollReveal direction="up">
         <div className="container mx-auto max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
-            {/* Left: Text + CTA */}
             <div className="text-left">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-10">
                 Before you ask for it, <br /> here’s some proof
@@ -57,20 +56,15 @@ export default function ProofSection() {
                 </Button>
               </a>
             </div>
-
-            {/* Right: Video element with custom controls */}
             <div className="w-full flex justify-center lg:justify-end">
               <div className="relative w-full max-w-[720px] rounded-lg overflow-hidden shadow-lg">
                 <video
                   ref={videoRef}
                   src={proofVid}
-                  // native controls removed to allow custom behavior
                   className="w-full h-56 sm:h-64 md:h-72 lg:h-80 object-cover bg-black cursor-pointer"
                   aria-label="Proof video"
                   onClick={togglePlay}
                 />
-
-                {/* Large play overlay shown only when video is paused/not started */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   {!isPlaying ? (
                     <button
@@ -92,8 +86,6 @@ export default function ProofSection() {
                     </button>
                   ) : null}
                 </div>
-
-                {/* Decorative rotated border behind thumbnail */}
                 <div className="pointer-events-none absolute -inset-4 border border-white/5 rounded-lg transform rotate-1" />
               </div>
             </div>
