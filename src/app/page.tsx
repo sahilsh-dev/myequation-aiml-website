@@ -9,6 +9,7 @@ import ProgramInfo from "@/components/program-info";
 import FeaturesOverview from "@/components/feature-overview";
 import Mentors from "@/components/mentors";
 import ProjectsSection from "@/components/projects-section";
+import ProofSection from "@/components/proof-section";
 import TargetAudience from "@/components/target-audience";
 import WhyBuyCourse from "@/components/why-buy-course";
 import CertificateSection from "@/components/certificate-section";
@@ -36,6 +37,7 @@ export default function Home() {
         <Mentors />
         <ProgramBreakdown />
         <ProjectsSection />
+        <ProofSection />
         <TargetAudience />
         <CertificateSection />
         <EnrollmentSection />

@@ -26,7 +26,9 @@ export default function EnrollmentSection() {
     phone: "",
   });
   const [errors, setErrors] = useState<Partial<FormData>>({});
-  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
   const [message, setMessage] = useState<string>("");
   const [dialogOpen, setDialogOpen] = useState(false);
 
@@ -64,19 +66,10 @@ export default function EnrollmentSection() {
 
     try {
       setStatus("submitting");
-      const res = await fetch("/api/enroll", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      const json = await res.json();
-      if (!res.ok) {
-        const serverErr = json?.errors as Partial<FormData> | undefined;
-        if (serverErr) setErrors(serverErr);
-        setStatus("error");
-        setMessage(json?.message || "Submission failed. Fix errors and try again.");
-        return;
-      }
+
+      // Simulate a frontend-only submit (no backend call)
+      await new Promise((res) => setTimeout(res, 700));
+
       setStatus("success");
       setMessage("Thanks! We received your details. We'll be in touch soon.");
       setDialogOpen(true);
@@ -84,7 +77,7 @@ export default function EnrollmentSection() {
       setErrors({});
     } catch (err) {
       setStatus("error");
-      setMessage("Network error. Please try again.");
+      setMessage("Something went wrong. Please try again.");
       console.error(err);
     }
   };
@@ -147,7 +140,9 @@ export default function EnrollmentSection() {
                     required
                   />
                   {errors.name && (
-                    <p className="text-red-400 text-xs sm:text-sm">{errors.name}</p>
+                    <p className="text-red-400 text-xs sm:text-sm">
+                      {errors.name}
+                    </p>
                   )}
 
                   {/* Email Input */}
@@ -161,7 +156,9 @@ export default function EnrollmentSection() {
                     required
                   />
                   {errors.email && (
-                    <p className="text-red-400 text-xs sm:text-sm">{errors.email}</p>
+                    <p className="text-red-400 text-xs sm:text-sm">
+                      {errors.email}
+                    </p>
                   )}
 
                   {/* Phone Input */}
@@ -175,7 +172,9 @@ export default function EnrollmentSection() {
                     required
                   />
                   {errors.phone && (
-                    <p className="text-red-400 text-xs sm:text-sm">{errors.phone}</p>
+                    <p className="text-red-400 text-xs sm:text-sm">
+                      {errors.phone}
+                    </p>
                   )}
 
                   {/* Submit Button */}
@@ -199,7 +198,8 @@ export default function EnrollmentSection() {
                 <DialogHeader>
                   <DialogTitle>Thank you!</DialogTitle>
                   <DialogDescription className="text-gray-300">
-                    {message || "Thanks! We received your details. We'll be in touch soon."}
+                    {message ||
+                      "Thanks! We received your details. We'll be in touch soon."}
                   </DialogDescription>
                 </DialogHeader>
                 <div className="mt-4 flex justify-end">

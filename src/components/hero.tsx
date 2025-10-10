@@ -74,7 +74,7 @@ export default function Hero() {
         </div>
 
         <p className="mx-auto max-w-[42rem] leading-normal sm:text-xl sm:leading-8">
-          The complete AI, ML, Deep Learning & Python - Learn from NVIDIA & IBM
+          The complete AI, ML, Deep Learning & ePython - Learn from NVIDIA & IBM
           Mentors in this 55 - Hour Program
         </p>
       </div>
@@ -90,7 +90,20 @@ export default function Hero() {
           Enroll Now
           <IoRocketOutline size={32} className="ml-1 animate-bounce" />
         </Button>
-        <GlassButton size="lg">Pay Now</GlassButton>
+        <GlassButton
+          size="lg"
+          onClick={() => {
+            // replace this placeholder with the real Razorpay checkout link when ready
+            const razorpayLink = "https://rzp.io/i/your-placeholder";
+            try {
+              window.open(razorpayLink, "_blank");
+            } catch (err) {
+              console.error("Failed to open Razorpay link", err);
+            }
+          }}
+        >
+          Pay Now
+        </GlassButton>
       </div>
       <EnrollModal open={open} onClose={() => setOpen(false)} />
     </section>

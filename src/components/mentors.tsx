@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-import mentor1 from "@/assets/mentors_image/mentor1.png";
-import mentor2 from "@/assets/mentors_image/mentor2.png";
+import mentor1 from "@/assets/mentors_image/mentor1.jpg";
+import mentor2 from "@/assets/mentors_image/mentor2.jpg";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import { Linkedin } from "lucide-react";
@@ -12,12 +12,15 @@ const mentors = [
     title: <p>AI Engineer</p>,
     company: "NLP Specialist @IBM",
     image: mentor1,
+    linkedin:
+      "https://www.linkedin.com/in/soumya-sv-profile/?originalSubdomain=in",
   },
   {
     name: "Yashashvi Singh",
     title: <p>SSW Engineer</p>,
     company: "Conversational AI @NVIDIA ",
     image: mentor2,
+    linkedin: "https://www.linkedin.com/in/yashashvi-singh-3013a4205/",
   },
 ];
 
@@ -61,7 +64,7 @@ export default function Mentors() {
                       </h3>
                       <div className="mt-2 flex items-center gap-3">
                         <a
-                          href="#"
+                          href={mentor.linkedin ?? "#"}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-muted-foreground transition-colors hover:text-primary"

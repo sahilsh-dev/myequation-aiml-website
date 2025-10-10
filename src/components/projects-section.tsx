@@ -91,13 +91,12 @@ export default function ProjectsSection() {
           {/* Header */}
           <div className="text-center mb-16">
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Build Real-World AI Projects That{" "}
+              Work on Projects Based on Real Industry Problems that{" "}
               <span className="text-yellow-400">Get You Hired</span>
             </h2>
-            <p className="text-gray-300 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
-              Apply your skills through deployment-ready projects inspired by
-              real-world problems tackled by companies like Tesla, IBM, and
-              healthcare leaders.
+            <p className="text-gray-300 text-lg md:text-xl max-w-5xl mx-auto leading-relaxed">
+              Every project is mapped to an industry use case, ensuring you
+              learn by doing, not just watching
             </p>
           </div>
 

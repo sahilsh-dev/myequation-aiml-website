@@ -11,7 +11,8 @@ export default function TestimonialSection() {
           {/* Heading and Description Section */}
           <div className="flex flex-col items-center text-center gap-3 sm:gap-4">
             <h2 className="text-white font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl leading-tight tracking-tight">
-              Hear it from the <span className="text-yellow-300">Learners</span>
+              You are not the <span className="text-yellow-300">First </span>to
+              take the program
             </h2>
             <p className="text-gray-300 text-center text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl lg:max-w-4xl">
               Over 800+ certified learners
