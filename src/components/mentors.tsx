@@ -2,27 +2,21 @@ import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import mentor1 from "@/assets/mentors_image/mentor1.png";
 import mentor2 from "@/assets/mentors_image/mentor2.png";
-import { Linkedin } from "lucide-react";
-import { FaMedium, FaInstagram, FaYoutube, FaLink } from "react-icons/fa";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 
 const mentors = [
   {
     name: "Soumya SV",
-    title: <p>AI Engineer</p>,
-    // title: <p>Python & Deep Learning Expert</p>,
-    company: "NLP Specialist at IBM",
+    title: <p>Python & Deep Learning Expert</p>,
+    company: "IBM",
     image: mentor1,
-    linkedin: "https://www.linkedin.com/in/soumya-sv-profile/?originalSubdomain=in",
   },
   {
     name: "Yashashvi Singh",
-    // title: <p>Machine Learning & AI Specialist</p>,
-    title: <p>System Software Engineer</p>,
-    company: "Conversational AI at NVIDIA ",
+    title: <p>Machine Learning & AI Specialist</p>,
+    company: "NVIDIA",
     image: mentor2,
-    linkedin: "https://www.linkedin.com/in/yashashvi-singh-3013a4205/?originalSubdomain=in",
   },
 ];
 
@@ -64,21 +58,6 @@ export default function Mentors() {
                       <h3 className="text-sm sm:text-lg opacity-80">
                         {mentor.company}
                       </h3>
-
-                      {/* Social icons */}
-                      <div className="flex gap-3 mt-2">
-                        {mentor.linkedin && (
-                          <a
-                            href={mentor.linkedin}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-blue-400 transition-colors"
-                            title={`LinkedIn - ${mentor.name}`}
-                          >
-                            <Linkedin size={20} />
-                          </a>
-                        )}
-                      </div>
                     </div>
                   </div>
                 </CardContent>
