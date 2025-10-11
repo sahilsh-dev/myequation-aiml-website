@@ -50,7 +50,7 @@ export default function Mentors() {
                     <Image
                       src={mentor.image}
                       alt="Mentor"
-                      className="w-[35%] lg:w-[40%]  h-fit md:h-full md:w-fit rounded-2xl"
+                      className="w-[35%] lg:w-[40%] h-[120px] h-fit md:h-full md:w-fit rounded-2xl"
                     />
                     <div className="flex flex-col justify-center gap-y-1">
                       <h2 className="text-xl sm:text-3xl font-bold mb-1">
