@@ -42,7 +42,7 @@ export default function Mentors() {
           {mentors.map((mentor, index) => (
             <MentorCard key={index}>
               <Card
-                className=" sm:h-60 w-[355px] lg:w-[550px] lg:flex-none bg-gradient-to-br from-[#01010a] to-[#090126] border border-white/20 shadow-lg rounded-2xl flex-grow"
+                className=" sm:h-50 w-[350px] lg:w-[490px] lg:flex-none bg-gradient-to-br from-[#01010a] to-[#090126] border border-white/20 shadow-lg rounded-2xl flex-grow"
                 key={mentor.name}
               >
                 <CardContent className="p-4 sm:p-6 h-full flex flex-col text-white">
@@ -50,19 +50,19 @@ export default function Mentors() {
                     <Image
                       src={mentor.image}
                       alt="Mentor"
-                      className="w-[35%] lg:w-[40%] h-[120px] h-fit md:h-full md:w-fit rounded-2xl"
+                      className="w-[35%] lg:w-[35%] h-[110px] lg:h-[160px] md:h-full md:w-fit rounded-2xl"
                     />
                     <div className="flex flex-col justify-center gap-y-1">
                       <h2 className="text-xl sm:text-3xl font-bold mb-1">
                         {mentor.name}
                       </h2>
-                      <h3 className="text-sm sm:text-lg opacity-90 mb-0.5">
+                      <h3 className="text-sm sm:text-lg opacity-90 lg:mb-0.5 ">
                         {mentor.title}
                       </h3>
                       <h3 className="text-sm sm:text-lg opacity-80">
                         {mentor.company}
                       </h3>
-                      <div className="mt-2 flex items-center gap-3">
+                      <div className="lg:mt-1 flex items-center gap-3">
                         <a
                           href={mentor.linkedin ?? "#"}
                           target="_blank"
