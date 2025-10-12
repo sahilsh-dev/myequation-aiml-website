@@ -76,8 +76,8 @@ export default function WhyBuyCourse() {
               className="md:basis-1/2 lg:basis-1/4 z-50 h-full"
             >
               <div className="p-1">
-                <Card className="h-full bg-gray-900 hover:bg-gradient-to-br hover:from-[hsl(var(--card))] hover:to-[#304a86] hover:scale-105 cursor-pointer rounded-lg transition-all duration-300 my-5">
-                  <CardContent className=" flex flex-col gap-4 aspect-square items-start p-4">
+                <Card className="bg-gray-900 hover:bg-gradient-to-br hover:from-[hsl(var(--card))] hover:to-[#304a86] hover:scale-105 cursor-pointer rounded-lg transition-all duration-300 my-5">
+                  <CardContent className="flex flex-col gap-4 items-start p-4 h-56 md:h-64 lg:h-72">
                     <GiAchievement className="text-blue-500 text-4xl mb-2" />
                     <div className="text-left">
                       <h3 className="text-lg md:text-xl font-semibold mb-2 text-white">
