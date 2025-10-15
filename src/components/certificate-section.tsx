@@ -1,7 +1,10 @@
 import Image from "next/image";
 import nvidiaLogo from "@/assets/nvidia-logo.png";
 import ibmLogo from "@/assets/ibm-logo-white.png";
-import { Separator } from "./ui/separator";
+import awsLogo from "@/assets/aws_logo.png";
+import nasscomLogo from "@/assets/nasscom_logo.png";
+import mongodbLogo from "@/assets/mongo_db_logo.png";
+// separators removed; logos will be rendered in uniform containers
 import Certificate from "./ui/certificate";
 import { ScrollReveal } from "./ui/scroll-reveal";
 
@@ -14,14 +17,18 @@ export default function CertificateSection() {
           <h2 className="font-bold text-2xl md:text-5xl leading-tight text-white m-0">
             Certificates awarded in partnership with
           </h2>
-          <div className="flex items-center justify-center mt-5">
-            <Image
-              src={nvidiaLogo}
-              alt="NVIDIA Logo"
-              className="w-16 md:w-24"
-            />
-            <Separator orientation="vertical" className="mx-7 h-16" />
-            <Image src={ibmLogo} alt="IBM Logo" className="w-24 md:w-32" />
+          <div className="flex items-center justify-center mt-5 gap-6">
+            {[
+              { src: nvidiaLogo, alt: "NVIDIA" },
+              { src: ibmLogo, alt: "IBM" },
+              { src: awsLogo, alt: "AWS" },
+              { src: nasscomLogo, alt: "Nasscom" },
+              { src: mongodbLogo, alt: "MongoDB" },
+            ].map((logo) => (
+              <div key={logo.alt} className="w-28 h-16 flex items-center justify-center">
+                <Image src={logo.src} alt={`${logo.alt} Logo`} className="object-contain" />
+              </div>
+            ))}
           </div>
         </ScrollReveal>
       </div>
