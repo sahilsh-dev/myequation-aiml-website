@@ -22,22 +22,30 @@ import audienceImg4 from "@/assets/targetaudienceimage/audience4.png";
 const targetAudiences = [
   {
     id: 1,
-    title: "Beginners & College Students",
+    title: "College Students",
+    description:
+      "Looking to build practical AI/ML projects that go beyond classroom theory.",
     image: audienceImg1,
   },
   {
     id: 2,
-    title: "Working Professionals & Engineers",
+    title: "Early-Career Engineers",
+    description:
+      "Wanting to strengthen Python, ML, and Deep Learning skills to stand out in placements.",
     image: audienceImg2,
   },
   {
     id: 3,
-    title: "Career Switchers & Aspiring Data Scientists",
+    title: "Working Professionals",
+    description:
+      "Upskilling to stay relevant in AI-driven roles or transitioning from non-CS backgrounds into data science & AI.",
     image: audienceImg3,
   },
   {
     id: 4,
-    title: "AI Enthusiasts & Tech Hobbyists",
+    title: "AI Enthusiasts",
+    description:
+      "Tech learners and hobbyists who want structured mentorship to move from basics to real applications.",
     image: audienceImg4,
   },
 ];
@@ -118,13 +126,13 @@ export default function TargetAudience() {
                   align: "start",
                   loop: true,
                 }}
-                plugins={[plugin.current]}
+                plugins={[plugin.current as any]}
               >
                 <CarouselContent className="-ml-2 md:-ml-4">
                   {targetAudiences.map((audience) => (
                     <CarouselItem key={audience.id} className="pl-2 md:pl-4">
-                      <div className="flex flex-col justify-between border rounded-2xl bg-black/20">
-                        <div className="p-3">
+                      <div className="flex flex-col justify-between border rounded-2xl bg-black/20 h-full">
+                        <div className="p-3 flex-1">
                           {/* Check Icon */}
                           <div className="mb-4">
                             <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
@@ -132,9 +140,13 @@ export default function TargetAudience() {
                             </div>
                           </div>
                           {/* Title */}
-                          <h3 className="text-white font-semibold text-lg mb-4 leading-tight">
+                          <h3 className="text-white font-semibold text-lg sm:text-xl md:text-2xl mb-2 leading-tight">
                             {audience.title}
                           </h3>
+                          {/* Description (sub-detail) */}
+                          <p className="text-gray-300 text-xs sm:text-sm md:text-base mb-3 leading-relaxed">
+                            {audience.description}
+                          </p>
                         </div>
                         {/* Image */}
                         <div className="rounded-lg overflow-hidden">
@@ -167,9 +179,9 @@ export default function TargetAudience() {
                 >
                   <div
                     key={audience.id}
-                    className="flex flex-col justify-between border rounded-2xl bg-black/20"
+                    className="flex flex-col justify-between border rounded-2xl bg-black/20 h-full"
                   >
-                    <div className="p-3">
+                    <div className="p-3 flex-1">
                       {/* Check Icon */}
                       <div className="mb-4">
                         <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
@@ -177,9 +189,13 @@ export default function TargetAudience() {
                         </div>
                       </div>
                       {/* Title */}
-                      <h3 className="text-white font-semibold text-lg mb-4 leading-tight">
+                      <h3 className="text-white font-semibold text-lg sm:text-xl md:text-2xl mb-2 leading-tight">
                         {audience.title}
                       </h3>
+                      {/* Description (sub-detail) */}
+                      <p className="text-gray-300 text-xs sm:text-sm md:text-base mb-3 leading-relaxed">
+                        {audience.description}
+                      </p>
                     </div>
                     {/* Image */}
                     <div className="rounded-lg overflow-hidden">

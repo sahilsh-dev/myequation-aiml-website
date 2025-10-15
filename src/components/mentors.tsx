@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 import mentor1 from "@/assets/mentors_image/mentor1.jpg";
-import mentor2 from "@/assets/mentors_image/mentor2.jpg";
+import mentor2 from "@/assets/mentors_image/mentor2.png";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { CardContainer, CardBody, CardItem } from "@/components/ui/3d-card";
 import { Linkedin } from "lucide-react";
