@@ -80,6 +80,14 @@ export default function ProjectsSection() {
     5: trafficManagementImg,
   };
 
+  // choose image class per-project to avoid over-zoom for certain aspect ratios
+  const getImageClass = (id?: number) => {
+    // project 1 (chatbot) has an aspect ratio that was getting over-zoomed
+    if (id === 1) return "object-contain object-center scale-100 transition-transform duration-300";
+    // default: slight zoom and center
+    return "object-cover object-center scale-105 transition-transform duration-300";
+  };
+
   useEffect(() => {
     const measure = () => {
       if (!accordionWrapperRef.current) return;
@@ -125,7 +133,7 @@ export default function ProjectsSection() {
               // restrict image max-height to the accordion's initial (collapsed) height on large screens
               style={collapsedHeight ? { maxHeight: `${collapsedHeight}px` } : undefined}
             >
-              <div className="w-full h-full relative rounded-2xl overflow-hidden">
+              <div className="w-full h-full relative rounded-2xl overflow-hidden flex items-center justify-center">
                 <Image
                   src={
                     selectedProjectId
@@ -135,7 +143,7 @@ export default function ProjectsSection() {
                   alt="Projects Section"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover"
+                  className={getImageClass(selectedProjectId)}
                 />
               </div>
             </div>
