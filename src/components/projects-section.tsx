@@ -1,7 +1,13 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+import { useEffect, useRef, useState } from "react";
 import projectsSectionImg from "@/assets/projects-section.png";
+import chatbotImg from "@/assets/projectImages/Chatbot.png";
+import genAiChatbotImg from "@/assets/projectImages/genAiChatbot.png";
+import imageClassificationImg from "@/assets/projectImages/ImageClassification.png";
+import oralDiseaseImg from "@/assets/projectImages/oralDisease.png";
+import trafficManagementImg from "@/assets/projectImages/trafficManagement.png";
 import Accordion from "./ui/accordion";
 import { ScrollReveal } from "./ui/scroll-reveal";
 
@@ -60,38 +66,100 @@ const projects = [
 ];
 
 export default function ProjectsSection() {
+  const accordionWrapperRef = useRef<HTMLDivElement | null>(null);
+  const [collapsedHeight, setCollapsedHeight] = useState<number | null>(null);
+  const [selectedProjectId, setSelectedProjectId] = useState<
+    number | undefined
+  >(undefined);
+
+  const projectImages: Record<number, StaticImageData> = {
+    1: chatbotImg,
+    2: imageClassificationImg,
+    3: oralDiseaseImg,
+    4: genAiChatbotImg,
+    5: trafficManagementImg,
+  };
+
+  // choose image class per-project to avoid over-zoom for certain aspect ratios
+  const getImageClass = (id?: number) => {
+    // project 1 (chatbot) has an aspect ratio that was getting over-zoomed
+    if (id === 1)
+      return "object-contain object-center scale-100 transition-transform duration-300";
+    // default: slight zoom and center
+    return "object-cover object-center scale-105 transition-transform duration-300";
+  };
+
+  useEffect(() => {
+    const measure = () => {
+      if (!accordionWrapperRef.current) return;
+      // only measure and apply max-height on large screens (tailwind's lg = 1024px)
+      if (window.innerWidth >= 1024) {
+        setCollapsedHeight(accordionWrapperRef.current.clientHeight);
+      } else {
+        // clear collapsedHeight for small screens so image uses responsive fixed height
+        setCollapsedHeight(null);
+      }
+    };
+
+    // measure on next frame to ensure layout is applied
+    requestAnimationFrame(measure);
+
+    // update measurement on resize
+    const onResize = () => requestAnimationFrame(measure);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   return (
     <section className="w-full py-7 md:px-2 md:py-32 my-10">
       <ScrollReveal direction="up">
         <div className="container mx-auto max-w-7xl">
           {/* Header */}
-          <div className="text-center mb-12">
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
               Work on Projects Based on Real Industry Problems that{" "}
               <span className="text-yellow-400">Get You Hired</span>
             </h2>
-            <p className="text-gray-300 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
-              Every project is mapped to an industry use case — learn by doing.
+            <p className="text-gray-300 text-lg md:text-xl max-w-5xl mx-auto leading-relaxed">
+              Every project is mapped to an industry use case, ensuring you
+              learn by doing, not just watching
             </p>
           </div>
 
-          {/* Main Content: left = image, right = accordion */}
-          <div className="grid lg:grid-cols-2 gap-8 items-start">
-            {/* Left: single main image */}
-            <div className="relative h-64 md:h-80 lg:h-[480px] rounded-2xl overflow-hidden shadow-lg">
-              <Image
-                src={projectsSectionImg}
-                alt="Projects"
-                fill
-                sizes="(min-width: 1024px) 50vw, 100vw"
-                style={{ objectFit: "cover", objectPosition: "center" }}
-                priority={false}
-              />
+          {/* Main Content */}
+          <div className="grid lg:grid-cols-2 gap-12 items-stretch">
+            {/* Left Side - Image */}
+            <div
+              className="relative h-64 md:h-80 lg:h-full"
+              // restrict image max-height to the accordion's initial (collapsed) height on large screens
+              style={
+                collapsedHeight
+                  ? { maxHeight: `${collapsedHeight}px` }
+                  : undefined
+              }
+            >
+              <div className="w-full h-full relative rounded-2xl overflow-hidden flex items-center justify-center">
+                <Image
+                  src={
+                    selectedProjectId
+                      ? projectImages[selectedProjectId]
+                      : projectsSectionImg
+                  }
+                  alt="Projects Section"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className={getImageClass(selectedProjectId)}
+                />
+              </div>
             </div>
 
-            {/* Right: simple accordion */}
-            <div>
-              <Accordion items={projects} className="space-y-3" />
+            {/* Right Side - Accordion */}
+            <div ref={accordionWrapperRef}>
+              <Accordion
+                items={projects}
+                className="space-y-4"
+                onChange={(id) => setSelectedProjectId(id)}
+              />
             </div>
           </div>
         </div>

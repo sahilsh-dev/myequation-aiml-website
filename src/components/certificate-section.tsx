@@ -30,7 +30,7 @@ export default function CertificateSection() {
             <ul
               role="list"
               aria-label="Partner logos"
-              className="flex items-center gap-6 p-0 m-0 list-none w-full"
+              className="flex items-center justify-center gap-6 p-0 m-0 list-none w-full"
             >
               {LOGOS.map((logo) => (
                 <li
