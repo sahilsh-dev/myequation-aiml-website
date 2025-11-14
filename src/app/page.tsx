@@ -30,7 +30,7 @@ export default function Home() {
 
       <div className="relative z-10">
         <Navbar />
-  <Hero />
+        <Hero />
         <FeaturesOverview />
         <Mentors />
         <ProgramBreakdown />
