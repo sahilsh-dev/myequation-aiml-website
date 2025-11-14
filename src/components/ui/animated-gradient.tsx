@@ -23,7 +23,7 @@ export default function AnimatedGradient({
     colors: ["#1e3a8a", "#4f46e5", "#7c3aed", "#ec4899"],
     fps: 30,
     seed: 0,
-    speed: 0.8,
+    speed: 1.0,
     amplitude: 100,
   };
 
