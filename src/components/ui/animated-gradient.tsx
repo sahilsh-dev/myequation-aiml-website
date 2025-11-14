@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, memo } from "react";
 import { WaveGradient } from "wave-gradient";
 import { useIsMobile } from "../../hooks/use-mobile";
 
@@ -10,7 +10,7 @@ interface AnimatedGradientProps
   className?: string;
 }
 
-export default function AnimatedGradient({
+const AnimatedGradient = memo(function AnimatedGradient({
   options,
   className,
   ...props
@@ -21,7 +21,7 @@ export default function AnimatedGradient({
 
   const defaultOptions = {
     colors: ["#1e3a8a", "#4f46e5", "#7c3aed", "#ec4899"],
-    fps: 30,
+    fps: 20,
     seed: 0,
     speed: 1.0,
     amplitude: 100,
@@ -74,4 +74,6 @@ export default function AnimatedGradient({
       {...props}
     />
   );
-}
+});
+
+export default AnimatedGradient;
