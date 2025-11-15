@@ -68,9 +68,9 @@ const projects = [
 export default function ProjectsSection() {
   const accordionWrapperRef = useRef<HTMLDivElement | null>(null);
   const [collapsedHeight, setCollapsedHeight] = useState<number | null>(null);
-  const [selectedProjectId, setSelectedProjectId] = useState<number | undefined>(
-    undefined
-  );
+  const [selectedProjectId, setSelectedProjectId] = useState<
+    number | undefined
+  >(undefined);
 
   const projectImages: Record<number, StaticImageData> = {
     1: chatbotImg,
@@ -145,8 +145,11 @@ export default function ProjectsSection() {
                   loading="eager"
                   className={[
                     getImageClass(undefined),
-                    "transition-opacity duration-500",
-                    selectedProjectId ? "opacity-0" : "opacity-100",
+                    // Smooth fade + slight blur without affecting transform timings
+                    "transition-[opacity,filter] duration-[1500ms] ease-in-out",
+                    selectedProjectId
+                      ? "opacity-0 blur-sm delay-0"
+                      : "opacity-100 blur-0 delay-300",
                   ].join(" ")}
                 />
 
@@ -165,8 +168,9 @@ export default function ProjectsSection() {
                       loading="eager"
                       className={[
                         getImageClass(numericId),
-                        "transition-opacity duration-500",
-                        active ? "opacity-100" : "opacity-0",
+                        // Smooth fade + slight blur without affecting transform timings
+                        "transition-[opacity,filter] duration-300 ease-in-out",
+                        active ? "opacity-100 blur-0" : "opacity-0 blur-sm",
                       ].join(" ")}
                       aria-hidden={!active}
                     />
