@@ -88,7 +88,7 @@ export const InfiniteMovingVideos = ({
       >
         {items.map((item, idx) => (
           <li
-            className="relative shrink-0 rounded-xl border border-gray-600/50 bg-gray-900/80 backdrop-blur-sm p-4 hover:bg-gray-900/90 transition-all duration-300"
+            className="relative shrink-0 rounded-xl border border-gray-600/50 bg-gray-900/80 p-4 hover:bg-gray-900/90 transition-all duration-300"
             key={`${item.name}-${idx}`}
           >
             <div className="flex flex-col items-center space-y-4 h-full">

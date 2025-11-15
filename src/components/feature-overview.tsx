@@ -61,7 +61,7 @@ export default function FeaturesOverview() {
                   onMouseEnter={() => setHoveredCard(index)}
                   onMouseLeave={() => setHoveredCard(null)}
                   className={cn(
-                    "rounded-2x p-4 sm:p-6 cursor-pointer transition-all duration-300 backdrop-blur-sm",
+                    "rounded-2x p-4 sm:p-6 cursor-pointer transition-all duration-300",
                     "border border-white/20 flex flex-col gap-3 sm:gap-4",
                     "min-h-0 sm:min-h-[360px] hover:scale-105 cursor-pointer rounded-lg duration-300",
                     `${

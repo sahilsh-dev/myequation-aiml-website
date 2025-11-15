@@ -1,4 +1,3 @@
-import TestimonialReviews from "./testimonial-reviews";
 import TestimonialVideos from "./testimonial-videos";
 import { ScrollReveal } from "./ui/scroll-reveal";
 
@@ -13,12 +12,8 @@ export default function TestimonialSection() {
               You are not the <span className="text-yellow-300">First </span>to
               take the program
             </h2>
-            {/* <p className="text-gray-300 text-center text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl lg:max-w-4xl">
-              Over 800+ certified learners
-            </p> */}
           </div>
 
-          {/* <TestimonialReviews /> */}
           <TestimonialVideos />
         </div>
       </div>
