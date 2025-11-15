@@ -68,9 +68,9 @@ const projects = [
 export default function ProjectsSection() {
   const accordionWrapperRef = useRef<HTMLDivElement | null>(null);
   const [collapsedHeight, setCollapsedHeight] = useState<number | null>(null);
-  const [selectedProjectId, setSelectedProjectId] = useState<
-    number | undefined
-  >(undefined);
+  const [selectedProjectId, setSelectedProjectId] = useState<number | undefined>(
+    undefined
+  );
 
   const projectImages: Record<number, StaticImageData> = {
     1: chatbotImg,
@@ -92,19 +92,14 @@ export default function ProjectsSection() {
   useEffect(() => {
     const measure = () => {
       if (!accordionWrapperRef.current) return;
-      // only measure and apply max-height on large screens (tailwind's lg = 1024px)
       if (window.innerWidth >= 1024) {
         setCollapsedHeight(accordionWrapperRef.current.clientHeight);
       } else {
-        // clear collapsedHeight for small screens so image uses responsive fixed height
         setCollapsedHeight(null);
       }
     };
 
-    // measure on next frame to ensure layout is applied
     requestAnimationFrame(measure);
-
-    // update measurement on resize
     const onResize = () => requestAnimationFrame(measure);
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
@@ -139,17 +134,44 @@ export default function ProjectsSection() {
               }
             >
               <div className="w-full h-full relative rounded-2xl overflow-hidden flex items-center justify-center">
+                {/* Pre-render all images and toggle opacity for smooth transitions */}
+                {/* Default image */}
                 <Image
-                  src={
-                    selectedProjectId
-                      ? projectImages[selectedProjectId]
-                      : projectsSectionImg
-                  }
+                  src={projectsSectionImg}
                   alt="Projects Section"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
-                  className={getImageClass(selectedProjectId)}
+                  placeholder="blur"
+                  loading="eager"
+                  className={[
+                    getImageClass(undefined),
+                    "transition-opacity duration-500",
+                    selectedProjectId ? "opacity-0" : "opacity-100",
+                  ].join(" ")}
                 />
+
+                {/* Project images */}
+                {Object.entries(projectImages).map(([id, src]) => {
+                  const numericId = Number(id);
+                  const active = selectedProjectId === numericId;
+                  return (
+                    <Image
+                      key={id}
+                      src={src}
+                      alt="Projects Section"
+                      fill
+                      sizes="(min-width: 1024px) 50vw, 100vw"
+                      placeholder="blur"
+                      loading="eager"
+                      className={[
+                        getImageClass(numericId),
+                        "transition-opacity duration-500",
+                        active ? "opacity-100" : "opacity-0",
+                      ].join(" ")}
+                      aria-hidden={!active}
+                    />
+                  );
+                })}
               </div>
             </div>
 
