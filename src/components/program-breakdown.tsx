@@ -88,7 +88,7 @@ export default function ProgramBreakdown() {
                 {courses.map((course, index) => (
                   <div
                     key={index}
-                    className="bg-black/50 backdrop-blur-lg border border-white/20 rounded-2xl md:rounded-3xl p-4 md:p-7 flex flex-col justify-between"
+                    className="bg-black/50 border border-white/20 rounded-2xl md:rounded-3xl p-4 md:p-7 flex flex-col justify-between"
                   >
                     {/* Header Section */}
                     <div className="flex justify-between items-start mb-4 md:mb-6">
@@ -130,13 +130,13 @@ export default function ProgramBreakdown() {
 
                     {/* Bottom Stats */}
                     <div className="flex md:flex-row gap-2 sm:gap-4 sm:justify-between">
-                      <div className="flex items-center gap-2 bg-black/30 border rounded-xl py-2 px-2 md:px-8 border-white/20">
+                      <div className="flex items-center gap-3 bg-black/30 border rounded-xl py-2 px-2 md:px-8 pl-4 border-white/20">
                         <Video className="w-6 h-6 md:w-4 md:h-4 text-white" />
                         <span className="text-white text-xs md:text-sm font-medium">
                           {course.videos} Video Lectures
                         </span>
                       </div>
-                      <div className="flex items-center gap-2 bg-black/30 border rounded-xl py-2 px-2 md:px-8 border-white/20">
+                      <div className="flex items-center gap-3 bg-black/30 border rounded-xl py-2 px-2 md:px-8 pl-4 border-white/20">
                         <Clock className="w-6 h-6 md:w-4 md:h-4 text-white" />
                         <span className="text-white text-xs md:text-sm font-medium">
                           {course.hours} Hour Content
