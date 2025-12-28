@@ -1,19 +1,19 @@
 import Image from "next/image";
-import nvidiaLogo from "@/assets/nvidia-logo.png";
-import ibmLogo from "@/assets/ibm-logo-white.png";
-import awsLogo from "@/assets/aws_logo.png";
-import nasscomLogo from "@/assets/nasscom_logo.png";
-import mongodbLogo from "@/assets/mongo_db_logo.png";
+// import nvidiaLogo from "@/assets/nvidia-logo.png";
+import ibmLogo from "@/assets/IBM.png";
+import awsLogo from "@/assets/aws_activate.png";
+import nasscomLogo from "@/assets/nasscom.png";
+import nvidia from "@/assets/NVIDIA_inception.png";
 import { ScrollReveal } from "./ui/scroll-reveal";
 import Certificate from "./ui/certificate";
 
 // Keep the logos array outside the component so it's not recreated on every render.
 const LOGOS = [
-  { src: nvidiaLogo, alt: "NVIDIA" },
+  { src: nvidia, alt: "NVIDIA" },
   { src: ibmLogo, alt: "IBM" },
   { src: awsLogo, alt: "AWS" },
   { src: nasscomLogo, alt: "Nasscom" },
-  { src: mongodbLogo, alt: "MongoDB" },
+  // { src: nvidia, alt: "NVIDIA" },
 ];
 
 export default function CertificateSection() {

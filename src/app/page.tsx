@@ -17,7 +17,7 @@ import EnrollmentSection from "@/components/enrollment-section";
 import TestimonialSection from "@/components/testimonial-section";
 import StatsSection from "@/components/stats-section";
 import MenteesWhatsappSection from "@/components/mentees-whatsapp-section";
-
+import EnrollNowPromotion from "@/components/enroll-now-promotion";
 export default function Home() {
   return (
     <div className="relative h-full">
@@ -44,6 +44,7 @@ export default function Home() {
         <StatsSection />
         <MenteesWhatsappSection />
         <FAQ />
+        <EnrollNowPromotion />
         <CTA />
         <Footer />
       </div>

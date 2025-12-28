@@ -104,6 +104,13 @@ export default function Navbar() {
                     Curriculum
                   </Link>
                   <Link
+                    href="#projects"
+                    onClick={() => setMenuOpen(false)}
+                    className="w-full py-2 hover:text-primary text-2xl pl-7"
+                  >
+                    Projects
+                  </Link>
+                  <Link
                     href="#Mentors"
                     onClick={() => setMenuOpen(false)}
                     className="w-full py-2 hover:text-primary text-2xl pl-7 "
@@ -144,6 +151,12 @@ export default function Navbar() {
                   className="transition-colors hover:text-primary"
                 >
                   Curriculum
+                </UnderlinedLink>
+                <UnderlinedLink
+                  href="#projects"
+                  className="transition-colors hover:text-primary"
+                >
+                  Projects
                 </UnderlinedLink>
                 <UnderlinedLink
                   href="#mentors"
