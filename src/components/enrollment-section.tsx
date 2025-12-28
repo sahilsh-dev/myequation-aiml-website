@@ -17,6 +17,8 @@ interface FormData {
   name: string;
   email: string;
   phone: string;
+  collegeName: string;
+  yearOfStudent: string;
 }
 
 export default function EnrollmentSection() {
@@ -24,6 +26,8 @@ export default function EnrollmentSection() {
     name: "",
     email: "",
     phone: "",
+    collegeName: "",
+    yearOfStudent: "",
   });
   const [errors, setErrors] = useState<Partial<FormData>>({});
   const [status, setStatus] = useState<
@@ -32,7 +36,9 @@ export default function EnrollmentSection() {
   const [message, setMessage] = useState<string>("");
   const [dialogOpen, setDialogOpen] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ): void => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -52,6 +58,12 @@ export default function EnrollmentSection() {
     const phoneRegex = /^[0-9+\-()\s]{7,20}$/;
     if (!phoneRegex.test(data.phone)) {
       next.phone = "Enter a valid phone (digits, spaces, +, -, () allowed)";
+    }
+    if (!data.collegeName || data.collegeName.trim().length < 2) {
+      next.collegeName = "Please enter your college name";
+    }
+    if (!data.yearOfStudent) {
+      next.yearOfStudent = "Please select your year of study";
     }
     return next;
   };
@@ -73,7 +85,13 @@ export default function EnrollmentSection() {
       setStatus("success");
       setMessage("Thanks! We received your details. We'll be in touch soon.");
       setDialogOpen(true);
-      setFormData({ name: "", email: "", phone: "" });
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        collegeName: "",
+        yearOfStudent: "",
+      });
       setErrors({});
     } catch (err) {
       setStatus("error");
@@ -106,11 +124,11 @@ export default function EnrollmentSection() {
 
           {/* Image and Form Section */}
 
-          <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12">
+          <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 lg:gap-12 items-stretch">
             {/* Image Section */}
             <div className="w-full lg:w-1/2">
               <ScrollReveal direction="up">
-                <div className="relative w-full h-48 sm:h-64 md:h-72 lg:h-80 xl:h-96 rounded-lg overflow-hidden">
+                <div className="relative w-full h-[250px] sm:h-[400px] lg:h-[520px] rounded-lg overflow-hidden">
                   <Image
                     src={enrollImg}
                     alt="AI & ML Learning Student"
@@ -124,7 +142,7 @@ export default function EnrollmentSection() {
 
             {/* Form Section */}
             <div className="w-full lg:w-1/2">
-              <div className="bg-black/75 border border-gray-800 rounded-3xl p-6 sm:p-8 h-full flex flex-col justify-center">
+              <div className="bg-black/75 border border-gray-800 rounded-3xl p-6 sm:p-8 min-h-[300px] sm:min-h-[400px] lg:min-h-[500px] flex flex-col justify-center">
                 <form
                   onSubmit={handleSubmit}
                   className="space-y-4 sm:space-y-6"
@@ -176,6 +194,79 @@ export default function EnrollmentSection() {
                       {errors.phone}
                     </p>
                   )}
+
+                  {/* College Name Input */}
+                  <input
+                    type="text"
+                    name="collegeName"
+                    placeholder="College Name"
+                    value={formData.collegeName}
+                    onChange={handleInputChange}
+                    className="w-full h-12 sm:h-14 rounded-xl px-4 bg-gray-800 border border-gray-600 text-white placeholder-gray-400 text-sm sm:text-base outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all"
+                    required
+                  />
+                  {errors.collegeName && (
+                    <p className="text-red-400 text-xs sm:text-sm">
+                      {errors.collegeName}
+                    </p>
+                  )}
+
+                  {/* Year of Student Dropdown */}
+                  <div className="relative">
+                    <select
+                      name="yearOfStudent"
+                      value={formData.yearOfStudent}
+                      onChange={handleInputChange}
+                      className="w-full h-12 sm:h-14 rounded-xl px-4 pr-10 bg-gray-800 border border-gray-600 text-white text-sm sm:text-base outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all appearance-none cursor-pointer"
+                      required
+                    >
+                      <option
+                        value=""
+                        disabled
+                        className="bg-gray-800 text-gray-400"
+                      >
+                        Year of Student
+                      </option>
+                      <option value="1st Year" className="bg-gray-800">
+                        1st Year
+                      </option>
+                      <option value="2nd Year" className="bg-gray-800">
+                        2nd Year
+                      </option>
+                      <option value="3rd Year" className="bg-gray-800">
+                        3rd Year
+                      </option>
+                      <option value="4th Year" className="bg-gray-800">
+                        4th Year
+                      </option>
+                      <option value="Graduate" className="bg-gray-800">
+                        Graduate
+                      </option>
+                      <option value="Post Graduate" className="bg-gray-800">
+                        Post Graduate
+                      </option>
+                    </select>
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                      <svg
+                        className="w-5 h-5 text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
+                      </svg>
+                    </div>
+                    {errors.yearOfStudent && (
+                      <p className="text-red-400 text-xs sm:text-sm mt-1">
+                        {errors.yearOfStudent}
+                      </p>
+                    )}
+                  </div>
 
                   {/* Submit Button */}
                   <button

@@ -20,7 +20,7 @@ const courses = [
       "Debugging & Real-World Applications: Proficient in debugging with PDB, performance tuning, AsyncIO, and building real-world apps involving image processing, face detection, Pandas, Matplotlib, and API integrations.",
     ],
     videos: 10,
-    hours: 12,
+    hours: 13,
   },
   {
     title: "Machine Learning",
@@ -34,7 +34,7 @@ const courses = [
       "Real-World Application & Practice: Built classification models, implemented machine learning pipelines, and created interactive dashboards as part of practical, real-world project work.",
     ],
     videos: 12,
-    hours: 14,
+    hours: 17,
   },
   {
     title: "Deep Learning",
@@ -48,7 +48,7 @@ const courses = [
       "Sequence & Deployment Mastery: Applied RNNs and LSTMs for text, time-series, and sequential data tasks, with deployment strategies aligned to industry standards and production-readiness.",
     ],
     videos: 15,
-    hours: 16,
+    hours: 14,
   },
   {
     title: "AI & Industrial Use Cases",
@@ -62,7 +62,7 @@ const courses = [
       "Reinforcement Learning & Real-World Use Cases: Mastery of RL concepts including Supervised Fine-Tuning (SFT) and Reinforcement Learning with Human Feedback (RLHF), along with hands-on engagements using visual pipelines and prompt examples.",
     ],
     videos: 10,
-    hours: 10,
+    hours: 11,
   },
 ];
 

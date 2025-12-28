@@ -74,7 +74,7 @@ export default function Hero() {
         </div>
 
         <p className="mx-auto max-w-[42rem] leading-normal sm:text-xl sm:leading-8">
-          The complete AI, ML, Deep Learning & ePython - Learn from NVIDIA & IBM
+          The complete AI, ML, Deep Learning & Python - Learn from NVIDIA & IBM
           Mentors in this 55 - Hour Program
         </p>
       </div>
@@ -94,7 +94,7 @@ export default function Hero() {
           size="lg"
           onClick={() => {
             // replace this placeholder with the real Razorpay checkout link when ready
-            const razorpayLink = "https://rzp.io/i/your-placeholder";
+            const razorpayLink = "https://pages.razorpay.com/AIML-Main";
             try {
               window.open(razorpayLink, "_blank");
             } catch (err) {

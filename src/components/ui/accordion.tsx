@@ -14,17 +14,25 @@ interface DropdownItem {
 export default function Accordion({
   items,
   className,
+  expandedItem: controlledExpandedItem,
   onChange,
 }: {
   items: DropdownItem[];
   className?: string;
+  expandedItem?: number | undefined;
   onChange?: (id: number | undefined) => void;
 }) {
-  const [expandedItem, setExpandedItem] = useState<number>();
+  const [internalExpandedItem, setInternalExpandedItem] = useState<number>();
+  const expandedItem =
+    controlledExpandedItem !== undefined
+      ? controlledExpandedItem
+      : internalExpandedItem;
 
   const toggleItem = (id: number) => {
     const next = expandedItem === id ? undefined : id;
-    setExpandedItem(next);
+    if (controlledExpandedItem === undefined) {
+      setInternalExpandedItem(next);
+    }
     if (onChange) onChange(next);
   };
 
@@ -63,9 +71,9 @@ export default function Accordion({
               }}
             >
               <p
-                 className="text-gray-300 leading-relaxed text-xs md:text-sm"
-                 dangerouslySetInnerHTML={{ __html: item.description }}
-               />
+                className="text-gray-300 leading-relaxed text-xs md:text-sm"
+                dangerouslySetInnerHTML={{ __html: item.description }}
+              />
             </div>
           </div>
         ))}

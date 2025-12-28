@@ -67,10 +67,13 @@ const projects = [
 
 export default function ProjectsSection() {
   const accordionWrapperRef = useRef<HTMLDivElement | null>(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
   const [collapsedHeight, setCollapsedHeight] = useState<number | null>(null);
   const [selectedProjectId, setSelectedProjectId] = useState<
     number | undefined
   >(undefined);
+  const [isPaused, setIsPaused] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const projectImages: Record<number, StaticImageData> = {
     1: chatbotImg,
@@ -105,8 +108,35 @@ export default function ProjectsSection() {
     return () => window.removeEventListener("resize", onResize);
   }, []);
 
+  useEffect(() => {
+    if (!sectionRef.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (isPaused || !isVisible) return;
+    const interval = setInterval(() => {
+      setSelectedProjectId((prev) => {
+        if (prev === undefined) return 1;
+        return prev >= projects.length ? 1 : prev + 1;
+      });
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [isPaused, isVisible]);
+
   return (
-    <section className="w-full py-7 md:px-2 md:py-32 my-10">
+    <section
+      ref={sectionRef}
+      id="projects"
+      className="w-full py-7 md:px-2 md:py-32 my-10"
+    >
       <ScrollReveal direction="up">
         <div className="container mx-auto max-w-7xl">
           {/* Header */}
@@ -184,7 +214,11 @@ export default function ProjectsSection() {
               <Accordion
                 items={projects}
                 className="space-y-4"
-                onChange={(id) => setSelectedProjectId(id)}
+                expandedItem={selectedProjectId}
+                onChange={(id) => {
+                  setSelectedProjectId(id);
+                  setIsPaused(true);
+                }}
               />
             </div>
           </div>

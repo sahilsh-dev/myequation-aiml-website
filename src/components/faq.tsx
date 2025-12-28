@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from "react";
 import faqImg from "@/assets/faq.png";
 import Image from "next/image";
 import Accordion from "./ui/accordion";
 import { ScrollReveal } from "./ui/scroll-reveal";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const faqs = [
   {
@@ -39,6 +41,17 @@ const faqs = [
 ];
 
 export default function FAQ() {
+  const isMobile = useIsMobile();
+  const [showNotification, setShowNotification] = useState(false);
+
+  const handleDownload = () => {
+    window.open("/api/brochure", "_blank");
+    if (isMobile) {
+      setShowNotification(true);
+      setTimeout(() => setShowNotification(false), 3000);
+    }
+  };
+
   return (
     <ScrollReveal direction="up">
       <section className="w-full py-16 md:px-4 md:py-24">
@@ -59,7 +72,7 @@ export default function FAQ() {
                 Reach out to us in case of any doubts!
               </p>
               <button
-                onClick={() => window.open("/api/brochure", "_blank")}
+                onClick={handleDownload}
                 className="flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-lg border border-gray-600 transition-colors duration-300"
               >
                 <svg
@@ -81,6 +94,26 @@ export default function FAQ() {
             <Accordion items={faqs} className="space-y-3" />
           </div>
         </div>
+        {showNotification && (
+          <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 md:hidden transition-all duration-300 ease-out">
+            <div className="bg-green-600 text-white px-6 py-3 rounded-lg shadow-lg flex items-center gap-2">
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <span>Brochure downloaded successfully!</span>
+            </div>
+          </div>
+        )}
       </section>
     </ScrollReveal>
   );
