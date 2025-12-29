@@ -104,14 +104,14 @@ export default function EnrollModal({
               className="w-[110px] h-[36px] sm:w-[150px] sm:h-[48px] object-contain"
             />
           </div>
-          <div className="flex flex-col items-start justify-center min-h-[36px] sm:min-h-[48px] leading-tight">
-            {/* <span className="text-sm sm:text-lg font-semibold text-gray-900">
+          {/* <div className="flex flex-col items-start justify-center min-h-[36px] sm:min-h-[48px] leading-tight">
+            <span className="text-sm sm:text-lg font-semibold text-gray-900">
               Want to
             </span>
             <span className="text-base sm:text-lg font-extrabold text-gray-900 -mt-1.5">
               Download brochure?
-            </span> */}
-          </div>
+            </span>
+          </div> */}
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-3">
