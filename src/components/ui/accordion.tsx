@@ -19,17 +19,19 @@ export default function Accordion({
 }: {
   items: DropdownItem[];
   className?: string;
-  expandedItem?: number | undefined;
-  onChange?: (id: number | undefined) => void;
+  expandedItem?: number | null | undefined;
+  onChange?: (id: number | null) => void;
 }) {
-  const [internalExpandedItem, setInternalExpandedItem] = useState<number>();
+  const [internalExpandedItem, setInternalExpandedItem] = useState<
+    number | null
+  >();
   const expandedItem =
     controlledExpandedItem !== undefined
       ? controlledExpandedItem
       : internalExpandedItem;
 
   const toggleItem = (id: number) => {
-    const next = expandedItem === id ? undefined : id;
+    const next = expandedItem === id ? null : id;
     if (controlledExpandedItem === undefined) {
       setInternalExpandedItem(next);
     }
