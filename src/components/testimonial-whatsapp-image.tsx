@@ -1,18 +1,20 @@
 import Image, { StaticImageData } from "next/image";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-image";
-
-import ananya from "@/assets/whatsapp-images/ananya.png";
-import manav from "@/assets/whatsapp-images/manav.png";
-import shorya from "@/assets/whatsapp-images/shorya.png";
-import GroupB from "@/assets/whatsapp-images/GroupB.png";
-import GroupC from "@/assets/whatsapp-images/GroupC.png";
-import GroupD from "@/assets/whatsapp-images/GroupD.png";
-import GroupE from "@/assets/whatsapp-images/GroupE.png";
-import GroupF from "@/assets/whatsapp-images/GroupF.png";
-import GroupG from "@/assets/whatsapp-images/GroupG.png";
-import GroupH from "@/assets/whatsapp-images/GroupH.png";
-import GroupI from "@/assets/whatsapp-images/GroupI.png";
-import GroupK from "@/assets/whatsapp-images/GroupK.png";
+import WhatsappImage1 from "@/assets/whatsapp-images/whatsapp_proof_1.png";
+import WhatsappImage2 from "@/assets/whatsapp-images/whatsapp_proof_2.png";
+import WhatsappImage3 from "@/assets/whatsapp-images/whatsapp_proof_3.png";
+import WhatsappImage4 from "@/assets/whatsapp-images/whatsapp_proof_4.png";
+import WhatsappImage5 from "@/assets/whatsapp-images/whatsapp_proof_5.png";
+import WhatsappImage6 from "@/assets/whatsapp-images/whatsapp_proof_6.png";
+import WhatsappImage7 from "@/assets/whatsapp-images/whatsapp_proof_7.png";
+import WhatsappImage8 from "@/assets/whatsapp-images/whatsapp_proof_8.png";
+import WhatsappImage9 from "@/assets/whatsapp-images/whatsapp_proof_9.png";
+import WhatsappImage10 from "@/assets/whatsapp-images/whatsapp_proof_10.png";
+import WhatsappImage11 from "@/assets/whatsapp-images/whatsapp_proof_11.png";
+import WhatsappImage12 from "@/assets/whatsapp-images/whatsapp_proof_12.png";
+import WhatsappImage13 from "@/assets/whatsapp-images/whatsapp_proof_13.png";
+import WhatsappImage14 from "@/assets/whatsapp-images/whatsapp_proof_14.png";
+import WhatsappImage15 from "@/assets/whatsapp-images/whatsapp_proof_15.png";
 
 interface ImageItem {
   src: string | StaticImageData;
@@ -23,51 +25,63 @@ interface ImageItem {
 
 const images: ImageItem[] = [
   {
-    src: ananya,
+    src: WhatsappImage1,
     alt: "Mountain landscape",
   },
   {
-    src: GroupB,
+    src: WhatsappImage2,
     alt: "City skyline",
   },
   {
-    src: GroupC,
+    src: WhatsappImage3,
     alt: "Ocean waves",
   },
   {
-    src: GroupD,
+    src: WhatsappImage4,
     alt: "Forest path",
   },
   {
-    src: GroupE,
+    src: WhatsappImage5,
     alt: "Desert sunset",
   },
   {
-    src: GroupF,
+    src: WhatsappImage6,
     alt: "Flower field",
   },
   {
-    src: GroupG,
+    src: WhatsappImage7,
     alt: "Flower field",
   },
   {
-    src: GroupH,
+    src: WhatsappImage8,
     alt: "Flower field",
   },
   {
-    src: GroupI,
+    src: WhatsappImage9,
     alt: "Flower field",
   },
   {
-    src: GroupK,
+    src: WhatsappImage10,
     alt: "Flower field",
   },
   {
-    src: manav,
+    src: WhatsappImage11,
     alt: "Flower field",
   },
   {
-    src: shorya,
+    src: WhatsappImage12,
+    alt: "Flower field",
+  },
+  {
+    src: WhatsappImage13,
+    alt: "Flower field",
+  },
+  {
+    src: WhatsappImage14,
+    alt: "Flower field",
+  },
+  {
+    src: WhatsappImage15,
     alt: "Flower field",
   },
 ];

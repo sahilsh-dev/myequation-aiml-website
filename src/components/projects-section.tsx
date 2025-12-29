@@ -16,51 +16,50 @@ const projects = [
     id: 1,
     title: "Simple Chatbot: Build Rule-Based Conversations",
     description: `
-    • Build a rule-based chatbot that interacts using predefined patterns and keywords — a perfect start to NLP and conversational AI development.<br/>
-    • User Input Handling & Pattern Recognition: Process and interpret typed messages using Python logic.<br/>
-    • Rule-Based Response Generation: Use conditionals or dictionaries to create intelligent chatbot replies.<br/>
-    • Text Processing with Python: Learn string operations, greetings detection, and input parsing.<br/>
-    • Expandable Functionality: Add support for weather queries, small talk, and custom commands.
+    • <strong>Rule-Based Chatbot:</strong> Build conversations using keywords and patterns.<br/>
+    • <strong>Input Processing:</strong> Handle and analyze user text in Python.<br/>
+    • <strong>Reply Logic:</strong> Generate responses using rules and conditions.<br/>
+    • <strong>Extendable Design:</strong> Add weather, chat, and custom commands.<br/>
     `,
   },
   {
     id: 2,
     title: "Image Classification using Supervised Learning",
     description: `
-    • Build and evaluate a supervised machine learning model that classifies images using tools like scikit-learn, Pandas, and Matplotlib.<br/>
-    • Complete ML Pipeline: Preprocess image data, train using algorithms like Logistic Regression, SVM, XGBoost, and evaluate using metrics like accuracy & confusion matrix.<br/>
-    • Tool Integration: Use scikit-learn, Pandas, NumPy, Matplotlib, and Seaborn to build, train, visualize, and analyze model performance.<br/>
-    • Hands-On Practice: Apply models on datasets like MNIST or CIFAR-10 using Jupyter or Google Colab, with detailed reporting and visualization.
+    • <strong>Image Classification Basics:</strong> Build supervised ML models for image classification.<br/>
+    • <strong>ML Pipeline:</strong> Preprocess data, train models, and evaluate performance.<br/>
+    • <strong>Tools & Visualization:</strong> Use scikit-learn, Pandas, NumPy, and plots for analysis.<br/>
+    • <strong>Practical Datasets:</strong> Apply models on MNIST or CIFAR-10 in Jupyter/Colab.<br/>
     `,
   },
   {
     id: 3,
     title: "Oral Disease Classification using CNN",
     description: `
-    • Build a deep learning model to classify oral diseases from medical images using Convolutional Neural Networks.<br/>
-    • Image-Based Diagnosis: Classify oral diseases using a CNN model trained on curated clinical image datasets.<br/>
-    • Modular Pipeline: Includes preprocessing, training (train_model.py), and evaluation (evaluate.py) scripts for a complete ML workflow.<br/>
-    • Deep Learning Tools: Leverages TensorFlow/Keras with data augmentation and model saving for real-world medical applications.
+    • <strong>CNN-Based Classification:</strong> Build a deep learning model for oral disease image classification.<br/>
+    • <strong>Image Diagnosis:</strong> Train CNNs on clinical oral image datasets.<br/>
+    • <strong>End-to-End Pipeline:</strong> Perform preprocessing, training, and evaluation in a modular workflow.<br/>
+    • <strong>DL Tools:</strong> Use TensorFlow/Keras with data augmentation and model saving.<br/>
     `,
   },
   {
     id: 4,
     title: "Chatbot with Generative AI",
     description: `
-    • Build a conversational AI using GPT models and Prompt Engineering to deliver intelligent, context-aware interactions.<br/>
-    • Generative AI Integration: Use GPT-3 or GPT-4 via OpenAI API to create a smart, conversational chatbot.<br/>
-    • Prompt Engineering & Fine-Tuning: Design effective prompts for accurate, relevant responses across various topics.<br/>
-    • Interactive UI & Deployment: Integrate with Flask/Streamlit for front-end interaction and deploy on platforms like Replit or Heroku.
+    • <strong>Generative AI Chatbot:</strong> Build a context-aware conversational AI using GPT models.<br/>
+    • <strong>GPT Integration:</strong> Use OpenAI APIs to generate intelligent responses.<br/>
+    • <strong>Prompt Engineering:</strong> Design effective prompts for accurate and relevant replies.<br/>
+    • <strong>UI & Deployment:</strong> Deploy the chatbot using Flask/Streamlit on cloud platforms.<br/>
     `,
   },
   {
     id: 5,
     title: "Smart Traffic Management System (AI + IoT)",
     description: `
-    • Major Project -Real-time traffic control and emergency management.<br/>
-    • AI-Powered Real-Time Traffic Control: Uses deep learning (YOLOv8/SSD) for vehicle detection from video feeds and dynamically adjusts traffic signals based on live traffic density.<br/>
-    • Emergency & Forecasting Intelligence: Integrates AI modules to prioritize emergency vehicles and applies ML for traffic prediction using historical data.<br/>
-    • Prototype & Simulation Integration: Includes software simulation (OpenCV/SUMO) and optional Raspberry Pi + camera hardware setup to emulate a smart traffic intersection.
+    • <strong>Smart Traffic System:</strong> AI + IoT–based real-time traffic and emergency management project.<br/>
+    • <strong>AI Traffic Control:</strong> Vehicle detection using YOLO/SSD with dynamic signal control.<br/>
+    • <strong>Emergency & Prediction:</strong> Priority for emergency vehicles and ML-based traffic forecasting.<br/>
+    • <strong>Prototype & Simulation:</strong> Implemented using OpenCV/SUMO with optional Raspberry Pi setup.<br/>
     `,
   },
 ];

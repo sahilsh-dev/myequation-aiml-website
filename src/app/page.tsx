@@ -36,7 +36,7 @@ export default function Home() {
         <Mentors />
         <ProgramBreakdown />
         <ProjectsSection />
-        <ProofSection />
+        {/* <ProofSection /> */}
         <TargetAudience />
         <CertificateSection />
         <EnrollmentSection />
@@ -47,7 +47,7 @@ export default function Home() {
         <FAQ />
         <EnrollNowPromotion />
         <RoboticsBlog />
-        <CTA />
+        {/* <CTA /> */}
         <Footer />
       </div>
     </div>
