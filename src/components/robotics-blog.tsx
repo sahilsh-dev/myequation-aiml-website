@@ -65,9 +65,10 @@ const blogPosts: BlogPost[] = [
 
 export default function RoboticsBlog() {
   return (
-    <section
-      className={`${poppins.className} w-full bg-black text-white antialiased`}
-    >
+    // <section
+    //   className={`${poppins.className} w-full bg-black text-white antialiased`}
+    // >
+    <section className={`${poppins.className} w-full  text-white antialiased`}>
       <div className="mx-auto max-w-[1060px] px-4 py-10 md:px-5 md:py-20">
         <div className="mb-8 pl-1 md:mb-[60px] md:pl-[10px]">
           <h1 className="mb-3 text-[22px] font-semibold leading-[1.2] text-white md:mb-5 md:text-[32px]">
@@ -91,7 +92,8 @@ export default function RoboticsBlog() {
               href={post.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex w-[calc(50%-6px)] flex-col rounded-[10px] md:rounded-[15px] transition-transform duration-200 hover:-translate-y-[5px] md:w-[325px]"
+              // className="group flex w-[calc(50%-6px)] flex-col rounded-[10px] md:rounded-[15px] transition-transform duration-200 hover:-translate-y-[5px] md:w-[325px]"
+              className="group flex w-[calc(50%-6px)] flex-col rounded-[10px] md:rounded-[15px] transition-transform duration-200  md:w-[325px]"
             >
               <div className="relative z-10 aspect-video w-full overflow-hidden rounded-[10px] bg-white md:aspect-auto md:h-[180px] md:rounded-[15px]">
                 <img
