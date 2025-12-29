@@ -7,8 +7,8 @@ export default function PromotionalBanner() {
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    const mentorsSection = document.getElementById("mentors");
-    if (!mentorsSection) return;
+    const featuresSection = document.getElementById("features-overview");
+    if (!featuresSection) return;
 
     // Clean up any previous observer
     if (observerRef.current) {
@@ -17,7 +17,7 @@ export default function PromotionalBanner() {
 
     observerRef.current = new window.IntersectionObserver(
       ([entry]) => {
-        // If the mentors section is NOT intersecting (out of view), show the banner
+        // If the features section is NOT intersecting (out of view), show the banner
         setShowBanner(
           !entry.isIntersecting && entry.boundingClientRect.top < 0
         );
@@ -28,7 +28,7 @@ export default function PromotionalBanner() {
       }
     );
 
-    observerRef.current.observe(mentorsSection);
+    observerRef.current.observe(featuresSection);
     // Clean up observer on unmount
     return () => {
       if (observerRef.current) {
