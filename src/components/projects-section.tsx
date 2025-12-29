@@ -70,7 +70,7 @@ export default function ProjectsSection() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const [collapsedHeight, setCollapsedHeight] = useState<number | null>(null);
   const [selectedProjectId, setSelectedProjectId] = useState<
-    number | undefined
+    number | null | undefined
   >(undefined);
   const [isPaused, setIsPaused] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -84,7 +84,7 @@ export default function ProjectsSection() {
   };
 
   // choose image class per-project to avoid over-zoom for certain aspect ratios
-  const getImageClass = (id?: number) => {
+  const getImageClass = (id?: number | null) => {
     // project 1 (chatbot) has an aspect ratio that was getting over-zoomed
     if (id === 1)
       return "object-contain object-center scale-100 transition-transform duration-300";
@@ -124,7 +124,7 @@ export default function ProjectsSection() {
     if (isPaused || !isVisible) return;
     const interval = setInterval(() => {
       setSelectedProjectId((prev) => {
-        if (prev === undefined) return 1;
+        if (prev === undefined || prev === null) return 1;
         return prev >= projects.length ? 1 : prev + 1;
       });
     }, 3000);
