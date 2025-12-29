@@ -48,7 +48,7 @@ export default function Navbar() {
     <header
       className={cn(
         "sticky z-50 w-full transition-all duration-500 ease-in-out",
-        isScrolled
+        isScrolled || (menuOpen && isMobile)
           ? "top-0 border-b backdrop-blur supports-[backdrop-filter]:bg-background/60 bg-background/95"
           : "top-4"
       )}
