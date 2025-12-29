@@ -18,6 +18,7 @@ import TestimonialSection from "@/components/testimonial-section";
 import StatsSection from "@/components/stats-section";
 import MenteesWhatsappSection from "@/components/mentees-whatsapp-section";
 import EnrollNowPromotion from "@/components/enroll-now-promotion";
+import RoboticsBlog from "@/components/robotics-blog";
 export default function Home() {
   return (
     <div className="relative h-full">
@@ -45,6 +46,7 @@ export default function Home() {
         <MenteesWhatsappSection />
         <FAQ />
         <EnrollNowPromotion />
+        <RoboticsBlog />
         <CTA />
         <Footer />
       </div>
