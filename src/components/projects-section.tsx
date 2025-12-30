@@ -3,11 +3,11 @@
 import Image, { StaticImageData } from "next/image";
 import { useEffect, useRef, useState } from "react";
 import projectsSectionImg from "@/assets/projects-section.png";
-import chatbotImg from "@/assets/projectImages/Chatbot.png";
-import genAiChatbotImg from "@/assets/projectImages/genAiChatbot.png";
-import imageClassificationImg from "@/assets/projectImages/ImageClassification.png";
-import oralDiseaseImg from "@/assets/projectImages/oralDisease.png";
-import trafficManagementImg from "@/assets/projectImages/trafficManagement.png";
+import chatbotImg from "@/assets/projectImages/Chatbot_with_Generative_AI.png";
+import genAiChatbotImg from "@/assets/projectImages/Simple_Chatbot_Build_Rule_Based_Conversations.png";
+import imageClassificationImg from "@/assets/projectImages/Image_Classification_using_Supervised_Learning.png";
+import oralDiseaseImg from "@/assets/projectImages/dental_Classification_using_CNN.png";
+import trafficManagementImg from "@/assets/projectImages/Smart_Traffic_Management_System.png";
 import Accordion from "./ui/accordion";
 import { ScrollReveal } from "./ui/scroll-reveal";
 
@@ -82,12 +82,8 @@ export default function ProjectsSection() {
     5: trafficManagementImg,
   };
 
-  // choose image class per-project to avoid over-zoom for certain aspect ratios
+  // UPDATED: Using object-cover for ALL images to ensure they fill the rounded container
   const getImageClass = (id?: number | null) => {
-    // project 1 (chatbot) has an aspect ratio that was getting over-zoomed
-    if (id === 1)
-      return "object-contain object-center scale-100 transition-transform duration-300";
-    // default: slight zoom and center
     return "object-cover object-center scale-105 transition-transform duration-300";
   };
 
@@ -155,7 +151,6 @@ export default function ProjectsSection() {
             {/* Left Side - Image */}
             <div
               className="relative h-64 md:h-80 lg:h-full"
-              // restrict image max-height to the accordion's initial (collapsed) height on large screens
               style={
                 collapsedHeight
                   ? { maxHeight: `${collapsedHeight}px` }
@@ -163,7 +158,6 @@ export default function ProjectsSection() {
               }
             >
               <div className="w-full h-full relative rounded-2xl overflow-hidden flex items-center justify-center">
-                {/* Pre-render all images and toggle opacity for smooth transitions */}
                 {/* Default image */}
                 <Image
                   src={projectsSectionImg}
@@ -174,7 +168,6 @@ export default function ProjectsSection() {
                   loading="eager"
                   className={[
                     getImageClass(undefined),
-                    // Smooth fade + slight blur without affecting transform timings
                     "transition-[opacity,filter] duration-[1500ms] ease-in-out",
                     selectedProjectId
                       ? "opacity-0 blur-sm delay-0"
@@ -197,7 +190,6 @@ export default function ProjectsSection() {
                       loading="eager"
                       className={[
                         getImageClass(numericId),
-                        // Smooth fade + slight blur without affecting transform timings
                         "transition-[opacity,filter] duration-300 ease-in-out",
                         active ? "opacity-100 blur-0" : "opacity-0 blur-sm",
                       ].join(" ")}

@@ -7,8 +7,8 @@ import AnimatedGradient from "./ui/animated-gradient";
 import { IoRocketOutline } from "react-icons/io5";
 import Image from "next/image";
 import circleImage1 from "@/assets/hero_image/circleimage1.png";
-import circleImage2 from "@/assets/hero_image/circleimage2.png";
-import circleImage3 from "@/assets/hero_image/circleimage3.png";
+import circleImage2 from "@/assets/hero_image/circleimage2.jpeg";
+import circleImage3 from "@/assets/hero_image/circleimage3.jpeg";
 import doodleImg from "@/assets/doodle.svg";
 import EnrollModal from "@/components/ui/enroll-modal";
 
