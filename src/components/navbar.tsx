@@ -48,13 +48,13 @@ export default function Navbar() {
     <header
       className={cn(
         "sticky z-50 w-full transition-all duration-500 ease-in-out",
-        isScrolled || (menuOpen && isMobile)
-          ? "top-0 border-b backdrop-blur supports-[backdrop-filter]:bg-background/60 bg-background/95"
-          : "top-4"
+        isScrolled
+          ? "top-0 border-b backdrop-blur supports-[backdrop-filter]:bg-background/60 h-full bg-background/95"
+          : "top-4 md:px-16"
       )}
     >
-      <div className="container flex max-w-screen-2xl items-center justify-between h-14 px-4 md:px-16">
-        <Link href="/" className="flex items-center space-x-2 h-10">
+      <div className="container flex max-w-screen-2xl items-center justify-between h-full">
+        <Link href="/" className="mr-6 flex items-center space-x-2 h-14">
           <div className="flex items-center justify-center h-10 w-32">
             <Image
               src={myEquationLogo}
@@ -66,70 +66,70 @@ export default function Navbar() {
         {isMobile ? (
           <>
             <button
-              className="flex flex-col justify-center items-center w-8 h-8 focus:outline-none z-50 relative"
+              className="flex flex-col justify-center items-center w-6 h-8 focus:outline-none"
               aria-label="Toggle menu"
               onClick={() => setMenuOpen((open) => !open)}
             >
               <span
-                className={`block h-0.5 w-6 bg-current transition-all duration-300 ${
+                className={`block h-0.5 w-5 bg-current transition-all duration-300 ${
                   menuOpen ? "rotate-45 translate-y-1.5" : ""
                 }`}
               ></span>
               <span
-                className={`block h-0.5 w-6 bg-current my-1 transition-all duration-300 ${
+                className={`block h-0.5 w-5 bg-current my-1 transition-all duration-300 ${
                   menuOpen ? "opacity-0" : ""
                 }`}
               ></span>
               <span
-                className={`block h-0.5 w-6 bg-current transition-all duration-300 ${
+                className={`block h-0.5 w-5 bg-current transition-all duration-300 ${
                   menuOpen ? "-rotate-45 -translate-y-1.5" : ""
                 }`}
               ></span>
             </button>
             {menuOpen && (
-              <div className="fixed inset-0 top-14 left-0 w-full bg-background border-b border-border/40 shadow-md z-40 flex flex-col h-[calc(100dvh-3.5rem)] overflow-y-auto">
-                <nav className="flex flex-col items-start space-y-2 py-4 text-base font-medium flex-1">
+              <div className="absolute top-14 left-0 w-full bg-background border-b border-border/40 shadow-md z-50 animate-fade-in flex flex-col h-[calc(100dvh-3.5rem)]">
+                <nav className="flex flex-col items-start space-y-4 py-4 text-base font-medium flex-1">
                   <Link
                     href="#overview"
                     onClick={() => setMenuOpen(false)}
-                    className="w-full py-3 hover:text-primary text-xl pl-6"
+                    className="w-full py-2 hover:text-primary text-2xl pl-7"
                   >
                     Overview
                   </Link>
                   <Link
                     href="#curriculum"
                     onClick={() => setMenuOpen(false)}
-                    className="w-full py-3 hover:text-primary text-xl pl-6"
+                    className="w-full py-2 hover:text-primary text-2xl pl-7"
                   >
                     Curriculum
                   </Link>
                   <Link
                     href="#projects"
                     onClick={() => setMenuOpen(false)}
-                    className="w-full py-3 hover:text-primary text-xl pl-6"
+                    className="w-full py-2 hover:text-primary text-2xl pl-7"
                   >
                     Projects
                   </Link>
                   <Link
                     href="#Mentors"
                     onClick={() => setMenuOpen(false)}
-                    className="w-full py-3 hover:text-primary text-xl pl-6"
+                    className="w-full py-2 hover:text-primary text-2xl pl-7 "
                   >
                     Mentors
                   </Link>
                   <Link
                     href="#contact"
                     onClick={() => setMenuOpen(false)}
-                    className="w-full py-3 hover:text-primary text-xl pl-6"
+                    className="w-full py-2 hover:text-primary text-2xl pl-7"
                   >
                     Contact
                   </Link>
                 </nav>
-                <div className="px-6 pb-6">
-                  <Button className="w-full text-base" asChild>
+                <div className="mx-7 mb-7">
+                  <Button className="w-[85vw] text-base" asChild>
                     <Link href="#enroll" onClick={() => setMenuOpen(false)}>
                       Register Now
-                      <IoRocketOutline size={24} />
+                      <IoRocketOutline size={32} />
                     </Link>
                   </Button>
                 </div>

@@ -12,8 +12,6 @@ import WhatsappImage9 from "@/assets/whatsapp-images/whatsapp_proof_9.png";
 import WhatsappImage10 from "@/assets/whatsapp-images/whatsapp_proof_10.png";
 import WhatsappImage11 from "@/assets/whatsapp-images/whatsapp_proof_11.png";
 import WhatsappImage12 from "@/assets/whatsapp-images/whatsapp_proof_12.png";
-import WhatsappImage13 from "@/assets/whatsapp-images/whatsapp_proof_13.png";
-
 interface ImageItem {
   src: string | StaticImageData;
   alt: string;
@@ -68,10 +66,6 @@ const images: ImageItem[] = [
   },
   {
     src: WhatsappImage12,
-    alt: "Flower field",
-  },
-  {
-    src: WhatsappImage13,
     alt: "Flower field",
   },
 ];
