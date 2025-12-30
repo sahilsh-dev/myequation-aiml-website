@@ -4,11 +4,21 @@ import { useEffect, useState, useRef } from "react";
 
 export default function PromotionalBanner() {
   const [showBanner, setShowBanner] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    const featuresSection = document.getElementById("features-overview");
-    if (!featuresSection) return;
+    const handleMobileMenuChange = (e: any) => {
+      setIsMobileMenuOpen(e.detail.isOpen);
+    };
+    window.addEventListener("mobile-menu-change", handleMobileMenuChange);
+    return () =>
+      window.removeEventListener("mobile-menu-change", handleMobileMenuChange);
+  }, []);
+
+  useEffect(() => {
+    const heroSection = document.getElementById("overview");
+    if (!heroSection) return;
 
     // Clean up any previous observer
     if (observerRef.current) {
@@ -17,7 +27,7 @@ export default function PromotionalBanner() {
 
     observerRef.current = new window.IntersectionObserver(
       ([entry]) => {
-        // If the features section is NOT intersecting (out of view), show the banner
+        // If the hero section is NOT intersecting (out of view), show the banner
         setShowBanner(
           !entry.isIntersecting && entry.boundingClientRect.top < 0
         );
@@ -28,7 +38,7 @@ export default function PromotionalBanner() {
       }
     );
 
-    observerRef.current.observe(featuresSection);
+    observerRef.current.observe(heroSection);
     // Clean up observer on unmount
     return () => {
       if (observerRef.current) {

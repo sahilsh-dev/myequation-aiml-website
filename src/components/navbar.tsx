@@ -28,6 +28,13 @@ export default function Navbar() {
   // Prevent scroll on mobile when menu is open
   useEffect(() => {
     if (!isMobile) return;
+
+    // Dispatch event for other components (like PromotionalBanner)
+    const event = new CustomEvent("mobile-menu-change", {
+      detail: { isOpen: menuOpen },
+    });
+    window.dispatchEvent(event);
+
     function preventScroll(e: Event) {
       e.preventDefault();
     }
