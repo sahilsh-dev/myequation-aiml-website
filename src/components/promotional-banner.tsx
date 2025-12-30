@@ -51,7 +51,7 @@ export default function PromotionalBanner() {
   return (
     <div
       className={`fixed bottom-0 left-0 right-0 z-50 transition-transform duration-300 ${
-        showBanner ? "translate-y-0" : "translate-y-full"
+        showBanner && !isMobileMenuOpen ? "translate-y-0" : "translate-y-full"
       }`}
     >
       <div className="w-full bg-gradient-to-r from-gray-900 via-blue-950 to-black px-4 py-2 rounded-t-lg shadow-lg">
