@@ -87,8 +87,8 @@ export default function EnrollNowPromotion() {
             </div>
           </div>
 
-          {/* <div className="weeks-career-bar flex flex-row justify-center items-center mx-auto max-w-[800px] w-full px-4 sm:px-6 md:px-8 py-[50px] sm:py-[40px] max-md:pt-[30px] max-md:pb-[20px] gap-2 sm:gap-4 md:gap-6 lg:gap-8">
-            <div className="weeks-career-box px-[5px] sm:px-[10px] md:px-[15px] lg:px-[20px] max-md:px-[10px] flex-1 text-center">
+          <div className="weeks-career-bar flex flex-row justify-center items-center mx-auto max-w-[800px] w-full px-4 sm:px-6 md:px-8 py-[50px] sm:py-[40px] max-md:pt-[30px] max-md:pb-[20px] gap-2 sm:gap-4 md:gap-6 lg:gap-8">
+            {/* <div className="weeks-career-box px-[5px] sm:px-[10px] md:px-[15px] lg:px-[20px] max-md:px-[10px] flex-1 text-center">
               <div className="career-icon mb-2 sm:mb-3 flex justify-center">
                 <img
                   src={careerIcon1.src}
@@ -131,8 +131,8 @@ export default function EnrollNowPromotion() {
               <p className="week-ptag text-[#191919] font-['Poppins',sans-serif] text-[10px] sm:text-[12px] md:text-[13px] lg:text-[14px] font-normal leading-[14px] sm:leading-[18px] md:leading-[20px]">
                 Lifetime Access with All Future Updates
               </p>
-            </div>
-          </div> */}
+            </div> */}
+          </div>
         </div>
       </div>
     </div>
