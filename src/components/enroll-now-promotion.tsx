@@ -22,14 +22,12 @@ export default function EnrollNowPromotion() {
     >
       <div className="mx-auto max-w-[1200px] px-[20px] pt-[20px]">
         <div className="ongoing-section">
-          {/* Top Section */}
           <div className="ongoing-text-bar text-center">
             <span className="block w-full text-[#303030] font-medium text-[20px] font-['Poppins',sans-serif]">
               Registrations Ongoing!
             </span>
           </div>
 
-          {/* Top BG Image */}
           <div className="ongoing-top-bg mt-[30px] mb-[25px] text-center">
             <img
               src={ongoingTopBg.src}
@@ -39,7 +37,6 @@ export default function EnrollNowPromotion() {
             />
           </div>
 
-          {/* Main Title Section */}
           <div className="flex items-start justify-center ">
             <img
               src={leftIcon.src}
@@ -64,8 +61,6 @@ export default function EnrollNowPromotion() {
               decoding="async"
             />
           </div>
-
-          {/* Report Text */}
           <div className="report-text pt-[8px] text-center">
             <p className="text-[#101010] font-['Poppins',sans-serif] text-[16px] font-normal leading-[22px]">
               Graduates report promotions, raises, or new{" "}
@@ -73,7 +68,6 @@ export default function EnrollNowPromotion() {
             </p>
           </div>
 
-          {/* Button */}
           <div className="text-center pt-[30px]">
             <div className="inline-block w-auto">
               <a
@@ -93,9 +87,7 @@ export default function EnrollNowPromotion() {
             </div>
           </div>
 
-          {/* Benefits Section */}
-          <div className="weeks-career-bar flex flex-row justify-center items-center mx-auto max-w-[800px] w-full px-4 sm:px-6 md:px-8 py-[50px] sm:py-[40px] max-md:pt-[30px] max-md:pb-[20px] gap-2 sm:gap-4 md:gap-6 lg:gap-8">
-            {/* Benefit 1 */}
+          {/* <div className="weeks-career-bar flex flex-row justify-center items-center mx-auto max-w-[800px] w-full px-4 sm:px-6 md:px-8 py-[50px] sm:py-[40px] max-md:pt-[30px] max-md:pb-[20px] gap-2 sm:gap-4 md:gap-6 lg:gap-8">
             <div className="weeks-career-box px-[5px] sm:px-[10px] md:px-[15px] lg:px-[20px] max-md:px-[10px] flex-1 text-center">
               <div className="career-icon mb-2 sm:mb-3 flex justify-center">
                 <img
@@ -111,7 +103,6 @@ export default function EnrollNowPromotion() {
               </p>
             </div>
 
-            {/* Benefit 2 */}
             <div className="weeks-career-box px-[5px] sm:px-[10px] md:px-[15px] lg:px-[20px] max-md:px-[10px] flex-1 text-center">
               <div className="career-icon mb-2 sm:mb-3 flex justify-center">
                 <img
@@ -127,7 +118,6 @@ export default function EnrollNowPromotion() {
               </p>
             </div>
 
-            {/* Benefit 3 */}
             <div className="weeks-career-box px-[5px] sm:px-[10px] md:px-[15px] lg:px-[20px] max-md:px-[10px] flex-1 text-center">
               <div className="career-icon mb-2 sm:mb-3 flex justify-center">
                 <img
@@ -142,7 +132,7 @@ export default function EnrollNowPromotion() {
                 Lifetime Access with All Future Updates
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
