@@ -80,9 +80,14 @@ export default function PromotionalBanner() {
                   Rs. 8000
                 </span>
               </div>
-              <button className="bg-blue-800 hover:bg-blue-700 text-white font-bold px-6 py-2.5 rounded-xl text-base shadow-lg hover:shadow-blue-400/60 transition-all duration-300 ease-in-out transform hover:scale-105 border-2 border-blue-600 hover:border-blue-400">
-                <span className="relative z-10">Register Now</span>
-              </button>
+             <a
+              href={paymentLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-blue-800 hover:bg-blue-700 text-white font-bold px-6 py-2.5 rounded-xl text-base shadow-lg hover:shadow-blue-400/60 transition-all duration-300 ease-in-out transform hover:scale-105 border-2 border-blue-600 hover:border-blue-400 inline-block"
+             >
+             <span className="relative z-10">Register Now</span>
+             </a>
             </div>
           </div>
 
